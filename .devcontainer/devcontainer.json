@@ -19,7 +19,10 @@
             ],
             "settings": {}
         }
-    }
+    },
     // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
     // "remoteUser": "root"
+    "remoteEnv": {
+        "PATH": "${containerEnv:PATH}:${containerWorkspaceFolder}/oscal/build/metaschema/support/xspec/bin"
+    }
 }
