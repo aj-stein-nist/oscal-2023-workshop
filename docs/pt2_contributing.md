@@ -6,7 +6,9 @@ theme: default
 class: invert
 paginate: true
 ---
-
+<!-- 
+This half of the presentation is shorter and less narative-driven.
+-->
 # How do I contribute?
 ### 4th Annual OSCAL Conference Workshop
 A.J. Stein & Nikita Wootten
