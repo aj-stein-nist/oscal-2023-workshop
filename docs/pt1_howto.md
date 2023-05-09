@@ -10,25 +10,40 @@ paginate: true
 General flow:
 1. Introduction
     1. Disclaimer
-    2. Environment setup
-    3. Introduce the speakers and their roles in this story
-    4. Describe the setting (Important Federal Agency, etc)
-2. The inciding incident (my company needs me to document this system)
+    2. Who is the target audience? What are key assumptions?
+       * No example automation implemented (no example code at all)
+       * Technical staff (dev, sys eng) read/write OSCAL, others consume data via OSCAL-enabled GRC tooling
+    3. Environment setup
+    4. Introduce the speakers and their roles in this story
+    5. Describe the setting (Important Federal Agency, etc)
+2. The inciting incident (my organization needs me to document this system)
+    1. Introduce the roles
+3. The valley of despair (you're telling me I have to pass around this hundred page word document?)
+    1. How roles interact when documentation is unstructured
+    2. How roles interact when GRC tooling is not interoperable
+4. How do those roles collaborate with OSCAL? (*a* way they interact, this is not perscriptive)
+    1. Developers write SSP store in VCS (GitHub)
+    1. VCS copy of SSP uploaded to GRC tool
+    1. ISSM reviews in GRC tool
+    1. During assessment, assessors send AP to AO/ISSM/developer
+    1. Devs submit evidence to assessors in AR against AP in GRC tool
+5. A new hope (let's try OSCAL) (the bulk of the presentation)
+    1. Setup (write metadata with name, party, contact info)
     1. Introduce the application (link shortener)
     2. Describe the system (deployment)
-3. The valley of despair (you're telling me I have to pass around this hundred page word document?)
-4. A new hope (let's try OSCAL) (the bulk of the presentation)
-    1. Start with the controls
-        * We get a list of controls from our ITSO
-        * Create a basic profile
-        * Perform profile resolution
+    1.Pick the controls
+        * Retrieve a list of controls from our ITSO (from GRC Tool manager for ITSO's office)
+        * Perform profile resolution and retrieve derived catalog
         * Compare the output resolved catalog (describe the utility)
-    2. Describe the system
+    1. Describe the system
         * Review the system (what controlled by who)
         * Perform validation
-    3. Write the SSP
+    1. Write about the system in the SSP
         * Introduce automation with GHA?
-5. Conclusion (bring back the word document, compare the benefits)
+    1. Assess the system in the SSP, GRC drops AR
+    1. Devs review AR and create POA&M
+    1. GRC tool checks POA&M and AR for updates
+6. Conclusion (bring back the word document, compare the benefits)
 -->
 
 # How do I OSCAL?
