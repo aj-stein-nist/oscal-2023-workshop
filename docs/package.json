@@ -1,0 +1,10 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "private": true,
+  "license": "See ../LICENSE.md",
+  "devDependencies": {
+    "@marp-team/marp-cli": "^2.5.0",
+    "@mermaid-js/mermaid-cli": "^10.1.0"
+  }
+}
