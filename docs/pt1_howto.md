@@ -61,7 +61,7 @@ In order to follow along we assume that you:
 
 ### Environment setup
 
-![bg left](./support/repo_qr_code.png)
+![bg left](./support/qrcode_repo.png)
 
 In order to follow along:
 
