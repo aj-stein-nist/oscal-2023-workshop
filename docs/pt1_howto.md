@@ -4,6 +4,7 @@ title: "Part 1: How do I OSCAL?"
 author: A.J. Stein, Nikita Wootten
 theme: default
 class: invert
+footer: How do I OSCAL? - 4th Annual OSCAL Conference Workshop
 paginate: true
 ---
 
@@ -59,6 +60,8 @@ In order to follow along we assume that you:
 ---
 
 ### Environment setup
+
+![bg left](./support/repo_qr_code.png)
 
 In order to follow along:
 
