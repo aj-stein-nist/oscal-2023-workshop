@@ -48,9 +48,11 @@ sequenceDiagram
     Product Team->>+Product Team: Deploy system
     Product Team->>+Owner: Announce system go-live status
     %% Continuously monitor controls
-    ISSO->>+Assessor: Initiate continuous monitoring for system
-    Assessor->>+Product Team: Send continuous monitoring steps in AP
-    Product Team-->>+Assessor: Send evidence to 
-    Assessor-->>+ISSO: Send updated assessment result (AR)
-    ISSO-->>+Product Team: Review AR and update ongoing POA&Ms
-    Product Team-->>+Product Team: Update system to mitigate ongoing POA&Ms
+    loop Monitor daily/weekly/monthly
+        ISSO->>+Assessor: Initiate continuous monitoring for system
+        Assessor->>+Product Team: Send continuous monitoring steps in AP
+        Product Team-->>+Assessor: Send evidence to 
+        Assessor-->>+ISSO: Send updated assessment result (AR)
+        ISSO-->>+Product Team: Review AR and update ongoing POA&Ms
+        Product Team-->>+Product Team: Update system to mitigate ongoing POA&Ms
+    end
