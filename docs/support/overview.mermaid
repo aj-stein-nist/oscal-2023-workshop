@@ -1,0 +1,56 @@
+sequenceDiagram
+    actor Owner
+    actor Product Team
+    actor ISSO
+    actor Assessor
+    %% Prepare
+    Owner->>+Owner: Start a new project and its system
+    Owner-->>+Owner: Describe the system
+    Owner-->>+Product Team: Send project decription and system requirements
+    %% Categorize
+    Product Team->>+ISSO: Request system categorization
+    ISSO-->>+Owner: What purpose?
+    ISSO-->>+Product Team: With what data? What does it do? How does it work?
+    Product Team-->>+ISSO: Define information types
+    ISSO-->>+ISSO: Categorize system based on info types
+    Product Team-->>+Product Team: Draft security plan
+    Product Team-->>+ISSO: Send draft categorization in plan for review
+    ISSO-->>+Product Team: Categorization ok, proceed.
+    %% Select controls
+    ISSO->>+ISSO: Select controls
+    ISSO-->>+Product Team: Announce controls
+    %% Implement system and controls
+    Product Team->>+Product Team: Implement the system.
+    Product Team-->>+ISSO: Submit security plan for review, request assessment
+    ISSO-->>+ISSO: Determine assessment readiness
+    %% Assess
+    ISSO->>+Assessor: Initiate assessment
+    Assessor-->>+Assessor: Review controls and system
+    Assessor-->>+Assessor: Draft assessment plan
+    Assessor-->>+ISSO: Start AP activities
+    Assessor-->>+Product Team: Test, examine, interview for evidence
+    Product Team-->>+Assessor: Receive test, examine, and interview evidence
+    Assessor-->>+Assessor: Review evidence
+    Assessor-->>+Assessor: Draft assessment result (AR)
+    Assessor-->>+ISSO: Review AR and system readiness
+    ISSO-->>+Product Team: Confirm project and system findings
+    Product Team-->>+Product Team: Draft POA&M with confirmed findings
+    Product Team-->>+ISSO: Send AR and POA&M for risk review
+    ISSO-->>+ISSO: Review AR and POA&M
+    ISSO-->>+Assessor: Consult assessor to accept risk
+    ISSO-->>+Owner: Brief risks to make decision
+    Owner-->>+Owner: Accepts risk
+    Owner-->>+ISSO: Document acceptance, request end of assessment
+    ISSO-->>+Assessor: Announce end of assessment
+    %% Authorize
+    ISSO-->>+ISSO: Update SSP with owner approval
+    ISSO->>+Owner: Certify system
+    Product Team->>+Product Team: Deploy system
+    Product Team->>+Owner: Announce system go-live status
+    %% Continuously monitor controls
+    ISSO->>+Assessor: Initiate continuous monitoring for system
+    Assessor->>+Product Team: Send continuous monitoring steps in AP
+    Product Team-->>+Assessor: Send evidence to 
+    Assessor-->>+ISSO: Send updated assessment result (AR)
+    ISSO-->>+Product Team: Review AR and update ongoing POA&Ms
+    Product Team-->>+Product Team: Update system to mitigate ongoing POA&Ms
