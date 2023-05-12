@@ -4,55 +4,80 @@ sequenceDiagram
     actor ISSO
     actor Assessor
     %% Prepare
-    Owner->>+Owner: Start a new project and its system
-    Owner-->>+Owner: Describe the system
-    Owner-->>+Product Team: Send project decription and system requirements
+    Owner->>Owner: Start a new project and its system
+    Owner-->>Owner: Describe the system
+    Owner-->>Product Team: Send project decription and system requirements
+    Note over Owner,Product Team: Email
     %% Categorize
-    Product Team->>+ISSO: Request system categorization
-    ISSO-->>+Owner: What purpose?
-    ISSO-->>+Product Team: With what data? What does it do? How does it work?
-    Product Team-->>+ISSO: Define information types
-    ISSO-->>+ISSO: Categorize system based on info types
-    Product Team-->>+Product Team: Draft security plan
-    Product Team-->>+ISSO: Send draft categorization in plan for review
-    ISSO-->>+Product Team: Categorization ok, proceed.
+    Product Team->>ISSO: Request system categorization
+    Note over Product Team,ISSO: Email
+    ISSO-->>Owner: What purpose?
+    ISSO-->>Product Team: With what data? What does it do? How does it work?
+    Product Team-->>ISSO: Define information types
+    ISSO-->>ISSO: Categorize system based on info types
+    Product Team-->>Product Team: Draft security plan
+    Note over Product Team: OSCAL SSP file in VCS
+    Product Team-->>ISSO: Send draft categorization in plan for review
+    Note over Product Team: Upload OSCAL SSP in GRC with API
+    ISSO-->>Product Team: Categorization ok, proceed
     %% Select controls
-    ISSO->>+ISSO: Select controls
-    ISSO-->>+Product Team: Announce controls
+    ISSO->>ISSO: Select controls
+    Note over ISSO: Update SSP in GRC
+    ISSO-->>Product Team: Announce controls
+    Note over ISSO, Product Team: Email
     %% Implement system and controls
-    Product Team->>+Product Team: Implement the system.
-    Product Team-->>+ISSO: Submit security plan for review, request assessment
-    ISSO-->>+ISSO: Determine assessment readiness
+    Product Team->>Product Team: Implement the system
+    Note over Product Team: 1. Export profile from GRC with API
+    Note over Product Team: 2. Resolve catalog from exported profile
+    Note over Product Team: 3. Update OSCAL SSP in VCS
+    Product Team-->>ISSO: Submit security plan for review, request assessment
+    Note over Product Team,ISSO: Update OSCAL SSP in GRC with API
+    ISSO-->>ISSO: Determine assessment readiness
     %% Assess
-    ISSO->>+Assessor: Initiate assessment
-    Assessor-->>+Assessor: Review controls and system
-    Assessor-->>+Assessor: Draft assessment plan
-    Assessor-->>+ISSO: Start AP activities
-    Assessor-->>+Product Team: Test, examine, interview for evidence
-    Product Team-->>+Assessor: Receive test, examine, and interview evidence
-    Assessor-->>+Assessor: Review evidence
-    Assessor-->>+Assessor: Draft assessment result (AR)
-    Assessor-->>+ISSO: Review AR and system readiness
-    ISSO-->>+Product Team: Confirm project and system findings
-    Product Team-->>+Product Team: Draft POA&M with confirmed findings
-    Product Team-->>+ISSO: Send AR and POA&M for risk review
-    ISSO-->>+ISSO: Review AR and POA&M
-    ISSO-->>+Assessor: Consult assessor to accept risk
-    ISSO-->>+Owner: Brief risks to make decision
-    Owner-->>+Owner: Accepts risk
-    Owner-->>+ISSO: Document acceptance, request end of assessment
-    ISSO-->>+Assessor: Announce end of assessment
+    ISSO->>Assessor: Initiate assessment
+    Note over ISSO: Update SSP in GRC
+    Assessor-->>Assessor: Review controls and system
+    Assessor-->>Assessor: Draft assessment plan
+    Note over Assessor: Create AP in GRC
+    Assessor-->>ISSO: Start AP activities
+    Note over Assessor,ISSO: Upload OSCAL AP to GRC with API
+    Assessor-->>Product Team: Test, examine, interview for evidence
+    Product Team-->>Assessor: Receive test, examine, and interview evidence
+    Note over Product Team, Assessor: Add OSCAL AR observations in GRC with API
+    Assessor-->>Assessor: Review evidence
+    Assessor-->>Assessor: Draft assessment result (AR)
+    Note over Assessor: Update AR reporting elements in GRC
+    Assessor-->>ISSO: Review AR and system readiness
+    ISSO-->>Product Team: Confirm project and system findings
+    Note over Product Team: Export AR with GRC with API in VCS
+    Product Team-->>Product Team: Draft POA&M with confirmed findings
+    Note over Product Team: Create OSCAL POA&M in VCS
+    Product Team-->>ISSO: Send AR and POA&M for risk review
+    Note over Product Team,ISSO: Upload AR and POA&M to GRC with API
+    ISSO-->>ISSO: Review AR and POA&M
+    ISSO-->>Assessor: Consult assessor to accept risk
+    ISSO-->>Owner: Brief risks to make decision
+    Owner-->>Owner: Accepts risk
+    Owner-->>ISSO: Document acceptance, request end of assessment
+    Note over Owner: Update POA&M in GRC
+    ISSO-->>Assessor: Announce end of assessment
     %% Authorize
-    ISSO-->>+ISSO: Update SSP with owner approval
-    ISSO->>+Owner: Authorize system
-    Product Team->>+Product Team: Deploy system
-    Product Team->>+Owner: Announce system go-live status
+    ISSO-->>ISSO: Update SSP with owner approval
+    Note over ISSO: Update SSP in GRC with approval
+    ISSO->>Owner: Authorize system
+    Product Team->>Product Team: Deploy system
+    Note over Product Team: Export OSCAL SSP and POA&M from GRC to VCS
+    Product Team->>Owner: Announce system go-live status
     %% Continuously monitor controls
     loop Monitor daily/weekly/monthly
-        ISSO->>+Assessor: Initiate continuous monitoring for system
-        Assessor->>+Product Team: Send continuous monitoring steps in AP
-        Product Team-->>+Assessor: Send evidence to 
-        Assessor-->>+ISSO: Send updated assessment result (AR)
-        ISSO-->>+Product Team: Review AR and update ongoing POA&Ms
-        Product Team-->>+Product Team: Update system to mitigate ongoing POA&Ms
+        ISSO->>Assessor: Initiate continuous monitoring for system
+        Note over ISSO: Create AP in GRC
+        Assessor->>Product Team: Send continuous monitoring steps in AP
+        Note over Assessor: Update AP plan and create AR in GRC
+        Product Team-->>Assessor: Send evidence to 
+        Note over Product Team: Upload observations in OSCAL AR to GRC with API
+        Assessor-->>ISSO: Send updated assessment result (AR)
+        ISSO-->>Product Team: Review AR and update ongoing POA&Ms
+        Product Team-->>Product Team: Update system to mitigate ongoing POA&Ms
+        Note over Product Team: Export AR and POA&M from GRC with API to VCS
     end
