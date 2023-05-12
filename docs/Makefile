@@ -32,13 +32,10 @@ presentations: $(EXPORTED_FILES) ## Export all presentations to HTML
 SUPPORT_DIR:=support
 GEN_SUPPORT_DIR:=$(SUPPORT_DIR)/generated
 
-# Ensure generated content has a place to go
-$(GEN_SUPPORT_DIR):
-	mkdir -p $(GEN_SUPPORT_DIR)
-
-MERMAID_FLAGS:=-t default -b transparent
+MERMAID_FLAGS:=-b transparent --configFile $(SUPPORT_DIR)/mermaid-config.json
 # Export the given Mermaid diagram to SVG
-$(GEN_SUPPORT_DIR)/%.svg: $(SUPPORT_DIR)/%.mermaid node_modules $(GEN_SUPPORT_DIR)
+$(GEN_SUPPORT_DIR)/%.svg: $(SUPPORT_DIR)/%.mermaid node_modules $(SUPPORT_DIR)/mermaid-config.json
+	mkdir -p $(GEN_SUPPORT_DIR)
 	npx @mermaid-js/mermaid-cli -i $(SUPPORT_DIR)/$*.mermaid -o $(GEN_SUPPORT_DIR)/$*.svg $(MERMAID_FLAGS)
 
 MERMAID_FILES:=$(wildcard $(SUPPORT_DIR)/*.mermaid)

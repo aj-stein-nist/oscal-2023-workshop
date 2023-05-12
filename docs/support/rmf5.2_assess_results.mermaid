@@ -1,0 +1,10 @@
+sequenceDiagram
+    actor Owner
+    actor Product Team
+    actor ISSO
+    actor Assessor
+    Assessor-->>+ISSO: Start AP activities
+    Assessor-->>+Product Team: Test, examine, interview for evidence
+    Product Team-->>+Assessor: Receive test, examine, and interview evidence
+    Assessor-->>+Assessor: Review evidence
+    Assessor-->>+Assessor: Draft assessment result (AR)

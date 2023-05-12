@@ -1,0 +1,10 @@
+sequenceDiagram
+    actor Owner
+    actor Product Team
+    actor ISSO
+    actor Assessor
+    Assessor-->>+ISSO: Review AR and system readiness
+    ISSO-->>+Product Team: Confirm project and system findings
+    Product Team-->>+Product Team: Draft POA&M with confirmed findings
+    Product Team-->>+ISSO: Send AR and POA&M for risk review
+    ISSO-->>+ISSO: Review AR and POA&M

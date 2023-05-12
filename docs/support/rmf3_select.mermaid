@@ -1,0 +1,8 @@
+sequenceDiagram
+    actor Owner
+    actor Product Team
+    actor ISSO
+    ISSO->>+ISSO: Select controls
+    ISSO-->>+Product Team: Announce controls
+    Note right of Product Team: This is where the OSCAL comes in!
+    Product Team-->>+Product Team: Generate an OSCAL profile

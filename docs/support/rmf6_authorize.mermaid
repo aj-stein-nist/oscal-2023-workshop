@@ -1,0 +1,9 @@
+sequenceDiagram
+    actor Owner
+    actor Product Team
+    actor ISSO
+    actor Assessor
+    ISSO-->>+ISSO: Update SSP with owner approval
+    ISSO->>+Owner: Authorize system
+    Product Team->>+Product Team: Deploy system
+    Product Team->>+Owner: Announce system go-live status

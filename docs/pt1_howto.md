@@ -8,6 +8,8 @@ footer: How do I OSCAL? - 4th Annual OSCAL Conference Workshop
 paginate: true
 ---
 
+<!-- _paginate: false -->
+
 # How do I OSCAL?
 ### 4th Annual OSCAL Conference Workshop
 A.J. Stein & Nikita Wootten
@@ -44,6 +46,8 @@ In order to follow along we assume that you:
 
 ### Assumptions
 
+The goal of this presentation is to demonstrate *a* workflow showcasing how OSCAL and GRC tools *could* interact within your organization.
+
 <!-- TODO -->
 
 ---
@@ -52,10 +56,8 @@ In order to follow along we assume that you:
 
 <!-- TODO include some icons here -->
 
-* Developer
-    Designing the application
-* System Engineer
-    Deploying and maintaining the application
+* Developer - Designing the application
+* System Engineer - Deploying and maintaining the application
 
 ---
 
@@ -65,10 +67,10 @@ In order to follow along we assume that you:
 
 In order to follow along:
 
-1. A computer (macOS or Windows, patched and updated)
+1. A computer (macOS or Windows, Linux, patched and updated)
     1. Windows users will require the [WSL backend](https://learn.microsoft.com/en-us/windows/wsl/install)
 1. [Visual Studio Code](https://code.visualstudio.com/#alt-downloads)
-1. [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+1. [Docker Desktop](https://www.docker.com/products/docker-desktop/) if on macOS or Windows, [Docker Engine](https://docs.docker.com/engine/) if on Linux
 
 You do not have to follow along to learn from this presentation.
 
@@ -86,7 +88,7 @@ We have been tasked with designing and documenting this new system.
 
 ### The project
 
-<!-- TODO introduce the link shortener -->
+Our task: to document a link shortener system.
 
 ---
 
@@ -135,3 +137,63 @@ How do those roles collaborate with OSCAL? (*a* way they interact, this is not p
     1. GRC tool checks POA&M and AR for updates
 6. Conclusion (bring back the word document, compare the benefits)
 -->
+
+---
+
+### Prepare
+
+![prepare](./support/generated/rmf1_prepare.svg)
+
+---
+
+### Categorize
+
+![categorize](./support/generated/rmf2_categorize.svg)
+
+---
+
+### Select controls
+
+![select](./support/generated/rmf3_select.svg)
+
+---
+
+### Implement
+
+![implement](./support/generated/rmf4_implement.svg)
+
+---
+
+### Assess: Plan
+
+![assess-plan](./support/generated/rmf5.1_assess_plan.svg)
+
+---
+
+### Assess: Generate Results
+
+![assess-plan](./support/generated/rmf5.2_assess_results.svg)
+
+---
+
+### Assess: Generate Plan of Action and Milestones (POA&M)
+
+![assess-results](./support/generated/rmf5.3_assess_poam.svg)
+
+---
+
+### Assess: Finishing touches
+
+![assess-end](./support/generated/rmf5.4_assess_end.svg)
+
+---
+
+### Authorize
+
+![authorize](./support/generated/rmf6_authorize.svg)
+
+---
+
+### Continuously monitor
+
+![monitor](./support/generated/rmf7_monitor.svg)

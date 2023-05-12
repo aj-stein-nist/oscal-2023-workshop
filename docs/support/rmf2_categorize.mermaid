@@ -1,0 +1,12 @@
+sequenceDiagram
+    actor Owner
+    actor Product Team
+    actor ISSO
+    Product Team->>+ISSO: Request system categorization
+    ISSO-->>+Owner: What purpose?
+    ISSO-->>+Product Team: With what data? What does it do? How does it work?
+    Product Team-->>+ISSO: Define information types
+    ISSO-->>+ISSO: Categorize system based on info types
+    Product Team-->>+Product Team: Draft security plan
+    Product Team-->>+ISSO: Send draft categorization in plan for review
+    ISSO-->>+Product Team: Categorization ok, proceed.
