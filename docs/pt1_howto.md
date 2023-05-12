@@ -18,9 +18,9 @@ A.J. Stein & Nikita Wootten
 
 ## Disclaimer
 
-<!-- TODO: NIST disclaimer? -->
-
 All persons and organizations mentioned within this presentation are fictional and any resemblance to actual persons or organizations is purely coincidental.
+
+<!-- TODO: NIST disclaimer? -->
 
 ---
 
@@ -88,7 +88,11 @@ We have been tasked with designing and documenting this new system.
 
 ### The project
 
-Our task: to document a link shortener system.
+Important Federal Agency needs a link shortener (IFA-GoodRead) for easy to share URLs for staff and the public to easily consume important guidance on IFA matters from their website and track audience metrics.
+
+```
+www.ifa.gov/2023/04/19/request-for-comment-on-new-guidance-for-2023-fiscal-year -> from.ifa.gov/2023rfc
+```
 
 ---
 
@@ -178,7 +182,7 @@ How do those roles collaborate with OSCAL? (*a* way they interact, this is not p
 
 #### Opportunity for automation
 
-![bg left](./support/qrcode_case-study.png)
+![bg right](./support/qrcode_case-study.png)
 
 Assessment results generation can be automated with OSCAL.
 
@@ -186,7 +190,7 @@ Assessment results generation can be automated with OSCAL.
 
 ### Assess: Generate Plan of Action and Milestones (POA&M)
 
-![assess-results](./support/generated/rmf5.3_assess_poam.svg)
+![assess-poam](./support/generated/rmf5.3_assess_poam.svg)
 
 ---
 
