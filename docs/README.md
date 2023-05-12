@@ -1,5 +1,14 @@
 # OSCAL 2023 Workshop
 
+## Building
+
+The presentations in this repository are created using [MARP](https://marp.app/), a Markdown-based presentation format.
+The diagrams for this presentation are generated using [Mermaid](https://mermaid.js.org/).
+
+To generate export the presentation to HTML run `make presentations`.
+Run `make presentations-pdf` to generate PDF presentations.
+Other common operations, such as generating supporting content, are defined in the [`Makefile`](./Makefile) and can be summarized with `make help`.
+
 ## Schedule
 
 The workshop has a running time of 3 hours.

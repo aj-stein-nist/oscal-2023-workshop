@@ -106,7 +106,7 @@ TODO: Create the following slides:
 
 <!--
 TODO: Create the following slides:
-How do those roles collaborate with OSCAL? (*a* way they interact, this is not perscriptive)
+How do those roles collaborate with OSCAL? (*a* way they interact, this is not prescriptive)
     1. Developers write SSP store in VCS (GitHub)
     1. VCS copy of SSP uploaded to GRC tool
     1. ISSM reviews in GRC tool
@@ -173,6 +173,14 @@ How do those roles collaborate with OSCAL? (*a* way they interact, this is not p
 ### Assess: Generate Results
 
 ![assess-plan](./support/generated/rmf5.2_assess_results.svg)
+
+---
+
+#### Opportunity for automation
+
+![bg left](./support/qrcode_case-study.png)
+
+Assessment results generation can be automated with OSCAL.
 
 ---
 

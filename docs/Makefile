@@ -15,15 +15,26 @@ help: ## Show this help message
 # Presentation exportation
 #
 
+MARP_FILES:=$(wildcard pt*.md)
+MARP_FLAGS:=--allow-local-files
+
+EXPORTED_FILES:=$(patsubst pt%.md,pt%.html,$(MARP_FILES))
+
 # Export the given markdown presentation to html
 %.html: %.md node_modules support
-	npx @marp-team/marp-cli $*.md -o $*.html
-
-MARP_FILES:=$(wildcard pt*.md)
-EXPORTED_FILES:=$(patsubst pt%.md,pt%.html,$(MARP_FILES))
+	npx @marp-team/marp-cli $(MARP_FLAGS) $*.md -o $*.html
 
 presentations: $(EXPORTED_FILES) ## Export all presentations to HTML
 	@echo Generated presentations...
+
+EXPORTED_FILES_PDF:=$(patsubst pt%.md,pt%.pdf,$(MARP_FILES))
+
+# Export the given markdown presentation to pdf
+%.pdf: %.md node_modules support
+	npx @marp-team/marp-cli $(MARP_FLAGS) $*.md -o $*.pdf
+
+presentations-pdf: $(EXPORTED_FILES_PDF) ## Export all presentations to PDF
+	@echo Generated presentation PDFs...
 
 #
 # Support generation
@@ -56,4 +67,4 @@ node_modules: package.json package-lock.json
 	npm ci
 
 clean: ## Remove generated presentation output and support
-	rm -f support/generated/* pt*.html
+	rm -f support/generated/* pt*.html pt*.pdf
