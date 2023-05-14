@@ -88,16 +88,38 @@ We have been tasked with designing and documenting this new system.
 
 ### The project
 
-Important Federal Agency needs a link shortener (IFA-GoodRead) for easy to share URLs for staff and the public to easily consume important guidance on IFA matters from their website and track audience metrics.
+* Important Federal Agency needs a link shortener (IFA GoodRead)
+* How will it work?
+    * Staff log into GoodRead admin portal
+    * Take a URL like `https://www.ifa.gov/2023/04/19/request-for-comment-on-new-guidance-for-2023-fiscal-year`
+    * Generate a short link like `https://from.ifa.gov/2023rfc`
+    * Share short link with public
+    * Track audience metric from short link usage
 
-```
-www.ifa.gov/2023/04/19/request-for-comment-on-new-guidance-for-2023-fiscal-year -> from.ifa.gov/2023rfc
-```
 
 ---
 
 ## The valley of despair
 
+* IFA has lots of policies and processes
+* Systems must start, change, or stop through SDLC
+* Not just developers create and manage a system
+    * Technical and non-technical staff collaboration is crucial
+    * They write about what they have and do
+    * They have to keep it current during long development cycles
+
+---
+
+## The valley of despair
+
+* How did they do it before?
+    * Staff created Microsoft Word and PDF documents
+    * Colleagues reviewed individually, made comments, emailed draft feedback
+    * Frequent meetings occurred to clear up ambiguities in documents
+* Why didn't they like it before?
+    * Data was unstructured and hard to manage
+    * Quality checking across multiple related documents was labor intensive
+    * Quick spot check of system development or operation difficult
 <!--
 TODO: Create the following slides:
 1. How roles interact when documentation is unstructured
@@ -106,7 +128,38 @@ TODO: Create the following slides:
 
 ---
 
+## The valley of despair
+
+IFA staff were not so happy.
+
+---
+
+
+## Leaving the valley of despair
+
+* How do they do it now?
+    * They built a GRC program with a centralized service
+    * Staff use web application or APIs
+    * Little reliance on Microsoft Word or PDF documents
+* What do they like about it now?
+    * GRC service has structured data for efficient analysis
+    * Most quality checking is done by GRC
+    * GRC indicates status or progress on the system lifecyle
+
+---
+
+## The valley of despair
+
+IFA staff are a little happier now.
+
+---
+
 ## How could we use OSCAL?
+
+* Developers save it with code, like code
+* Developers upload and download data with a GRC API
+* Exchange data between different GRC services
+* Vendors provide security information about their products in components
 
 <!--
 TODO: Create the following slides:
