@@ -3,8 +3,9 @@ sequenceDiagram
     actor Product Team
     actor ISSO
     actor Assessor
-    ISSO-->>+Assessor: Consult assessor to accept risk
-    ISSO-->>+Owner: Brief risks to make decision
-    Owner-->>+Owner: Accepts risk
-    Owner-->>+ISSO: Document acceptance, request end of assessment
-    ISSO-->>+Assessor: Announce end of assessment
+    ISSO-->>Assessor: Consult assessor to accept risk
+    ISSO-->>Owner: Brief risks to make decision
+    Owner-->>Owner: Accepts risk
+    Owner-->>ISSO: Document acceptance, request end of assessment
+    Note over Owner: Update POA&M in GRC
+    ISSO-->>Assessor: Announce end of assessment

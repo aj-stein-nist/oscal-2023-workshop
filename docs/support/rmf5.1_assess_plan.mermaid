@@ -3,6 +3,8 @@ sequenceDiagram
     actor Product Team
     actor ISSO
     actor Assessor
-    ISSO->>+Assessor: Initiate assessment
-    Assessor-->>+Assessor: Review controls and system
-    Assessor-->>+Assessor: Draft assessment plan
+    ISSO->>Assessor: Initiate assessment
+    Note over ISSO: Update SSP in GRC
+    Assessor-->>Assessor: Review controls and system
+    Assessor-->>Assessor: Draft assessment plan
+    Note over Assessor: Create AP in GRC

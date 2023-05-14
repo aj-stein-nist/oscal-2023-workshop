@@ -3,8 +3,11 @@ sequenceDiagram
     actor Product Team
     actor ISSO
     actor Assessor
-    Assessor-->>+ISSO: Start AP activities
-    Assessor-->>+Product Team: Test, examine, interview for evidence
-    Product Team-->>+Assessor: Receive test, examine, and interview evidence
-    Assessor-->>+Assessor: Review evidence
-    Assessor-->>+Assessor: Draft assessment result (AR)
+    Assessor-->>ISSO: Start AP activities
+    Note over Assessor,ISSO: Upload OSCAL AP to GRC with API
+    Assessor-->>Product Team: Test, examine, interview for evidence
+    Product Team-->>Assessor: Receive test, examine, and interview evidence
+    Note over Product Team, Assessor: Add OSCAL AR observations in GRC with API
+    Assessor-->>Assessor: Review evidence
+    Assessor-->>Assessor: Draft assessment result (AR)
+    Note over Assessor: Update AR reporting elements in GRC

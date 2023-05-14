@@ -3,8 +3,11 @@ sequenceDiagram
     actor Product Team
     actor ISSO
     actor Assessor
-    Assessor-->>+ISSO: Review AR and system readiness
-    ISSO-->>+Product Team: Confirm project and system findings
-    Product Team-->>+Product Team: Draft POA&M with confirmed findings
-    Product Team-->>+ISSO: Send AR and POA&M for risk review
-    ISSO-->>+ISSO: Review AR and POA&M
+    Assessor-->>ISSO: Review AR and system readiness
+    ISSO-->>Product Team: Confirm project and system findings
+    Note over Product Team: Export AR with GRC with API in VCS
+    Product Team-->>Product Team: Draft POA&M with confirmed findings
+    Note over Product Team: Create OSCAL POA&M in VCS
+    Product Team-->>ISSO: Send AR and POA&M for risk review
+    Note over Product Team,ISSO: Upload AR and POA&M to GRC with API
+    ISSO-->>ISSO: Review AR and POA&M

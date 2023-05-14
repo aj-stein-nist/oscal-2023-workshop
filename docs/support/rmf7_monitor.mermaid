@@ -4,10 +4,14 @@ sequenceDiagram
     actor ISSO
     actor Assessor
     loop Monitor daily/weekly/monthly
-        ISSO->>+Assessor: Initiate continuous monitoring for system
-        Assessor->>+Product Team: Send continuous monitoring steps in AP
-        Product Team-->>+Assessor: Send evidence to 
-        Assessor-->>+ISSO: Send updated assessment result (AR)
-        ISSO-->>+Product Team: Review AR and update ongoing POA&Ms
-        Product Team-->>+Product Team: Update system to mitigate ongoing POA&Ms
+        ISSO->>Assessor: Initiate continuous monitoring for system
+        Note over ISSO: Create AP in GRC
+        Assessor->>Product Team: Send continuous monitoring steps in AP
+        Note over Assessor: Update AP plan and create AR in GRC
+        Product Team-->>Assessor: Send evidence to 
+        Note over Product Team: Upload observations in OSCAL AR to GRC with API
+        Assessor-->>ISSO: Send updated assessment result (AR)
+        ISSO-->>Product Team: Review AR and update ongoing POA&Ms
+        Product Team-->>Product Team: Update system to mitigate ongoing POA&Ms
+        Note over Product Team: Export AR and POA&M from GRC with API to VCS
     end

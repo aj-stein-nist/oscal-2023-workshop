@@ -26,9 +26,9 @@ All persons and organizations mentioned within this presentation are fictional a
 
 ## Introduction
 
-* [Who is the target audience of this talk?](#target-audience)
-* [What are the key assumptions made for this talk?](#assumptions)
-* [Who are we?](#who-are-we)
+- [Who is the target audience of this talk?](#target-audience)
+- [What are the key assumptions made for this talk?](#assumptions)
+- [Who are we?](#who-are-we)
 
 ---
 
@@ -46,9 +46,7 @@ In order to follow along we assume that you:
 
 ### Assumptions
 
-The goal of this presentation is to demonstrate *a* workflow showcasing how OSCAL and GRC tools *could* interact within your organization.
-
-<!-- TODO -->
+The goal of this presentation is to demonstrate *a* workflow showcasing how OSCAL and a GRC service *could* interact within your organization.
 
 ---
 
@@ -68,7 +66,7 @@ The goal of this presentation is to demonstrate *a* workflow showcasing how OSCA
 In order to follow along:
 
 1. A computer (macOS or Windows, Linux, patched and updated)
-    1. Windows users will require the [WSL backend](https://learn.microsoft.com/en-us/windows/wsl/install)
+    - Windows users will require the [WSL backend](https://learn.microsoft.com/en-us/windows/wsl/install)
 1. [Visual Studio Code](https://code.visualstudio.com/#alt-downloads)
 1. [Docker Desktop](https://www.docker.com/products/docker-desktop/) if on macOS or Windows, [Docker Engine](https://docs.docker.com/engine/) if on Linux
 
@@ -88,78 +86,73 @@ We have been tasked with designing and documenting this new system.
 
 ### The project
 
-* Important Federal Agency needs a link shortener (IFA GoodRead)
-* How will it work?
-    * Staff log into GoodRead admin portal
-    * Take a URL like `https://www.ifa.gov/2023/04/19/request-for-comment-on-new-guidance-for-2023-fiscal-year`
-    * Generate a short link like `https://from.ifa.gov/2023rfc`
-    * Share short link with public
-    * Track audience metric from short link usage
-
-
----
-
-## The valley of despair
-
-* IFA has lots of policies and processes
-* Systems must start, change, or stop through SDLC
-* Not just developers create and manage a system
-    * Technical and non-technical staff collaboration is crucial
-    * They write about what they have and do
-    * They have to keep it current during long development cycles
+- Important Federal Agency needs a link shortener (let's call it **IFA GoodRead**)
+- How will it work?
+    - Staff log into GoodRead admin portal
+    - Take a URL like `https://www.ifa.gov/2023/04/19/request-for-comment-on-new-guidance-for-2023-fiscal-year`
+    - Generate a short link like `https://from.ifa.gov/2023rfc`
+    - Share short link with public
+    - Track audience metric from short link usage
 
 ---
 
 ## The valley of despair
+
+- IFA has lots of policies and processes
+- Systems must start, change, or stop through SDLC
+- Not just developers create and manage a system
+    - Technical and non-technical staff collaboration is crucial
+    - They write about what they have and do
+    - They have to keep it current during long development cycles
+
+---
+
+## The valley of despair (continued)
 
 * How did they do it before?
-    * Staff created Microsoft Word and PDF documents
-    * Colleagues reviewed individually, made comments, emailed draft feedback
-    * Frequent meetings occurred to clear up ambiguities in documents
+    - Staff created Microsoft Word and PDF documents
+    - Colleagues reviewed individually, made comments, emailed draft feedback
+    - Frequent meetings occurred to clear up ambiguities in documents
 * Why didn't they like it before?
-    * Data was unstructured and hard to manage
-    * Quality checking across multiple related documents was labor intensive
-    * Quick spot check of system development or operation difficult
-<!--
-TODO: Create the following slides:
-1. How roles interact when documentation is unstructured
-2. How roles interact when GRC tooling is not interoperable
--->
+    - Data was unstructured and hard to manage
+    - Quality checking across multiple related documents was labor intensive
+    - Quick spot check of system development or operation difficult
 
 ---
 
-## The valley of despair
+## The valley of despair (continued)
 
 IFA staff were not so happy.
 
 ---
 
 
-## Leaving the valley of despair
+## Leaving the valley of despair (continued)
 
 * How do they do it now?
-    * They built a GRC program with a centralized service
-    * Staff use web application or APIs
-    * Little reliance on Microsoft Word or PDF documents
+    - They built a GRC program with a centralized service
+    - Staff use web application or APIs
+    - Little reliance on Microsoft Word or PDF documents
 * What do they like about it now?
-    * GRC service has structured data for efficient analysis
-    * Most quality checking is done by GRC
-    * GRC indicates status or progress on the system lifecyle
+    - GRC service has structured data for efficient analysis
+    - Most quality checking is done by GRC
+    - GRC indicates status or progress on the system lifecyle
 
 ---
 
-## The valley of despair
+## The valley of despair (continued)
 
 IFA staff are a little happier now.
 
 ---
 
-## How could we use OSCAL?
+## How could we leverage OSCAL as developers?
 
-* Developers save it with code, like code
-* Developers upload and download data with a GRC API
-* Exchange data between different GRC services
-* Vendors provide security information about their products in components
+Although *each organization will use OSCAL differently*, it provides some key benefits:
+
+- Developers can document systems with code, with all the benefits of modularization.
+- GRC tools and services can exchange data with standard data models.
+- Vendors can provide security information about their products in components.
 
 <!--
 TODO: Create the following slides:
@@ -174,6 +167,16 @@ How do those roles collaborate with OSCAL? (*a* way they interact, this is not p
 ---
 
 ## Let's try OSCAL
+
+*A potential* OSCAL workflow framed within the *RMF process*: 
+
+1. **Prepare** the project and its system
+1. **Categorize** the system's data
+1. **Select** controls for the system
+1. **Implement** the system and its security
+1. **Assess** system's security
+1. **Authorize** the system for operation
+1. **Monitor** the system
 
 <!--
 5. A new hope (let's try OSCAL) (the bulk of the presentation)
@@ -197,6 +200,18 @@ How do those roles collaborate with OSCAL? (*a* way they interact, this is not p
 
 ---
 
+## Let's try OSCAL (continued)
+
+1. Prepare the project and its system
+1. Categorize the system's data
+1. Select controls for the system
+1. Implement the system and its security
+1. Assess system's security
+1. Authorize the system for operation
+1. Monitor the system
+
+---
+
 ### Prepare
 
 ![prepare](./support/generated/rmf1_prepare.svg)
@@ -209,13 +224,36 @@ How do those roles collaborate with OSCAL? (*a* way they interact, this is not p
 
 ---
 
-### Categorize (Continued)
+### Categorize (continued)
 
 ![categorize](./support/generated/rmf2.2_categorize.svg)
 
 ---
 
-### Categorize (Continued)
+#### The OSCAL System Security Plan Model
+
+---
+
+#### Editing OSCAL content
+
+
+---
+
+#### Validating OSCAL content
+
+---
+
+#### Our basic SSP
+
+<!--
+Note: Live demo here
+
+Create the basic SSP
+-->
+
+---
+
+### Categorize (continued)
 
 ![categorize](./support/generated/rmf2.3_categorize.svg)
 
@@ -233,9 +271,62 @@ How do those roles collaborate with OSCAL? (*a* way they interact, this is not p
 
 ---
 
+#### The OSCAL Catalog Model
+
+---
+
+#### The OSCAL Profile Model
+
+---
+
+#### Our profile
+
+<!--
+Note: Live demo here
+
+Create a profile with our control selection
+-->
+
+---
+
+#### Obtaining a resolved catalog from our selection
+
+
+---
+
+#### IFA GoodReads: Defining the system
+
+![bg right 65%](./support/generated/system.svg)
+
+---
+
+#### Our updated system security plan
+
+<!--
+Note: Live demo here
+
+Update the SSP with our systems
+-->
+
+---
+
 ### Assess: Plan
 
 ![assess-plan](./support/generated/rmf5.1_assess_plan.svg)
+
+---
+
+#### The OSCAL Assessment Plan Model
+
+---
+
+#### Our assessment plan
+
+<!--
+Note: Live demo here
+
+Create our basic assessment plan
+-->
 
 ---
 
@@ -245,17 +336,49 @@ How do those roles collaborate with OSCAL? (*a* way they interact, this is not p
 
 ---
 
+#### The OSCAL Assessment Results Model
+
+---
+
+#### Our assessment results
+
+<!--
+Note: Live demo here
+
+Go through an already created assessment results file
+-->
+
+---
+
 #### Opportunity for automation
+
+<!--
+The astute among you may be thinking: "I could generate evidence for assessment results in CI/CD pretty easily."
+
+We agree! In a separate presentation we have explored this idea with a small GitHub actions workflow that generated assessment results automatically.
+-->
 
 ![bg right](./support/qrcode_case-study.png)
 
-Assessment results generation can be automated with OSCAL.
+Evidence generation for assessment results can be [automated with OSCAL](https://github.com/usnistgov/blossom-case-study).
 
 ---
 
 ### Assess: Generate Plan of Action and Milestones (POA&M)
 
 ![assess-poam](./support/generated/rmf5.3_assess_poam.svg)
+
+---
+
+#### The OSCAL POA&M Model
+
+---
+
+#### Our plan of action and milestones
+
+<!--
+Note: Live demo here
+-->
 
 ---
 
@@ -274,3 +397,7 @@ Assessment results generation can be automated with OSCAL.
 ### Continuously monitor
 
 ![monitor](./support/generated/rmf7_monitor.svg)
+
+---
+
+

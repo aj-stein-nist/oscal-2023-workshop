@@ -2,6 +2,10 @@ sequenceDiagram
     actor Owner
     actor Product Team
     actor ISSO
-    Product Team->>+Product Team: Implement the system.
-    Product Team-->>+ISSO: Submit security plan for review, request assessment
-    ISSO-->>+ISSO: Determine assessment readiness
+    Product Team->>Product Team: Implement the system
+    Note over Product Team: 1. Export profile from GRC with API
+    Note over Product Team: 2. Resolve catalog from exported profile
+    Note over Product Team: 3. Update OSCAL SSP in VCS
+    Product Team-->>ISSO: Submit security plan for review, request assessment
+    Note over Product Team,ISSO: Update OSCAL SSP in GRC with API
+    ISSO-->>ISSO: Determine assessment readiness
