@@ -1,0 +1,9 @@
+sequenceDiagram
+    actor Owner
+    actor Product Team
+    actor ISSO
+    Product Team->>ISSO: Request system categorization
+    Note over Product Team,ISSO: Email
+    ISSO-->>Owner: What purpose?
+    ISSO-->>Product Team: With what data? What does it do? How does it work?
+    Product Team-->>ISSO: Define information types

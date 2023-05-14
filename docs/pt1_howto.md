@@ -205,7 +205,19 @@ How do those roles collaborate with OSCAL? (*a* way they interact, this is not p
 
 ### Categorize
 
-![categorize](./support/generated/rmf2_categorize.svg)
+![categorize](./support/generated/rmf2.1_categorize.svg)
+
+---
+
+### Categorize (Continued)
+
+![categorize](./support/generated/rmf2.2_categorize.svg)
+
+---
+
+### Categorize (Continued)
+
+![categorize](./support/generated/rmf2.3_categorize.svg)
 
 ---
 

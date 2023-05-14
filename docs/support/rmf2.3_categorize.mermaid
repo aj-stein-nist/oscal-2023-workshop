@@ -1,0 +1,7 @@
+sequenceDiagram
+    actor Owner
+    actor Product Team
+    actor ISSO
+    Product Team-->>ISSO: Send draft categorization in plan for review
+    Note over Product Team: Upload OSCAL SSP in GRC with API
+    ISSO-->>Product Team: Categorization ok, proceed
