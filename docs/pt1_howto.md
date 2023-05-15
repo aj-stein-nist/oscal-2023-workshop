@@ -84,8 +84,8 @@ The goal of this presentation is to demonstrate *a* workflow showcasing how OSCA
 
 <!-- TODO include some icons here -->
 
-* Developer - Designing the application
-* System Engineer - Deploying and maintaining the application
+* Developer - Developing the application
+* System Engineer - Deploying and maintaining the application in the system
 
 ---
 
@@ -108,9 +108,9 @@ In order to follow along:
 
 <!-- _class: whitebg -->
 
-## The inciting incident
+## The opening act (why are we here?)
 
-Our fictional organization, IFA, has chosen to adopt OSCAL on a new project key to the wellbeing of the public.
+Our fictional organization, IFA, wants the GoodRead product team to use OSCAL on this new project and report back on how it improves the project lifecycle.
 
 ![IFA's GitHub page](./support/screenshot_ifa_github.png)
 
@@ -132,12 +132,12 @@ We have been tasked with designing and documenting this new system.
 
 ## The valley of despair
 
-- IFA has lots of policies and processes
-- Systems must start, change, or stop through SDLC
+- IFA has lots of mandatory policies and recommended processes
+- Systems must start, change, or stop through the IFA SDLC
 - Not just developers create and manage a system
-    - Technical and non-technical staff collaboration is crucial
-    - They write about what they have and do
-    - They have to keep it current during long development cycles
+    - Technical and non-technical staff must frequently collaborate
+    - They write about what they have and do in the project
+    - They have to keep documentation current long SDLC phases
 
 ---
 
@@ -163,11 +163,11 @@ IFA staff were not so happy.
 
 ## Leaving the valley of despair (continued)
 
-* How do they do it now?
+* How will the IFA GoodRead Team do now?
     - They built a GRC program with a centralized service
     - Staff use web application or APIs
     - Little reliance on Microsoft Word or PDF documents
-* What do they like about it now?
+* What does the IFA CISO office expect to happen now?
     - GRC service has structured data for efficient analysis
     - Most quality checking is done by GRC
     - GRC indicates status or progress on the system lifecyle
@@ -202,7 +202,7 @@ How do those roles collaborate with OSCAL? (*a* way they interact, this is not p
 
 ## Let's try OSCAL
 
-*A potential* OSCAL workflow framed within the *RMF process*: 
+*A potential* OSCAL workflow framed within a *SDLC process*: 
 
 1. **Prepare** the project and its system
 1. **Categorize** the system's data
