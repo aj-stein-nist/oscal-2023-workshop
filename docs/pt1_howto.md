@@ -14,9 +14,15 @@ paginate: true
 ### 4th Annual OSCAL Conference Workshop
 A.J. Stein & Nikita Wootten
 
+<!--
+Slide headings prefixed by an emoji follow the following legend:
+- 🧩: This slide is an overview of a model
+- 📝: This slide contains a live demonstration
+-->
+
 ---
 
-## Disclaimer
+## ⚠️ Disclaimer
 
 All persons and organizations mentioned within this presentation are fictional and any resemblance to actual persons or organizations is purely coincidental.
 
@@ -66,11 +72,11 @@ The goal of this presentation is to demonstrate *a* workflow showcasing how OSCA
 In order to follow along:
 
 1. A computer (macOS or Windows, Linux, patched and updated)
-    - Windows users will require the [WSL backend](https://learn.microsoft.com/en-us/windows/wsl/install)
+    - ⚠️ Windows users will require the [WSL backend](https://learn.microsoft.com/en-us/windows/wsl/install)
 1. [Visual Studio Code](https://code.visualstudio.com/#alt-downloads)
 1. [Docker Desktop](https://www.docker.com/products/docker-desktop/) if on macOS or Windows, [Docker Engine](https://docs.docker.com/engine/) if on Linux
 
-You do not have to follow along to learn from this presentation.
+📝 You do not have to follow along to learn from this presentation.
 
 ---
 
@@ -78,7 +84,7 @@ You do not have to follow along to learn from this presentation.
 
 Our fictional organization, IFA, has chosen to adopt OSCAL on a new project key to the wellbeing of the public.
 
-![IFA's GitHub page](./support/ifa_github_screenshot.png)
+![IFA's GitHub page](./support/screenshot_ifa_github.png)
 
 We have been tasked with designing and documenting this new system.
 
@@ -212,6 +218,35 @@ How do those roles collaborate with OSCAL? (*a* way they interact, this is not p
 
 ---
 
+### OSCAL basics
+
+OSCAL describes a set of *models* for documenting a system in machine readable formats (JSON, XML, YAML).
+
+![oscal layers](https://pages.nist.gov/OSCAL/concepts/layer/oscal-layers.svg)
+
+---
+
+#### How do we edit OSCAL content?
+
+![bg right 100%](./support/screenshot_model_reference.png)
+
+
+- Refer to the [OSCAL model documentation](https://pages.nist.gov/OSCAL/reference/latest/complete/) (pictured)
+- Configure your editor to use OSCAL's [JSON/YAML](https://github.com/usnistgov/OSCAL/tree/d3a2b990e24210c253642451e30ea6db99bd045b/json/schema) and [XML](https://github.com/usnistgov/OSCAL/tree/d3a2b990e24210c253642451e30ea6db99bd045b/xml/schema) **schemas**.
+    - ⚠️ OSCAL imposes additional constraints not represented within the schemas.
+
+---
+
+#### Leveraging OSCAL tooling
+
+OSCAL tools, such as the [OSCAL-CLI](https://github.com/usnistgov/oscal-cli), provide additional functionality:
+
+- Converting documents between formats (JSON, YAML, XML)
+- Validating OSCAL documents
+- Performing specific OSCAL operations (profile resolution)
+
+---
+
 ### Prepare
 
 ![prepare](./support/generated/rmf1_prepare.svg)
@@ -230,20 +265,11 @@ How do those roles collaborate with OSCAL? (*a* way they interact, this is not p
 
 ---
 
-#### The OSCAL System Security Plan Model
+#### 🧩 The OSCAL System Security Plan Model
 
 ---
 
-#### Editing OSCAL content
-
-
----
-
-#### Validating OSCAL content
-
----
-
-#### Our basic SSP
+#### 📝 Our basic SSP
 
 <!--
 Note: Live demo here
@@ -271,15 +297,19 @@ Create the basic SSP
 
 ---
 
-#### The OSCAL Catalog Model
+#### 🧩 The OSCAL Catalog Model
+
+> A catalog describes a collection of security controls and related control enhancements, along with contextualizing documentation and metadata.
 
 ---
 
-#### The OSCAL Profile Model
+#### 🧩 The OSCAL Profile Model
+
+> A profile designates a selection and configuration of controls from one or more catalogs, along with a series of operations over them.
 
 ---
 
-#### Our profile
+#### 📝 Our profile
 
 <!--
 Note: Live demo here
@@ -300,7 +330,7 @@ Create a profile with our control selection
 
 ---
 
-#### Our updated system security plan
+#### 📝 Our updated system security plan
 
 <!--
 Note: Live demo here
@@ -316,11 +346,13 @@ Update the SSP with our systems
 
 ---
 
-#### The OSCAL Assessment Plan Model
+#### 🧩 The OSCAL Assessment Plan Model
+
+> An assessment plan describes the information typically provided by an assessor during the preparation for an assessment.
 
 ---
 
-#### Our assessment plan
+#### 📝 Our assessment plan
 
 <!--
 Note: Live demo here
@@ -336,11 +368,13 @@ Create our basic assessment plan
 
 ---
 
-#### The OSCAL Assessment Results Model
+#### 🧩 The OSCAL Assessment Results Model
+
+> An assessment results document describes the information typically provided by an assessor following an assessment.
 
 ---
 
-#### Our assessment results
+#### 📝 Our assessment results
 
 <!--
 Note: Live demo here
@@ -350,7 +384,7 @@ Go through an already created assessment results file
 
 ---
 
-#### Opportunity for automation
+#### 🤖 Opportunity for automation
 
 <!--
 The astute among you may be thinking: "I could generate evidence for assessment results in CI/CD pretty easily."
@@ -370,11 +404,13 @@ Evidence generation for assessment results can be [automated with OSCAL](https:/
 
 ---
 
-#### The OSCAL POA&M Model
+#### 🧩 The OSCAL POA&M Model
+
+> A plan of actions and milestones (POA&M) document describes the information typically provided by an assessor during the preparation for an assessment.
 
 ---
 
-#### Our plan of action and milestones
+#### 📝 Our plan of action and milestones
 
 <!--
 Note: Live demo here
@@ -400,4 +436,34 @@ Note: Live demo here
 
 ---
 
+### Making OSCAL documents reusable
 
+![bg right 65%](./support/generated/system.svg)
+
+Our organization uses a lot of the same pieces across all of our applications (*AwesomeCloud Compute Server*, *Postgres*, etc)
+
+How do we reuse the systems in other deployments?
+
+---
+
+#### 🧩 The OSCAL Component Definition Model
+
+> A component definition describes the implementation of controls in a component or a set of components (technical or procedural) grouped as a capability.
+
+*⚠️ NOTE: the component definition model is currently a Work-in-Progress*
+
+---
+
+#### 📝 Breaking our SSP into component definitions
+
+<!--
+Note: Live demo here
+-->
+
+---
+
+## What have we learned?
+
+* 🧩 All of the OSCAL models and how they relate to one-another
+* 📝 The basics of editing and validating OSCAL documents
+* 🔍 Describing systems, security documentation, and assessment data with OSCAL
