@@ -24,7 +24,7 @@ Slide headings prefixed by an emoji follow the following legend:
 
 ## ⚠️ Disclaimer
 
-All persons and organizations mentioned within this presentation are fictional and any resemblance to actual persons or organizations is purely coincidental.
+All persons and organizations mentioned within this presentation are fictional and any resemblance to actual persons or organizations is unintended.
 
 <!-- TODO: NIST disclaimer? -->
 
@@ -230,7 +230,6 @@ OSCAL describes a set of *models* for documenting a system in machine readable f
 
 ![bg right 100%](./support/screenshot_model_reference.png)
 
-
 - Refer to the [OSCAL model documentation](https://pages.nist.gov/OSCAL/reference/latest/complete/) (pictured)
 - Configure your editor to use OSCAL's [JSON/YAML](https://github.com/usnistgov/OSCAL/tree/d3a2b990e24210c253642451e30ea6db99bd045b/json/schema) and [XML](https://github.com/usnistgov/OSCAL/tree/d3a2b990e24210c253642451e30ea6db99bd045b/xml/schema) **schemas**.
     - ⚠️ OSCAL imposes additional constraints not represented within the schemas.
@@ -242,8 +241,19 @@ OSCAL describes a set of *models* for documenting a system in machine readable f
 OSCAL tools, such as the [OSCAL-CLI](https://github.com/usnistgov/oscal-cli), provide additional functionality:
 
 - Converting documents between formats (JSON, YAML, XML)
+    ```
+    $ oscal-cli profile convert basic-profile.json basic-profile.xml
+    ```
+
 - Validating OSCAL documents
+    ```
+    $ oscal-cli profile validate basic-profile.json
+    ```
+
 - Performing specific OSCAL operations (profile resolution)
+    ```
+    $ oscal-cli profile resolve basic-profile.json
+    ```
 
 ---
 
@@ -266,6 +276,8 @@ OSCAL tools, such as the [OSCAL-CLI](https://github.com/usnistgov/oscal-cli), pr
 ---
 
 #### 🧩 The OSCAL System Security Plan Model
+
+![bg right 53%](https://pages.nist.gov/OSCAL/concepts/layer/implementation/ssp/SSP-model.svg)
 
 ---
 
@@ -299,11 +311,15 @@ Create the basic SSP
 
 #### 🧩 The OSCAL Catalog Model
 
+![bg right 70%](https://pages.nist.gov/OSCAL/concepts/layer/control/catalog/catalog-model.svg)
+
 > A catalog describes a collection of security controls and related control enhancements, along with contextualizing documentation and metadata.
 
 ---
 
 #### 🧩 The OSCAL Profile Model
+
+![bg right 60%](https://pages.nist.gov/OSCAL/concepts/layer/control/profile/profile-model.svg)
 
 > A profile designates a selection and configuration of controls from one or more catalogs, along with a series of operations over them.
 
@@ -348,6 +364,8 @@ Update the SSP with our systems
 
 #### 🧩 The OSCAL Assessment Plan Model
 
+![bg right 42%](https://pages.nist.gov/OSCAL/concepts/layer/assessment/assessment-plan/assessment-plan-model.svg)
+
 > An assessment plan describes the information typically provided by an assessor during the preparation for an assessment.
 
 ---
@@ -370,6 +388,9 @@ Create our basic assessment plan
 
 #### 🧩 The OSCAL Assessment Results Model
 
+<!-- TODO edit the source files to make this more legible -->
+![bg right 31%](https://pages.nist.gov/OSCAL/concepts/layer/assessment/assessment-results/assessment-results-model.svg)
+
 > An assessment results document describes the information typically provided by an assessor following an assessment.
 
 ---
@@ -381,6 +402,16 @@ Note: Live demo here
 
 Go through an already created assessment results file
 -->
+
+---
+
+<br><br><br><br><br><br>
+
+#### 🌊 The flow of information
+The models build on one-another iteratively
+
+
+![bg 85%](https://pages.nist.gov/OSCAL/concepts/layer/assessment/assessment-results/OSCAL-stack-assessment_results.svg)
 
 ---
 
@@ -405,6 +436,8 @@ Evidence generation for assessment results can be [automated with OSCAL](https:/
 ---
 
 #### 🧩 The OSCAL POA&M Model
+
+![bg right 49%](https://pages.nist.gov/OSCAL/concepts/layer/assessment/poam/poam-model.svg)
 
 > A plan of actions and milestones (POA&M) document describes the information typically provided by an assessor during the preparation for an assessment.
 
@@ -447,6 +480,8 @@ How do we reuse the systems in other deployments?
 ---
 
 #### 🧩 The OSCAL Component Definition Model
+
+![bg right 75%](https://pages.nist.gov/OSCAL/concepts/layer/implementation/component-definition/component-model.svg)
 
 > A component definition describes the implementation of controls in a component or a set of components (technical or procedural) grouped as a capability.
 
