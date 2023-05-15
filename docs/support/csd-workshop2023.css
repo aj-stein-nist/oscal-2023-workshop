@@ -11,8 +11,8 @@
    
    */
 
-section.workshop { font-size: 2em }
-section.shrink   { font-size: 1.6em }
+section.workshop { font-size: 200% }
+section.shrink   { font-size: 160% }
 section.whitebg  { background-color: white }
 section.invert  {
     background-color: #0c192f;
