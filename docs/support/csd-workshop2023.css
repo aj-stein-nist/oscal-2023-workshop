@@ -16,7 +16,11 @@ section.shrink   { font-size: 160% }
 section.whitebg  { background-color: white }
 section.invert  {
     background-color: #0c192f;
-    color: white
+    color: white;
+}
+
+section.invert img {
+    background-color: #0c192f;
 }
 
 section.radialbg { background-image:  radial-gradient(circle, #0c192f, #0c192f 35%, black) }
