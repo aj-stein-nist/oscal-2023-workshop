@@ -1,0 +1,46 @@
+/* @theme csd-workshop2023 */
+
+@import 'default';
+
+/* background color
+   face color
+   face font
+   basic sizes
+   branding? placement of images
+   radial color bg
+   
+   */
+
+section.workshop { font-size: 200% }
+section.shrink   { font-size: 160% }
+section.whitebg  { background-color: white }
+section.invert  {
+    background-color: #0c192f;
+    color: white;
+}
+
+section.invert img {
+    background-color: #0c192f;
+}
+
+section.radialbg { background-image:  radial-gradient(circle, #0c192f, #0c192f 35%, black) }
+
+section.headed { display: block; flex-flow: inherit;
+    padding: 0em }
+    
+section.headed > *:first-child {
+    padding: 3vh 9vw;
+    background-color: #0c192f;
+    color: white;
+}
+
+section.headed.invert > *:first-child {
+    background-color: white;
+    color: #0c192f;
+}
+
+section.headed p,
+section.headed pre,
+section.headed > ul,
+section.headed > ol { padding: 3vh 9vw } 
+
