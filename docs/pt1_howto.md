@@ -46,7 +46,29 @@ In order to follow along we assume that you:
 1. Understanding of security requirements for your business or mission
 1. Understanding of your system and larger environment
 
-<!-- TODO insert a blurb here reassuring people not in this audience they can also follow along -->
+
+---
+
+### But I'm not the target audience!
+
+We also assume you may not have these experiences.
+
+* "But I've never been a developer!"
+
+* "But I've never been an assessor."
+
+* "But I've never done governance, risk, or compliance work at my job!"
+
+---
+
+### But I'm not the target audience! (continued)
+
+That is OK, we are very happy you're here!
+
+* Somewhere, somehow, you are a member of an organization.
+* In that organization, you are part of an information security program.
+* In the present or future, you will use systems, and they will use OSCAL.
+* We want to show how shared specifications across multiple tools and vendors may impact your organization and how people work in many roles.
 
 ---
 
