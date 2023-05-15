@@ -2,8 +2,8 @@
 marp: true
 title: "Part 1: How do I OSCAL?"
 author: A.J. Stein, Nikita Wootten
-theme: default
-class: invert
+theme: csd-workshop2023
+class: invert workshop
 footer: How do I OSCAL? - 4th Annual OSCAL Conference Workshop
 paginate: true
 ---
@@ -23,6 +23,8 @@ Slide headings prefixed by an emoji follow the following legend:
 ---
 
 ## ⚠️ Disclaimer
+
+<!-- _class: workshop invert radialbg -->
 
 All persons and organizations mentioned within this presentation are fictional and any resemblance to actual persons or organizations is unintended.
 
@@ -87,6 +89,8 @@ The goal of this presentation is to demonstrate *a* workflow showcasing how OSCA
 
 ---
 
+<!-- _class: workshop shrink -->
+
 ### Environment setup
 
 ![bg left](./support/qrcode_repo.png)
@@ -101,6 +105,8 @@ In order to follow along:
 📝 You do not have to follow along to learn from this presentation.
 
 ---
+
+<!-- _class: whitebg -->
 
 ## The inciting incident
 
@@ -240,6 +246,8 @@ How do those roles collaborate with OSCAL? (*a* way they interact, this is not p
 
 ---
 
+<!-- _class: whitebg -->
+
 ### OSCAL basics
 
 OSCAL describes a set of *models* for documenting a system in machine readable formats (JSON, XML, YAML).
@@ -247,6 +255,8 @@ OSCAL describes a set of *models* for documenting a system in machine readable f
 ![oscal layers](https://pages.nist.gov/OSCAL/concepts/layer/oscal-layers.svg)
 
 ---
+
+<!-- _class: whitebg -->
 
 #### How do we edit OSCAL content?
 
@@ -297,9 +307,11 @@ OSCAL tools, such as the [OSCAL-CLI](https://github.com/usnistgov/oscal-cli), pr
 
 ---
 
-#### 🧩 The OSCAL System Security Plan Model
+#### 🧩 The OSCAL system security plan (SSP) model
 
 ![bg right 53%](https://pages.nist.gov/OSCAL/concepts/layer/implementation/ssp/SSP-model.svg)
+
+> An SSP describes the control implementation of an information system.
 
 ---
 
@@ -331,7 +343,7 @@ Create the basic SSP
 
 ---
 
-#### 🧩 The OSCAL Catalog Model
+#### 🧩 The OSCAL catalog model
 
 ![bg right 70%](https://pages.nist.gov/OSCAL/concepts/layer/control/catalog/catalog-model.svg)
 
@@ -339,7 +351,7 @@ Create the basic SSP
 
 ---
 
-#### 🧩 The OSCAL Profile Model
+#### 🧩 The OSCAL profile model
 
 ![bg right 60%](https://pages.nist.gov/OSCAL/concepts/layer/control/profile/profile-model.svg)
 
@@ -384,7 +396,7 @@ Update the SSP with our systems
 
 ---
 
-#### 🧩 The OSCAL Assessment Plan Model
+#### 🧩 The OSCAL assessment plan model
 
 ![bg right 42%](https://pages.nist.gov/OSCAL/concepts/layer/assessment/assessment-plan/assessment-plan-model.svg)
 
@@ -402,13 +414,13 @@ Create our basic assessment plan
 
 ---
 
-### Assess: Generate Results
+### Assess: generate results
 
 ![assess-plan](./support/generated/rmf5.2_assess_results.svg)
 
 ---
 
-#### 🧩 The OSCAL Assessment Results Model
+#### 🧩 The OSCAL assessment results model
 
 <!-- TODO edit the source files to make this more legible -->
 ![bg right 31%](https://pages.nist.gov/OSCAL/concepts/layer/assessment/assessment-results/assessment-results-model.svg)
@@ -427,17 +439,9 @@ Go through an already created assessment results file
 
 ---
 
-<br><br><br><br><br><br>
-
-#### 🌊 The flow of information
-The models build on one-another iteratively
-
-
-![bg 85%](https://pages.nist.gov/OSCAL/concepts/layer/assessment/assessment-results/OSCAL-stack-assessment_results.svg)
-
----
-
 #### 🤖 Opportunity for automation
+
+<!-- _class: whitebg -->
 
 <!--
 The astute among you may be thinking: "I could generate evidence for assessment results in CI/CD pretty easily."
@@ -457,11 +461,11 @@ Evidence generation for assessment results can be [automated with OSCAL](https:/
 
 ---
 
-#### 🧩 The OSCAL POA&M Model
+#### 🧩 The OSCAL plan of actions & milestones (POA&M) model
 
 ![bg right 49%](https://pages.nist.gov/OSCAL/concepts/layer/assessment/poam/poam-model.svg)
 
-> A plan of actions and milestones (POA&M) document describes the information typically provided by an assessor during the preparation for an assessment.
+> A POA&M document describes the information typically provided by an assessor during the preparation for an assessment.
 
 ---
 
@@ -491,6 +495,15 @@ Note: Live demo here
 
 ---
 
+<!-- _class: whitebg -->
+
+#### 🌊 The flow of information
+The models build on one-another iteratively
+
+![OSCAL flow](./support/OSCAL_information_flow.png)
+
+---
+
 ### Making OSCAL documents reusable
 
 ![bg right 65%](./support/generated/system.svg)
@@ -501,7 +514,7 @@ How do we reuse the systems in other deployments?
 
 ---
 
-#### 🧩 The OSCAL Component Definition Model
+#### 🧩 The OSCAL component definition (CDEF) model
 
 ![bg right 75%](https://pages.nist.gov/OSCAL/concepts/layer/implementation/component-definition/component-model.svg)
 
@@ -518,6 +531,8 @@ Note: Live demo here
 -->
 
 ---
+
+<!-- _class: workshop invert radialbg -->
 
 ## What have we learned?
 
