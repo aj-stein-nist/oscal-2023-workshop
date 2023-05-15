@@ -37,6 +37,7 @@ All persons and organizations mentioned within this presentation are fictional a
 - [Who is the target audience of this talk?](#target-audience)
 - [What are the key assumptions made for this talk?](#assumptions)
 - [Who are we?](#who-are-we)
+- [Environment setup](#environment-setup)
 
 ---
 
@@ -105,8 +106,6 @@ In order to follow along:
 📝 You do not have to follow along to learn from this presentation.
 
 ---
-
-<!-- _class: whitebg -->
 
 ## The opening act (why are we here?)
 
@@ -268,6 +267,8 @@ OSCAL describes a set of *models* for documenting a system in machine readable f
 
 ---
 
+<!-- _class: whitebg -->
+
 #### Leveraging OSCAL tooling
 
 OSCAL tools, such as the [OSCAL-CLI](https://github.com/usnistgov/oscal-cli), provide additional functionality:
@@ -307,6 +308,8 @@ OSCAL tools, such as the [OSCAL-CLI](https://github.com/usnistgov/oscal-cli), pr
 
 ---
 
+<!-- _class: whitebg -->
+
 #### 🧩 The OSCAL system security plan (SSP) model
 
 ![bg right 53%](https://pages.nist.gov/OSCAL/concepts/layer/implementation/ssp/SSP-model.svg)
@@ -343,6 +346,8 @@ Create the basic SSP
 
 ---
 
+<!-- _class: whitebg -->
+
 #### 🧩 The OSCAL catalog model
 
 ![bg right 70%](https://pages.nist.gov/OSCAL/concepts/layer/control/catalog/catalog-model.svg)
@@ -350,6 +355,8 @@ Create the basic SSP
 > A catalog describes a collection of security controls and related control enhancements, along with contextualizing documentation and metadata.
 
 ---
+
+<!-- _class: whitebg -->
 
 #### 🧩 The OSCAL profile model
 
@@ -396,6 +403,8 @@ Update the SSP with our systems
 
 ---
 
+<!-- _class: whitebg -->
+
 #### 🧩 The OSCAL assessment plan model
 
 ![bg right 42%](https://pages.nist.gov/OSCAL/concepts/layer/assessment/assessment-plan/assessment-plan-model.svg)
@@ -419,6 +428,8 @@ Create our basic assessment plan
 ![assess-plan](./support/generated/rmf5.2_assess_results.svg)
 
 ---
+
+<!-- _class: whitebg -->
 
 #### 🧩 The OSCAL assessment results model
 
@@ -460,6 +471,8 @@ Evidence generation for assessment results can be [automated with OSCAL](https:/
 ![assess-poam](./support/generated/rmf5.3_assess_poam.svg)
 
 ---
+
+<!-- _class: whitebg -->
 
 #### 🧩 The OSCAL plan of actions & milestones (POA&M) model
 
@@ -513,6 +526,8 @@ Our organization uses a lot of the same pieces across all of our applications (*
 How do we reuse the systems in other deployments?
 
 ---
+
+<!-- _class: whitebg -->
 
 #### 🧩 The OSCAL component definition (CDEF) model
 
