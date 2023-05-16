@@ -636,10 +636,26 @@ Let's start with a skeleton of an SSP and fill in some metadata:
 
 ### Appendix A.i: Our starter SSP's roles and parties
 
-Roles and parties
+We use `<role>` and `<party>` in `<metadata>` to document the kinds of work in a project, the people who do it, and the organization they work for.
+
 
 ```xml
-TODO
+...
+<role id="owner">
+    <title>IFA GoodRead Owner</title>
+</role>
+<party uuid="ba9c12bd-e5ef-46b6-95a2-4d8e7f864c1a" type="person">
+    <name>Owen Owner</name>
+    <member-of-organization>3a675986-b4ff-4030-b178-e953c2e55d64</member-of-organization>
+</party>
+<party uuid="3a675986-b4ff-4030-b178-e953c2e55d64" type="organization">
+    <name>Important Federal Agency</name>
+    <short-name>IFA</short-name>
+    <link href="https://www.ifa.gov" rel="website"/>
+</party>
+<responsible-party role-id="owner">
+    <party-uuid>ba9c12bd-e5ef-46b6-95a2-4d8e7f864c1a</party-uuid>
+</responsible-party>
 ```
 
 ---
