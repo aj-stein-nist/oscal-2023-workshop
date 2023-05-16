@@ -4,7 +4,7 @@ title: "Part 1: How do I OSCAL?"
 author: A.J. Stein, Nikita Wootten
 theme: csd-workshop2023
 class: invert workshop
-footer: How do I OSCAL? - 4th Annual OSCAL Conference Workshop
+footer: "![width:60px brightness:.2 invert](https://upload.wikimedia.org/wikipedia/commons/e/ee/NIST_logo.svg) How do I OSCAL? - 4th Annual OSCAL Conference Workshop"
 paginate: true
 ---
 

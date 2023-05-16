@@ -20,7 +20,7 @@ section.invert  {
 }
 
 section.invert img {
-    background-color: #0c192f;
+    background-color:transparent;
 }
 
 section.radialbg { background-image:  radial-gradient(circle, #0c192f, #0c192f 35%, black) }
