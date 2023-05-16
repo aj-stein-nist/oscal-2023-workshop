@@ -14,13 +14,14 @@
 section.workshop { font-size: 200% }
 section.shrink   { font-size: 160% }
 section.whitebg  { background-color: white }
+
+section.workshop img {
+    background-color: transparent;
+}
+
 section.invert  {
     background-color: #0c192f;
     color: white;
-}
-
-section.invert img {
-    background-color:transparent;
 }
 
 section.radialbg { background-image:  radial-gradient(circle, #0c192f, #0c192f 35%, black) }

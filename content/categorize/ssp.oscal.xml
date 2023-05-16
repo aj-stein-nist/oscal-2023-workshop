@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system-security-plan
+    uuid="cff8385f-108e-40a5-8f7a-82f3dc0eaba8"
+    xmlns="http://csrc.nist.gov/ns/oscal/1.0">
+    <metadata>
+        <title>IFA GoodReads SSP</title>
+        <last-modified>2023-05-16T13:57:28.355446-04:00</last-modified>
+        <version>1.0</version>
+        <oscal-version>1.0.4</oscal-version>
+    </metadata>
+    <!-- To fill in: -->
+    <import-profile></import-profile>
+    <system-characteristics>
+        <system-id identifier-type="http://ietf.org/rfc/rfc4122">8101e04d-8305-4e73-bb95-6b59f645b143</system-id>
+        <system-name>IFA GoodReads</system-name>
+        <description>
+            <p>This system acts as a link shortener for IFA employees</p>
+        </description>
+        <security-sensitivity-level>moderate</security-sensitivity-level>
+        <system-information>
+            <information-type>
+                <title>User-provided Links</title>
+                <description>
+                    <p>This system maintains a set of user-provided links and their associated
+                        shortlinks</p>
+                </description>
+                <categorization system="https://doi.org/10.6028/NIST.SP.800-60v2r1">
+                    <information-type-id>C.2.8.12</information-type-id>
+                </categorization>
+                <confidentiality-impact>
+                    <base>fips-199-low</base>
+                </confidentiality-impact>
+                <integrity-impact>
+                    <base>fips-199-low</base>
+                    <selected>fips-199-moderate</selected>
+                    <adjustment-justification>
+                        <p>Maliciously modified links are a concern</p>
+                    </adjustment-justification>
+                </integrity-impact>
+                <availability-impact>
+                    <base>fips-199-low</base>
+                </availability-impact>
+            </information-type>
+        </system-information>
+        <security-impact-level>
+            <security-objective-confidentiality>low</security-objective-confidentiality>
+            <security-objective-integrity>medium</security-objective-integrity>
+            <security-objective-availability>low</security-objective-availability>
+        </security-impact-level>
+        <status state="under-development"></status>
+        <authorization-boundary>
+            <description>
+                <p>This components deployed on AwesomeCloud</p>
+            </description>
+        </authorization-boundary>
+    </system-characteristics>
+    <system-implementation></system-implementation>
+    <control-implementation></control-implementation>
+</system-security-plan>

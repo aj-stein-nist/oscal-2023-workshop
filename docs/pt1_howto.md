@@ -4,7 +4,7 @@ title: "Part 1: How do I OSCAL?"
 author: A.J. Stein, Nikita Wootten
 theme: csd-workshop2023
 class: invert workshop
-footer: "![width:60px brightness:.2 invert](https://upload.wikimedia.org/wikipedia/commons/e/ee/NIST_logo.svg) How do I OSCAL? - 4th Annual OSCAL Conference Workshop"
+footer: "![width:60px invert](https://upload.wikimedia.org/wikipedia/commons/e/ee/NIST_logo.svg) How do I OSCAL? - 4th Annual OSCAL Conference Workshop"
 paginate: true
 ---
 
@@ -75,22 +75,10 @@ That is OK, we are very happy you're here!
 
 ---
 
-### Assumptions
-
-The goal of this presentation is to demonstrate *a* workflow showcasing how OSCAL and a GRC service *could* interact within your organization.
-
----
-
-### Who are we?
-
-<!-- TODO include some icons here -->
-
-* Developer - Developing the application
-* System Engineer - Deploying and maintaining the application in the system
-
----
-
-<!-- _class: workshop shrink -->
+<!--
+_footer: "![width:60px](https://upload.wikimedia.org/wikipedia/commons/e/ee/NIST_logo.svg) How do I OSCAL? - 4th Annual OSCAL Conference Workshop"
+_class: workshop shrink
+-->
 
 ### Environment setup
 
@@ -104,6 +92,23 @@ In order to follow along:
 1. [Docker Desktop](https://www.docker.com/products/docker-desktop/) if on macOS or Windows, [Docker Engine](https://docs.docker.com/engine/) if on Linux
 
 📝 You do not have to follow along to learn from this presentation.
+
+---
+
+### Assumptions
+
+<!-- _class: workshop invert radialbg -->
+
+The goal of this presentation is to demonstrate *a* workflow showcasing how OSCAL and a GRC service *could* interact within your organization.
+
+---
+
+### Who are we?
+
+<!-- TODO include some icons here -->
+
+* Developer - Developing the application
+* System Engineer - Deploying and maintaining the application in the system
 
 ---
 
@@ -245,7 +250,10 @@ How do those roles collaborate with OSCAL? (*a* way they interact, this is not p
 
 ---
 
-<!-- _class: whitebg -->
+<!--
+_footer: "![width:60px](https://upload.wikimedia.org/wikipedia/commons/e/ee/NIST_logo.svg) How do I OSCAL? - 4th Annual OSCAL Conference Workshop"
+_class: workshop whitebg
+-->
 
 ### OSCAL basics
 
@@ -255,7 +263,10 @@ OSCAL describes a set of *models* for documenting a system in machine readable f
 
 ---
 
-<!-- _class: whitebg -->
+<!--
+_footer: "![width:60px](https://upload.wikimedia.org/wikipedia/commons/e/ee/NIST_logo.svg) How do I OSCAL? - 4th Annual OSCAL Conference Workshop"
+_class: workshop whitebg
+-->
 
 #### How do we edit OSCAL content?
 
@@ -267,7 +278,10 @@ OSCAL describes a set of *models* for documenting a system in machine readable f
 
 ---
 
-<!-- _class: whitebg -->
+<!--
+_footer: "![width:60px](https://upload.wikimedia.org/wikipedia/commons/e/ee/NIST_logo.svg) How do I OSCAL? - 4th Annual OSCAL Conference Workshop"
+_class: workshop whitebg
+-->
 
 #### Leveraging OSCAL tooling
 
@@ -308,7 +322,10 @@ OSCAL tools, such as the [OSCAL-CLI](https://github.com/usnistgov/oscal-cli), pr
 
 ---
 
-<!-- _class: whitebg -->
+<!--
+_footer: "![width:60px](https://upload.wikimedia.org/wikipedia/commons/e/ee/NIST_logo.svg) How do I OSCAL? - 4th Annual OSCAL Conference Workshop"
+_class: workshop whitebg
+-->
 
 #### 🧩 The OSCAL system security plan (SSP) model
 
@@ -319,6 +336,8 @@ OSCAL tools, such as the [OSCAL-CLI](https://github.com/usnistgov/oscal-cli), pr
 ---
 
 #### 📝 Our basic SSP
+
+[🔗 appendix slides](#appendix-a-our-starter-ssp)
 
 <!--
 Note: Live demo here
@@ -346,7 +365,10 @@ Create the basic SSP
 
 ---
 
-<!-- _class: whitebg -->
+<!--
+_footer: "![width:60px](https://upload.wikimedia.org/wikipedia/commons/e/ee/NIST_logo.svg) How do I OSCAL? - 4th Annual OSCAL Conference Workshop"
+_class: workshop whitebg
+-->
 
 #### 🧩 The OSCAL catalog model
 
@@ -356,7 +378,10 @@ Create the basic SSP
 
 ---
 
-<!-- _class: whitebg -->
+<!--
+_footer: "![width:60px](https://upload.wikimedia.org/wikipedia/commons/e/ee/NIST_logo.svg) How do I OSCAL? - 4th Annual OSCAL Conference Workshop"
+_class: workshop whitebg
+-->
 
 #### 🧩 The OSCAL profile model
 
@@ -403,7 +428,10 @@ Update the SSP with our systems
 
 ---
 
-<!-- _class: whitebg -->
+<!--
+_footer: "![width:60px](https://upload.wikimedia.org/wikipedia/commons/e/ee/NIST_logo.svg) How do I OSCAL? - 4th Annual OSCAL Conference Workshop"
+_class: workshop whitebg
+-->
 
 #### 🧩 The OSCAL assessment plan model
 
@@ -429,7 +457,10 @@ Create our basic assessment plan
 
 ---
 
-<!-- _class: whitebg -->
+<!--
+_footer: "![width:60px](https://upload.wikimedia.org/wikipedia/commons/e/ee/NIST_logo.svg) How do I OSCAL? - 4th Annual OSCAL Conference Workshop"
+_class: workshop whitebg
+-->
 
 #### 🧩 The OSCAL assessment results model
 
@@ -450,9 +481,12 @@ Go through an already created assessment results file
 
 ---
 
-#### 🤖 Opportunity for automation
+<!--
+_footer: "![width:60px](https://upload.wikimedia.org/wikipedia/commons/e/ee/NIST_logo.svg) How do I OSCAL? - 4th Annual OSCAL Conference Workshop"
+_class: workshop whitebg
+-->
 
-<!-- _class: whitebg -->
+#### 🤖 Opportunity for automation
 
 <!--
 The astute among you may be thinking: "I could generate evidence for assessment results in CI/CD pretty easily."
@@ -472,7 +506,10 @@ Evidence generation for assessment results can be [automated with OSCAL](https:/
 
 ---
 
-<!-- _class: whitebg -->
+<!--
+_footer: "![width:60px](https://upload.wikimedia.org/wikipedia/commons/e/ee/NIST_logo.svg) How do I OSCAL? - 4th Annual OSCAL Conference Workshop"
+_class: workshop whitebg
+-->
 
 #### 🧩 The OSCAL plan of actions & milestones (POA&M) model
 
@@ -508,7 +545,10 @@ Note: Live demo here
 
 ---
 
-<!-- _class: whitebg -->
+<!--
+_footer: "![width:60px](https://upload.wikimedia.org/wikipedia/commons/e/ee/NIST_logo.svg) How do I OSCAL? - 4th Annual OSCAL Conference Workshop"
+_class: workshop whitebg
+-->
 
 #### 🌊 The flow of information
 The models build on one-another iteratively
@@ -527,7 +567,10 @@ How do we reuse the systems in other deployments?
 
 ---
 
-<!-- _class: whitebg -->
+<!--
+_footer: "![width:60px](https://upload.wikimedia.org/wikipedia/commons/e/ee/NIST_logo.svg) How do I OSCAL? - 4th Annual OSCAL Conference Workshop"
+_class: workshop whitebg
+-->
 
 #### 🧩 The OSCAL component definition (CDEF) model
 
@@ -554,3 +597,127 @@ Note: Live demo here
 * 🧩 All of the OSCAL models and how they relate to one-another
 * 📝 The basics of editing and validating OSCAL documents
 * 🔍 Describing systems, security documentation, and assessment data with OSCAL
+
+---
+
+# 📚 Appendix
+
+- [A](#appendix-a-our-starter-ssp): Our starter SSP
+
+---
+
+<!-- Footer excluded from remaining slides due to content -->
+<!--footer: "" -->
+
+## Appendix A: Our starter SSP
+
+Let's start with a skeleton of an SSP and fill in some metadata:
+
+```xml
+<system-security-plan
+  uuid="cff8385f-108e-40a5-8f7a-82f3dc0eaba8"
+  xmlns="http://csrc.nist.gov/ns/oscal/1.0">
+  <metadata>
+    <title>IFA GoodReads SSP</title>
+    <last-modified>2023-05-16T13:57:28.355446-04:00</last-modified>
+    <version>1.0</version>
+    <oscal-version>1.0.4</oscal-version>
+    <!-- Must populate roles and parties -->
+  </metadata>
+  <!-- To fill in: -->
+  <import-profile></import-profile>
+  <system-characteristics></system-characteristics>
+  <system-implementation></system-implementation>
+  <control-implementation></control-implementation>
+</system-security-plan>
+```
+
+---
+
+### Appendix A.i: Our starter SSP's roles and parties
+
+Roles and parties
+
+```xml
+TODO
+```
+
+---
+
+### Appendix A.ii: Our starter SSP's system characteristics
+
+```xml
+...
+<system-characteristics>
+    <system-id identifier-type="http://ietf.org/rfc/rfc4122">
+        8101e04d-8305-4e73-bb95-6b59f645b143
+    </system-id>
+    <system-name>IFA GoodReads</system-name>
+    <description>
+        <p>This system acts as a link shortener for IFA employees</p>
+    </description>
+    <security-sensitivity-level>moderate</security-sensitivity-level> <!-- Determined by categorization -->
+    <system-information>
+        <!-- Detailed information types (next slide) -->
+    </system-information>
+    <security-impact-level> <!-- Determined by categorization -->
+        <security-objective-confidentiality>low</security-objective-confidentiality>
+        <security-objective-integrity>medium</security-objective-integrity>
+        <security-objective-availability>low</security-objective-availability>
+    </security-impact-level>
+    <status state="under-development"></status>
+    <authorization-boundary>
+        <description>
+            <p>This components deployed on AwesomeCloud</p>
+        </description>
+    </authorization-boundary>
+</system-characteristics>
+```
+
+---
+
+### Appendix A.iii: Our starter SSP's system information types
+
+In `<system-information>` we document the information types (as defined in [FIPS-199](https://nvlpubs.nist.gov/nistpubs/fips/nist.fips.199.pdf)) present in the system.
+
+```xml
+...
+<system-information>
+    <information-type>
+        <title>User-provided Links</title>
+        <description>
+            <p>This system maintains a set of user-provided links and their associated shortlinks</p>
+        </description>
+        <categorization system="https://doi.org/10.6028/NIST.SP.800-60v2r1">
+            <information-type-id>C.2.8.12</information-type-id>
+        </categorization>
+        <confidentiality-impact>
+            <base>fips-199-low</base>
+        </confidentiality-impact>
+        <integrity-impact>
+            <base>fips-199-low</base>
+            <selected>fips-199-moderate</selected>
+            <adjustment-justification>
+                <p>Maliciously modified links are a concern</p>
+            </adjustment-justification>
+        </integrity-impact>
+        <availability-impact>
+            <base>fips-199-low</base>
+        </availability-impact>
+    </information-type>
+</system-information>
+```
+
+---
+
+### Appendix A.iv: Our starter SSP (conclusion)
+
+In this demonstration we have:
+- Created a minimal SSP in OSCAL
+- Discussed the `<metadata>` object
+- Documented our system's `roles` and `parties`
+- Documented the information types in our system and their categorization
+
+⚠️ The SSP in its current state is invalid! We must fill it out with information given in later steps.
+
+[⏪ Back to the presentation](#our-basic-ssp)

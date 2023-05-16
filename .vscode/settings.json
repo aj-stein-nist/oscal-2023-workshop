@@ -1,4 +1,26 @@
-{ "markdown.marp.themes": [
-    "./docs/support/csd-workshop2023.css"
-]
+{
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "*.oscal.json"
+            ],
+            "url": "https://raw.githubusercontent.com/usnistgov/OSCAL/d3a2b990e24210c253642451e30ea6db99bd045b/json/schema/oscal_complete_schema.json"
+        }
+    ],
+    // YAML extension seems not to work properly?
+    "yaml.schemas": {
+        "https://raw.githubusercontent.com/usnistgov/OSCAL/d3a2b990e24210c253642451e30ea6db99bd045b/json/schema/oscal_complete_schema.json": "*.oscal.yaml",
+    },
+    "xml.fileAssociations": [
+        {
+            "pattern": "**/*.oscal.xml",
+            "systemId": "https://raw.githubusercontent.com/usnistgov/OSCAL/d3a2b990e24210c253642451e30ea6db99bd045b/xml/schema/oscal_complete_schema.xsd"
+        }
+    ],
+    "markdown.marp.themes": [
+        "./docs/support/csd-workshop2023.css"
+    ],
+    "[xml]": {
+        "editor.tabSize": 4
+    }
 }
