@@ -465,7 +465,7 @@ _class: workshop whitebg
 #### 🧩 The OSCAL assessment results model
 
 <!-- TODO edit the source files to make this more legible -->
-![bg right 31%](https://pages.nist.gov/OSCAL/concepts/layer/assessment/assessment-results/assessment-results-model.svg)
+![bg right 50%](./support/assessment-results-model.svg)
 
 > An assessment results document describes the information typically provided by an assessor following an assessment.
 
