@@ -595,7 +595,7 @@ _class: workshop whitebg
 
 > A component definition describes the implementation of controls in a component or a set of components (technical or procedural) grouped as a capability.
 
-*⚠️ NOTE: the component definition model is currently a Work-in-Progress*
+*⚠️ NOTE: enhancements to the CDEF model are slated for future work*
 
 ---
 
@@ -670,6 +670,9 @@ We use `<role>` and `<party>` in `<metadata>` to document the kinds of work in a
 ...
 <role id="owner">
     <title>IFA GoodRead Owner</title>
+</role>
+<role id="public-affairs-office">
+    <title>IFA Public Affairs Office</title>
 </role>
 <party uuid="ba9c12bd-e5ef-46b6-95a2-4d8e7f864c1a" type="person">
     <name>Owen Owner</name>
@@ -769,7 +772,38 @@ In this demonstration we have:
 
 ## Appendix B: Our profile
 
-TODO (insert profile here)
+Profiles import and tailor controls from one or more catalogs.
+
+```json
+{
+    "profile": {
+        "uuid": "ada8fb2f-ba03-46b6-a695-35763beed453",
+        "metadata": {
+            "title": "IFA GoodReads Profile",
+            "last-modified": "2023-05-17T13:57:28.355446-04:00",
+            "version": "1.0",
+            "oscal-version": "1.0.4"
+        },
+        "imports": [
+            {
+                // URL shortened for brevity (if only we had a link shortener!)
+                "href":
+"https://raw.githubusercontent.com/.../NIST_SP-800-53_rev5_MODERATE-baseline-resolved-profile_catalog.json",
+                "include-controls": [
+                    {
+                        "with-ids": [
+                            "ac-6.1"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "merge": {
+            "flat": {}
+        }
+    }
+}
+```
 
 ---
 
@@ -778,13 +812,32 @@ TODO (insert profile here)
 Through a process known as *profile resolution*, profile authors can turn a profile into a *resolved catalog*:
 
 ```
-oscal-cli profile resolve profile.json
+oscal-cli profile resolve profile.oscal.json
 ```
 
 Which produces:
 
-```
-TODO
+```json
+{
+    "catalog" : {
+        "uuid" : "30013927-fb24-4e03-bc15-8d9df5e17a25",
+        "metadata" : {
+            "title" : "IFA GoodReads Profile"
+            // ...
+        },
+        "controls": [ {
+            "id": "ac-6.1",
+            "class" : "SP800-53-enhancement",
+            "title" : "Authorize Access to Security Functions",
+            "params" : [ {
+                "id" : "ac-6.1_prm_2",
+                "label" : "organization-defined security functions (deployed in hardware, software, and firmware)"
+            // ... rest of the params omitted
+            } ]
+            // ... rest of the control omitted
+        } ]
+    }
+}
 ```
 
 ---
@@ -798,7 +851,7 @@ Our SSP imports the profile we just created:
     uuid="cff8385f-108e-40a5-8f7a-82f3dc0eaba8"
     xmlns="http://csrc.nist.gov/ns/oscal/1.0">
     ...
-    <import-profile href="./profile.json"/>
+    <import-profile href="./profile.oscal.json"/>
     ...
 </system-security-plan>
 ```
@@ -822,6 +875,86 @@ In this demonstration we have:
 ---
 
 ## Appendix C: Our updated system security plan
+
+Our system security plan is missing crucial details about our system, namely:
+- `<system-implementation>`: Define how the system is implemented
+    - `<user>`*s*: Define the users that interact with a system based on an associated `<role>`
+    - `<component>`*s*: Define the components that make up an implemented system
+- `<control-implementation>`: Describes how the system satisfies a set of controls
+
+---
+
+### Appendix C.i: Our updated system security plan's system users
+
+The first user type of our system is the general public, who are free only to view a shortlink.
+
+```xml
+...
+<system-implementation>
+    <user uuid="fb36760a-143d-490b-8fc4-6a8c172fba86">
+        <title>General Public</title>
+        <description>
+            <p>The general public is free to click on shortlinks</p>
+        </description>
+        <authorized-privilege>
+            <title>General Public Privilege</title>
+            <function-performed>shortlink-view</function-performed>
+        </authorized-privilege>
+    </user>
+</system-implementation>
+```
+
+---
+
+### Appendix C.ii: Our updated system security plan's system users (continued)
+
+```xml
+...
+<user uuid="00d323d3-dc3f-4d93-900f-f13430e094d3">
+    <title>Application Administrator</title>
+    <description>
+        <p>The developer of the application supports IFA Public Affairs Officers by
+        administering the application and its infrastructure.</p>
+    </description>
+    <role-id>developer</role-id>
+    <authorized-privilege>
+        <title>Application Administrator Privilege</title>
+        <function-performed>user-creation</function-performed>
+        <function-performed>user-enablement</function-performed>
+        <function-performed>user-disablement</function-performed>
+        <function-performed>user-role-modification</function-performed>
+        <function-performed>popular-shortlink-cache-reset</function-performed>
+        <function-performed>database-export</function-performed>
+        <function-performed>database-migration</function-performed>
+    </authorized-privilege>
+</user>
+<user uuid="61405ba7-edb4-4243-8461-79aac5805e5c">
+    <title>Public Affairs Officers</title>
+    <description>
+        <p>IFA Public Affairs Officers (PAOs) in each division of the agency review public communications to citizens who are customers of the IFA.
+        PAOs review requests from colleagues to generate and publish content that is the target of a shortlink and can un-publish shortlinks.</p>
+    </description>
+    <role-id>public-affairs-office</role-id>
+    <authorized-privilege>
+        <title>Public Affairs Officer Privilege</title>
+        <function-performed>shortlink-generation</function-performed>
+        <function-performed>shortlink-approval</function-performed>
+        <function-performed>shortlink-rejection</function-performed>
+        <function-performed>shortlink-publication</function-performed>
+        <function-performed>shortlink-unpublication</function-performed>
+    </authorized-privilege>
+</user>
+```
+
+---
+
+### Appendix C.iii: Our updated system security plan's system component
+
+TODO
+
+---
+
+### Appendix C.iv: Our updated system security plan's control implementation
 
 TODO
 
