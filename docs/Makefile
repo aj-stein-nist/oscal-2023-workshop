@@ -79,6 +79,6 @@ clean: clean-support clean-exports ## Remove exported presentations and support
 clean-support: ## Remove generated presentation support (SVGs, etc.)
 	rm -f support/generated/*
 
-.PHONY: clean-exports
-clean-exports: ## Remove exported presentations (HTML and PDFs)
+.PHONY: clean-presentations
+clean-presentations: ## Remove exported presentations (HTML and PDFs)
 	rm -f pt*.html pt*.pdf

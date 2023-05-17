@@ -66,15 +66,6 @@ We also assume you may not have these experiences.
 
 That is OK, we are very happy you're here!
 
-* Somewhere, somehow, you are a member of an organization.
-* In that organization, you are part of an information security program. 
-
----
-
-### But I'm not the target audience! (continued)
-
-That is OK, we are very happy you're here!
-
 * In the present or future, you will use compliance and security tools that use OSCAL.
 * Shared specifications may standardize information and behavior for multiple tools from different vendors.
 * Changed tools and processes will impact your organization and work.
@@ -90,7 +81,7 @@ _class: workshop shrink
 
 ![bg left](./support/qrcode_repo.png)
 
-In order to follow along:
+In order to follow along you need:
 
 1. A computer (macOS or Windows, Linux, patched and updated)
     - ⚠️ Windows users will require the [WSL backend](https://learn.microsoft.com/en-us/windows/wsl/install)
@@ -221,26 +212,6 @@ How do those roles collaborate with OSCAL? (*a* way they interact, this is not p
 1. **Assess** system's security
 1. **Authorize** the system for operation
 1. **Monitor** the system
-
-<!--
-5. A new hope (let's try OSCAL) (the bulk of the presentation)
-    1. Setup (write metadata with name, party, contact info)
-    1. Introduce the application (link shortener)
-    2. Describe the system (deployment)
-    1.Pick the controls
-        * Retrieve a list of controls from our ITSO (from GRC Tool manager for ITSO's office)
-        * Perform profile resolution and retrieve derived catalog
-        * Compare the output resolved catalog (describe the utility)
-    1. Describe the system
-        * Review the system (what controlled by who)
-        * Perform validation
-    1. Write about the system in the SSP
-        * Introduce automation with GHA?
-    1. Assess the system in the SSP, GRC drops AR
-    1. Devs review AR and create POA&M
-    1. GRC tool checks POA&M and AR for updates
-6. Conclusion (bring back the word document, compare the benefits)
--->
 
 ---
 
@@ -434,13 +405,12 @@ _class: workshop whitebg
 <!--
 Note: Live demo here
 
-Create a profile with our control selection
+- Create a profile with our control selection
+- Resolve the profile and examine the output catalog (if time permits)
+- Update the SSP to use the new profile
 -->
 
----
-
-#### Obtaining a resolved catalog from our selection
-
+[🔗 appendix slides](#appendix-b-our-profile)
 
 ---
 
@@ -457,6 +427,8 @@ Note: Live demo here
 
 Update the SSP with our systems
 -->
+
+[🔗 appendix slides](#appendix-c-our-updated-system-security-plan)
 
 ---
 
@@ -487,6 +459,8 @@ Note: Live demo here
 Create our basic assessment plan
 -->
 
+[🔗 appendix slides](#appendix-d-our-assessment-plan)
+
 ---
 
 ### Assess: generate results
@@ -502,7 +476,6 @@ _class: workshop whitebg
 
 #### 🧩 The OSCAL assessment results model
 
-<!-- TODO edit the source files to make this more legible -->
 ![bg right 60%](./support/assessment-results-model.svg)
 
 > An assessment results document describes the information typically provided by an assessor following an assessment.
@@ -516,6 +489,8 @@ Note: Live demo here
 
 Go through an already created assessment results file
 -->
+
+[🔗 appendix slides](#appendix-e-our-assessment-results)
 
 ---
 
@@ -561,7 +536,11 @@ _class: workshop whitebg
 
 <!--
 Note: Live demo here
+
+Create the POA&M
 -->
+
+[🔗 appendix slides](#appendix-f-our-plan-of-action-and-milestones)
 
 ---
 
@@ -624,7 +603,11 @@ _class: workshop whitebg
 
 <!--
 Note: Live demo here
+
+Create the CDEF, update the SSP to use the CDEF
 -->
+
+[🔗 appendix slides](#appendix-g-breaking-our-ssp-into-component-definitions)
 
 ---
 
@@ -775,3 +758,75 @@ In this demonstration we have:
 ⚠️ The SSP in its current state is invalid! We must fill it out with information given in later steps.
 
 [⏪ Back to the presentation](#our-basic-ssp)
+
+---
+
+## Appendix B: Our profile
+
+TODO
+
+---
+
+### Appendix B.?: Our profile (conclusion)
+
+[⏪ Back to the presentation](#our-profile)
+
+---
+
+## Appendix C: Our updated system security plan
+
+TODO
+
+---
+
+### Appendix C.?: Our updated system security plan (conclusion)
+
+[⏪ Back to the presentation](#our-updated-system-security-plan)
+
+---
+
+## Appendix D: Our assessment plan
+
+TODO
+
+---
+
+### Appendix D.?: Our assessment plan (conclusion)
+
+[⏪ Back to the presentation](#our-assessment-plan)
+
+---
+
+## Appendix E: Our assessment results
+
+TODO
+
+---
+
+### Appendix E.?: Our assessment results (conclusion)
+
+[⏪ Back to the presentation](#our-assessment-results)
+
+---
+
+## Appendix F: Our plan of action and milestones
+
+TODO
+
+---
+
+### Appendix F.?: Our plan of action and milestones (conclusion)
+
+[⏪ Back to the presentation](#our-plan-of-action-and-milestones)
+
+---
+
+## Appendix G: Breaking our SSP into component definitions
+
+TODO
+
+---
+
+### Appendix G.?: Breaking our SSP into component definitions (conclusion)
+
+[⏪ Back to the presentation](#breaking-our-ssp-into-component-definitions)
