@@ -47,7 +47,7 @@ In order to follow along we assume that you:
 
 1. Basic experience writing code or data (JSON, XML, YAML) in text editors
 1. Understanding of security requirements for your business or mission
-1. Understanding of your system and larger environment
+1. Understanding of your system and the larger context of your projects
 
 
 ---
@@ -57,9 +57,7 @@ In order to follow along we assume that you:
 We also assume you may not have these experiences.
 
 * "But I've never been a developer!"
-
-* "But I've never been an assessor."
-
+* "But I've never been an assessor!"
 * "But I've never done governance, risk, or compliance work at my job!"
 
 ---
@@ -69,9 +67,17 @@ We also assume you may not have these experiences.
 That is OK, we are very happy you're here!
 
 * Somewhere, somehow, you are a member of an organization.
-* In that organization, you are part of an information security program.
-* In the present or future, you will use systems, and they will use OSCAL.
-* We want to show how shared specifications across multiple tools and vendors may impact your organization and how people work in many roles.
+* In that organization, you are part of an information security program. 
+
+---
+
+### But I'm not the target audience! (continued)
+
+That is OK, we are very happy you're here!
+
+* In the present or future, you will use compliance and security tools that use OSCAL.
+* Shared specifications may standardize information and behavior for multiple tools from different vendors.
+* Changed tools and processes will impact your organization and work.
 
 ---
 
@@ -137,11 +143,11 @@ We have been tasked with designing and documenting this new system.
 ## The valley of despair
 
 - IFA has lots of mandatory policies and recommended processes
-- Systems must start, change, or stop through the IFA SDLC
-- Not just developers create and manage a system
+- Projects must start, change, or stop through the IFA SDLC
+- Not just developers and engineers create and manage a system:
     - Technical and non-technical staff must frequently collaborate
     - They write about what they have and do in the project
-    - They have to keep documentation current long SDLC phases
+    - They have to keep documentation current in long SDLC phases
 
 ---
 
@@ -240,14 +246,46 @@ How do those roles collaborate with OSCAL? (*a* way they interact, this is not p
 
 ## Let's try OSCAL (continued)
 
-1. Prepare the project and its system
-1. Categorize the system's data
-1. Select controls for the system
-1. Implement the system and its security
-1. Assess system's security
-1. Authorize the system for operation
-1. Monitor the system
+1. **Prepare** the project and its system
+    * Bootstrap OSCAL files with preparatory info
+2. **Categorize** the system's data
+    * Add system information types in OSCAL SSP
+    * Add system categorization in OSCAL SSP
 
+---
+
+## Let's try OSCAL (continued)
+
+3. **Select** controls for the system
+    * Retrieve import profile for OSCAL SSP to identify selected controls
+    * Generate resolved OSCAL catalog from OSCAL profile
+4. **Implement** the system and its security
+    * Add "this system" component in OSCAL SSP
+    * Add control implementation in OSCAL
+---
+
+## Let's try OSCAL (continued)
+
+5. **Assess** system's security
+    * Retrieve OSCAL AP
+    * Perform assessment activities in OSCAL AP
+    * Create OSCAL AR documenting assessment activities, supporting evidence, and results
+    * Upload OSCAL AR to GRC
+    * Create OSCAL POA&M and upload to GRC
+6. **Authorize** the system for operation
+    * Retrieve updated OSCAL SSP with authorization data
+    * Deploy system
+
+---
+
+## Let's try OSCAL (continued)
+
+7. **Monitor** the system
+    * Review OSCAL POA&M and check if findings obsolete
+    * Retrieve OSCAL AP for continuous monitoring steps
+    * Perform continuous monitoring activities
+    * Create OSCAL AR documenting activities, supporting evidence, and results
+    * Create and update OSCAL POA&M if needed
 ---
 
 <!--
