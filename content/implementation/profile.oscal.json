@@ -1,0 +1,26 @@
+{
+    "profile": {
+        "uuid": "ada8fb2f-ba03-46b6-a695-35763beed453",
+        "metadata": {
+            "title": "IFA GoodReads Profile",
+            "last-modified": "2023-05-17T13:57:28.355446-04:00",
+            "version": "1.0",
+            "oscal-version": "1.0.4"
+        },
+        "imports": [
+            {
+                "href": "https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_MODERATE-baseline-resolved-profile_catalog.json",
+                "include-controls": [
+                    {
+                        "with-ids": [
+                            "ac-6.1"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "merge": {
+            "flat": {}
+        }
+    }
+}

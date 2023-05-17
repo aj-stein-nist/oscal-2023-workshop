@@ -47,7 +47,7 @@
         </responsible-party>
     </metadata>
     <!-- To fill in: -->
-    <import-profile/>
+    <import-profile href="./profile.oscal.json"/>
     <system-characteristics>
         <system-id identifier-type="http://ietf.org/rfc/rfc4122">8101e04d-8305-4e73-bb95-6b59f645b143</system-id>
         <system-name>IFA GoodReads</system-name>
@@ -92,6 +92,68 @@
             </description>
         </authorization-boundary>
     </system-characteristics>
-    <system-implementation></system-implementation>
+    <system-implementation>
+        <user uuid="00d323d3-dc3f-4d93-900f-f13430e094d3">
+            <title>Application Administrator</title>
+            <description>
+                <p>The developer of the application supports IFA Public Affairs Officers by administering the application and its infrastructure.</p>
+            </description>
+            <role-id>developer</role-id>
+            <authorized-privilege>
+                <title>Application Administrator Privilege</title>
+                <function-performed>user-creation</function-performed>
+                <function-performed>user-enablement</function-performed>
+                <function-performed>user-disablement</function-performed>
+                <function-performed>user-role-modification</function-performed>
+                <function-performed>popular-shortlink-cache-reset</function-performed>
+                <function-performed>database-export</function-performed>
+                <function-performed>database-migration</function-performed>
+            </authorized-privilege>
+        </user>
+        <user uuid="61405ba7-edb4-4243-8461-79aac5805e5c">
+            <title>Public Affairs Officers</title>
+            <description>
+                <p>IFA Public Affairs Officers (PAOs) in each division of the agency review public communications to citizens who are customers of the IFA. PAOs review requests from colleagues to generate and publish content that is the target of a shortlink and can unpublish shortlinks.</p>
+            </description>
+            <role-id>public-affairs-office</role-id>
+            <authorized-privilege>
+                <title>Public Affairs Officer Privilege</title>
+                <function-performed>shortlink-generation</function-performed>
+                <function-performed>shortlink-approval</function-performed>
+                <function-performed>shortlink-rejection</function-performed>
+                <function-performed>shortlink-publication</function-performed>
+                <function-performed>shortlink-unpublication</function-performed>
+            </authorized-privilege>
+        </user>
+        <user uuid="fb36760a-143d-490b-8fc4-6a8c172fba86">
+            <title>General Public</title>
+            <description>
+                <p>The general public is free to click on shortlinks</p>
+            </description>
+            <authorized-privilege>
+                <title>General Public Privilege</title>
+                <function-performed>shortlink-view</function-performed>
+            </authorized-privilege>
+        </user>
+        <component uuid="551b9706-d6a4-4d25-8207-f2ccec548b89" type="this-system">
+            <title>IFA GoodReads system</title>
+            <description>
+                <p>The IFA GoodReads link shortener system</p>
+            </description>
+            <status state="under-development"/>
+            <protocol name="https">
+                <port-range start="443" end="443" transport="TCP"/>
+            </protocol>
+            <protocol name="ssh">
+                <port-range start="22" end="22" transport="TCP" />
+            </protocol>
+        </component>
+        <inventory-item uuid="4392599a-9117-416a-87d1-24c7d1b2dd0b">
+            <description>
+                <p>This inventory item is an instance of the AwesomeCloud Awesome Compute Service. It is a Linux server.</p>
+            </description>
+
+        </inventory-item>
+    </system-implementation>
     <control-implementation></control-implementation>
 </system-security-plan>
