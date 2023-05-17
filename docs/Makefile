@@ -1,7 +1,6 @@
 SHELL:=/usr/bin/env bash
 
-.PHONY: help presentations support dependencies clean
-
+.PHONY: help
 # Run "make" or "make help" to get a list of user targets
 # Adapted from https://marmelab.com/blog/2016/02/29/auto-documented-makefile.html
 help: ## Show this help message
@@ -10,31 +9,6 @@ help: ## Show this help message
 	 printf "\033[1m%-30s\033[0m %s\n", "TARGET", "DESCRIPTION" \
 	} \
 	{ printf "\033[32m%-30s\033[0m %s\n", $$1, $$2 }'
-
-#
-# Presentation exportation
-#
-
-MARP_FILES:=$(wildcard pt*.md)
-MARP_FLAGS:=--allow-local-files
-
-EXPORTED_FILES:=$(patsubst pt%.md,pt%.html,$(MARP_FILES))
-
-# Export the given markdown presentation to html
-%.html: %.md node_modules support
-	npx @marp-team/marp-cli $(MARP_FLAGS) $*.md -o $*.html
-
-presentations: $(EXPORTED_FILES) ## Export all presentations to HTML
-	@echo Generated presentations...
-
-EXPORTED_FILES_PDF:=$(patsubst pt%.md,pt%.pdf,$(MARP_FILES))
-
-# Export the given markdown presentation to pdf
-%.pdf: %.md node_modules support
-	npx @marp-team/marp-cli $(MARP_FLAGS) $*.md -o $*.pdf
-
-presentations-pdf: $(EXPORTED_FILES_PDF) ## Export all presentations to PDF
-	@echo Generated presentation PDFs...
 
 #
 # Support generation
@@ -52,13 +26,45 @@ $(GEN_SUPPORT_DIR)/%.svg: $(SUPPORT_DIR)/%.mermaid node_modules $(SUPPORT_DIR)/m
 MERMAID_FILES:=$(wildcard $(SUPPORT_DIR)/*.mermaid)
 MERMAID_SVG_FILES:=$(patsubst $(SUPPORT_DIR)/%.mermaid,$(GEN_SUPPORT_DIR)/%.svg,$(MERMAID_FILES))
 
+.PHONY: support
 support: $(MERMAID_SVG_FILES) ## Generate presentation support
 	@echo Generated presentation support...
+
+#
+# Presentation exportation
+#
+
+.PHONY: presentations
+presentations: presentations-html presentations-pdf ## Export all presentations to HTML and PDF
+
+MARP_FILES:=$(wildcard pt*.md)
+MARP_FLAGS:=--allow-local-files --theme-set $(SUPPORT_DIR)/csd-workshop2023.css
+
+EXPORTED_FILES:=$(patsubst pt%.md,pt%.html,$(MARP_FILES))
+
+# Export the given markdown presentation to html
+%.html: %.md node_modules support
+	npx @marp-team/marp-cli -o $*.html $(MARP_FLAGS) -- $*.md
+
+.PHONY: presentations-html
+presentations-html: $(EXPORTED_FILES) ## Export all presentations to HTML
+	@echo Generated presentation HTML...
+
+EXPORTED_FILES_PDF:=$(patsubst pt%.md,pt%.pdf,$(MARP_FILES))
+
+# Export the given markdown presentation to pdf
+%.pdf: %.md node_modules support
+	npx @marp-team/marp-cli -o $*.pdf $(MARP_FLAGS) -- $*.md
+
+.PHONY: presentations-pdf
+presentations-pdf: $(EXPORTED_FILES_PDF) ## Export all presentations to PDF
+	@echo Generated presentation PDFs...
 
 #
 # Dependencies/misc
 #
 
+.PHONY: dependencies
 dependencies: node_modules ## Download dependencies
 	@echo Downloaded dependencies...
 
@@ -66,5 +72,13 @@ dependencies: node_modules ## Download dependencies
 node_modules: package.json package-lock.json
 	npm ci
 
-clean: ## Remove generated presentation output and support
-	rm -f support/generated/* pt*.html pt*.pdf
+.PHONY: clean
+clean: clean-support clean-exports ## Remove exported presentations and support
+
+.PHONY: clean-support
+clean-support: ## Remove generated presentation support (SVGs, etc.)
+	rm -f support/generated/*
+
+.PHONY: clean-exports
+clean-exports: ## Remove exported presentations (HTML and PDFs)
+	rm -f pt*.html pt*.pdf
