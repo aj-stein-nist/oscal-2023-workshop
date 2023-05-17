@@ -368,12 +368,6 @@ Create the basic SSP
 
 ---
 
-### Implement
-
-![implement](./support/generated/rmf4_implement.svg)
-
----
-
 <!--
 _footer: "![width:60px](https://upload.wikimedia.org/wikipedia/commons/e/ee/NIST_logo.svg) How do I OSCAL? - 4th Annual OSCAL Conference Workshop"
 _class: workshop whitebg
@@ -411,6 +405,12 @@ Note: Live demo here
 -->
 
 [🔗 appendix slides](#appendix-b-our-profile)
+
+---
+
+### Implement
+
+![implement](./support/generated/rmf4_implement.svg)
 
 ---
 
@@ -668,14 +668,20 @@ We use `<role>` and `<party>` in `<metadata>` to document the kinds of work in a
 
 ```xml
 ...
-<role id="owner">
-    <title>IFA GoodRead Owner</title>
-</role>
-<role id="public-affairs-office">
-    <title>IFA Public Affairs Office</title>
-</role>
+<role id="owner"><title>IFA GoodRead Owner</title></role>
+<role id="developer"><title>IFA GoodRead Developer</title></role>
+<role id="system-engineer"><title>IFA GoodRead System Engineer</title></role>
+<role id="public-affairs-office"><title>IFA Public Affairs Office</title></role>
 <party uuid="ba9c12bd-e5ef-46b6-95a2-4d8e7f864c1a" type="person">
     <name>Owen Owner</name>
+    <member-of-organization>3a675986-b4ff-4030-b178-e953c2e55d64</member-of-organization>
+</party>
+<party uuid="67c04291-dbf6-495a-a3ba-0011638acc94" type="person">
+    <name>Nikita Wootten</name>
+    <member-of-organization>3a675986-b4ff-4030-b178-e953c2e55d64</member-of-organization>
+</party>
+<party uuid="4ba3f2b7-e894-48d7-b940-91c68661df55" type="person">
+    <name>A.J. Stein</name>
     <member-of-organization>3a675986-b4ff-4030-b178-e953c2e55d64</member-of-organization>
 </party>
 <party uuid="3a675986-b4ff-4030-b178-e953c2e55d64" type="organization">
@@ -685,6 +691,12 @@ We use `<role>` and `<party>` in `<metadata>` to document the kinds of work in a
 </party>
 <responsible-party role-id="owner">
     <party-uuid>ba9c12bd-e5ef-46b6-95a2-4d8e7f864c1a</party-uuid>
+</responsible-party>
+<responsible-party role-id="developer">
+    <party-uuid>67c04291-dbf6-495a-a3ba-0011638acc94</party-uuid>
+</responsible-party>
+<responsible-party role-id="system-engineer">
+    <party-uuid>4ba3f2b7-e894-48d7-b940-91c68661df55</party-uuid>
 </responsible-party>
 ```
 
@@ -832,12 +844,8 @@ Which produces:
             "params" : [ {
                 "id" : "ac-6.1_prm_2",
                 "label" : "organization-defined security functions (deployed in hardware, software, and firmware)"
-            // ... rest of the params omitted
-            } ]
             // ... rest of the control omitted
-        } ]
-    }
-}
+}]}]}} // sorry
 ```
 
 ---
@@ -950,11 +958,34 @@ The first user type of our system is the general public, who are free only to vi
 
 ### Appendix C.iii: Our updated system security plan's system component
 
+For now, let's define our system as a single component.
+
+```xml
+...
+<component uuid="551b9706-d6a4-4d25-8207-f2ccec548b89" type="this-system">
+    <title>IFA GoodReads system</title>
+    <description>
+        <p>The IFA GoodReads link shortener system</p>
+    </description>
+    <status state="under-development"/>
+    <protocol name="https">
+        <port-range start="443" end="443" transport="TCP"/>
+    </protocol>
+    <protocol name="ssh">
+        <port-range start="22" end="22" transport="TCP" />
+    </protocol>
+</component>
+```
+
+---
+
+### Appendix C.iv: Our updated system security plan's system inventory
+
 TODO
 
 ---
 
-### Appendix C.iv: Our updated system security plan's control implementation
+### Appendix C.v: Our updated system security plan's control implementation
 
 TODO
 
