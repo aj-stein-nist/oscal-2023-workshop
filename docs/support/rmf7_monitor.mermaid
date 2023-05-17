@@ -12,6 +12,7 @@ sequenceDiagram
         Note over Product Team: Upload observations in OSCAL AR to GRC with API
         Assessor-->>ISSO: Send updated assessment result (AR)
         ISSO-->>Product Team: Review AR and update ongoing POA&Ms
+        Owner-->>Product Team: Review AR and update ongoing POA&Ms
         Product Team-->>Product Team: Update system to mitigate ongoing POA&Ms
         Note over Product Team: Export AR and POA&M from GRC with API to VCS
     end

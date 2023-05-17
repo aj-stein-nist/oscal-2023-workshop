@@ -623,7 +623,13 @@ Create the CDEF, update the SSP to use the CDEF
 
 # 📚 Appendix
 
-- [A](#appendix-a-our-starter-ssp): Our starter SSP
+- [A](#appendix-a-our-starter-ssp): Our starter system security plan
+- [B](#appendix-b-our-profile): Our profile
+- [C](#appendix-c-our-updated-system-security-plan): Our updated system security plan
+- [D](#appendix-d-our-assessment-plan): Our assessment plan
+- [E](#appendix-e-our-assessment-results): Our assessment results
+- [F](#appendix-f-our-plan-of-action-and-milestones): Our plan of action and milestones
+- [G](#appendix-g-breaking-our-ssp-into-component-definitions): Breaking our system security plan into component definitions
 
 ---
 
@@ -763,11 +769,53 @@ In this demonstration we have:
 
 ## Appendix B: Our profile
 
-TODO
+TODO (insert profile here)
 
 ---
 
-### Appendix B.?: Our profile (conclusion)
+### Appendix B.i: Our profile can be resolved into a catalog
+
+Through a process known as *profile resolution*, profile authors can turn a profile into a *resolved catalog*:
+
+```
+oscal-cli profile resolve profile.json
+```
+
+Which produces:
+
+```
+TODO
+```
+
+---
+
+### Appendix B.ii: Our profile can be imported by our SSP
+
+Our SSP imports the profile we just created:
+
+```xml
+<system-security-plan
+    uuid="cff8385f-108e-40a5-8f7a-82f3dc0eaba8"
+    xmlns="http://csrc.nist.gov/ns/oscal/1.0">
+    ...
+    <import-profile href="./profile.json"/>
+    ...
+</system-security-plan>
+```
+
+📝 Notice that the SSP and profiles use JSON and XML interchangeably.
+
+---
+
+### Appendix B.iii: Our profile (conclusion)
+
+In this demonstration we have:
+- Created a profile with our selected controls
+- Explored profile resolution and the process of creating a "resolved catalog"
+- Demonstrated OSCAL's inter-format compatibility
+- Updated our SSP to import the profile
+
+⚠️ The SSP is still incomplete and missing crucial details about our system. We will finish creating the SSP in the next step.
 
 [⏪ Back to the presentation](#our-profile)
 
@@ -781,6 +829,12 @@ TODO
 
 ### Appendix C.?: Our updated system security plan (conclusion)
 
+In this demonstration we have:
+- Documented our system using the `<system-implementation>` part of our SSP.
+- Documented how our system implements controls using the `<control-implementation>` part of our SSP.
+
+✅ Our SSP now adequately describes our system and is considered *valid*.
+
 [⏪ Back to the presentation](#our-updated-system-security-plan)
 
 ---
@@ -792,6 +846,9 @@ TODO
 ---
 
 ### Appendix D.?: Our assessment plan (conclusion)
+
+In this demonstration we have:
+- TODO
 
 [⏪ Back to the presentation](#our-assessment-plan)
 
@@ -805,6 +862,9 @@ TODO
 
 ### Appendix E.?: Our assessment results (conclusion)
 
+In this demonstration we have:
+- TODO
+
 [⏪ Back to the presentation](#our-assessment-results)
 
 ---
@@ -817,6 +877,9 @@ TODO
 
 ### Appendix F.?: Our plan of action and milestones (conclusion)
 
+In this demonstration we have:
+- TODO
+
 [⏪ Back to the presentation](#our-plan-of-action-and-milestones)
 
 ---
@@ -828,5 +891,8 @@ TODO
 ---
 
 ### Appendix G.?: Breaking our SSP into component definitions (conclusion)
+
+In this demonstration we have:
+- TODO
 
 [⏪ Back to the presentation](#breaking-our-ssp-into-component-definitions)
