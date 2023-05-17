@@ -18,7 +18,8 @@
                 "ms-vscode.live-server",
                 "redhat.vscode-yaml",
                 "redhat.vscode-xml",
-                "bierner.markdown-mermaid"
+                "bierner.markdown-mermaid",
+                "streetsidesoftware.code-spell-checker"
             ]
         }
     },
