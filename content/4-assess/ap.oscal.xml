@@ -13,7 +13,7 @@
         <activity uuid="0d243b23-a889-478f-9716-6d4870e56209">
             <title>Examine IFA GoodRead Application and Infrastructure and Cloud Account Configurations</title>
             <description>
-                <p>The assessor will be provided read-only access to a subset of administrative (a custom-built AwesomeCloud IAM IFAGoodReadAssessor role) in both the GoodRead application and cloud account to view infrastructure configurations. A read-only folder in an internal intranet server will also be porovided to the assessor with standard operating procedures and a copy of the Infrastructure-as-Code used to implement the least privilege architecture as designed.</p>
+                <p>The assessor will be provided read-only access to a subset of administrative (a custom-built AwesomeCloud IAM IFAGoodReadAssessor role) in both the GoodRead application and cloud account to view infrastructure configurations. A read-only folder in an internal intranet server will also be provided to the assessor with standard operating procedures and a copy of the Infrastructure-as-Code used to implement the least privilege architecture as designed.</p>
             </description>
             <prop name="method" value="EXAMINE"/>
         </activity>

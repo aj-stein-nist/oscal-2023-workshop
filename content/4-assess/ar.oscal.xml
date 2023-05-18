@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<assessment-plan 
+<assessment-results 
     uuid="4918e6c8-bc41-43ef-b038-f343f0a8d5e2"
     xmlns="http://csrc.nist.gov/ns/oscal/1.0">
-</assessment-plan>
+    <metadata></metadata>
+    <import-ap href="./ap.oscal.xml"/>
+    <local-definitions></local-definitions>
+    <result uuid="13af0353-71fa-4f1c-8dc7-8f9e829a80f4">
+        <title></title>
+        <description><p>Placeholder</p></description>
+        <start></start>
+        <prop name="placeholder" value="noway!"/>
+        <local-definitions/>
+        <reviewed-controls>
+            <control-selection>
+                <include-control control-id="ac-6.1"/>
+            </control-selection>
+            <control-objective-selection>
+                <include-all />
+            </control-objective-selection>
+        </reviewed-controls>
+        <observation uuid="">
+            <description></description>
+            <method>EXAMINE</method>
+            <collected></collected>
+        </observation>
+    </result>
+</assessment-results>
