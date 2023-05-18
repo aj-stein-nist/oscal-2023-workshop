@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assessment-plan 
+    uuid="60077e84-e62f-4375-8c6c-b0e0d4560c5f"
+    xmlns="http://csrc.nist.gov/ns/oscal/1.0">
+    <metadata>
+        <title>IFA GoodRead Assessment Plan</title>
+        <last-modified>2023-05-18T13:57:28.355446-04:00</last-modified>
+        <version>1.0</version>
+        <oscal-version>1.0.4</oscal-version>
+    </metadata>
+    <import-ssp href="./ssp.oscal.xml"/>
+    <local-definitions>
+        <activity uuid="0d243b23-a889-478f-9716-6d4870e56209">
+            <title>Examine IFA GoodRead Application and Infrastructure and Cloud Account Configurations</title>
+            <description>
+                <p>The assessor will be provided read-only access to a subset of administrative (a custom-built AwesomeCloud IAM IFAGoodReadAssessor role) in both the GoodRead application and cloud account to view infrastructure configurations. A read-only folder in an internal intranet server will also be porovided to the assessor with standard operating procedures and a copy of the Infrastructure-as-Code used to implement the least privilege architecture as designed.</p>
+            </description>
+            <prop name="method" value="EXAMINE"/>
+        </activity>
+    </local-definitions>
+    <reviewed-controls>
+        <control-selection>
+            <include-control control-id="ac-6.1"/>
+        </control-selection>
+        <control-objective-selection>
+            <include-all/>
+        </control-objective-selection>
+    </reviewed-controls>
+    <assessment-subject type="component">
+        <description>
+            <p>The assessor for the IFA GoodRead Project, including the application and infrastructure for this information system, are within scope of this assessment.</p>
+        </description>
+        <include-all/>
+    </assessment-subject>
+    <task uuid="b3504d22-0e75-4dd7-9247-618661beba4e" type="action">
+        <title>Examine Least Privilege Design and Implementation</title>
+        <associated-activity activity-uuid="0d243b23-a889-478f-9716-6d4870e56209">
+            <subject type="component">
+                <include-all/>
+            </subject>
+        </associated-activity>
+        <responsible-role role-id="ifa-assessor"/>
+        <remarks>
+            <p>Per IFA's use of NIST SP-800 53A, the assessor, with the support of the owner, information system security officer, and product team for the IFA GoodRead project, will examine least privilege design and implementation with the following:</p>
+            <ul>
+                <li>list of security functions (deployed in hardware, software, and firmware) and security-relevant information for which access must be explicitly authorized;</li>
+                <li>system configuration settings and associated documentation;</li>
+            </ul>
+        </remarks>
+    </task>
+    <back-matter/>
+</assessment-plan>
