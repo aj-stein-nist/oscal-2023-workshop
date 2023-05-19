@@ -34,10 +34,27 @@ All persons and organizations mentioned within this presentation are fictional a
 
 ## Introduction
 
+- [What is OSCAL?](#what-is-oscal)
 - [Who is the target audience of this talk?](#target-audience)
 - [What are the key assumptions made for this talk?](#assumptions)
 - [Who are we?](#who-are-we)
 - [Environment setup](#environment-setup)
+
+---
+
+## What is OSCAL?
+
+"OSCAL is a set of formats expressed in XML, JSON, and YAML. These formats provide machine-readable representations of control catalogs, control baselines, system security plans, and assessment plans and results."
+
+---
+
+## What is OSCAL? (continued)
+
+- OSCAL has three layers with seven **models** that define:
+    - information structure supporting a specific operational purpose
+    - relationships between data internal to a model and externally to other models
+- OSCAL data that conforms to one of the models is a **document instance**
+- Software checks that data conforms to the model with a **schema**
 
 ---
 
@@ -164,7 +181,7 @@ IFA staff were not so happy.
 
 ## Leaving the valley of despair (continued)
 
-* How will the IFA GoodRead Team do now?
+* How will the IFA GoodRead Team do it now?
     - They built a GRC program with a centralized service
     - Staff use web application or APIs
     - Little reliance on Microsoft Word or PDF documents
@@ -294,7 +311,7 @@ _class: workshop whitebg
 
 #### Leveraging OSCAL tooling
 
-OSCAL tools, such as the [OSCAL-CLI](https://github.com/usnistgov/oscal-cli), provide additional functionality:
+OSCAL tools, such as the [oscal-cli](https://github.com/usnistgov/oscal-cli), provide additional functionality:
 
 - Converting documents between formats (JSON, YAML, XML)
     ```
@@ -318,6 +335,7 @@ OSCAL tools, such as the [OSCAL-CLI](https://github.com/usnistgov/oscal-cli), pr
 ![prepare](./support/generated/rmf1_prepare.svg)
 
 ---
+
 
 ### Categorize
 
@@ -344,6 +362,25 @@ _class: workshop whitebg
 
 ---
 
+### Our Information Types
+
+![bg right 80%](./support/screenshot_800-60.png)
+
+* Our system stores **links** created by members of IFA.
+* Let's choose `C.2.8.12 General Information Information Type` from [NIST SP 800-60](https://csrc.nist.gov/publications/detail/sp/800-60/vol-2-rev-1/final)
+* The ISSO reclassified the *integrity impact* from [FIPS-199](https://csrc.nist.gov/publications/detail/fips/199/final) **LOW** to **MODERATE**.
+
+<!--
+General Information Information Type is categorized as a:
+- confidentiality low
+- integrity low
+- availability low
+
+But in our system the integrity is a bit more impactful (imagine a malicious actor replacing well known links)
+-->
+
+---
+
 #### 📝 Our basic SSP
 
 [🔗 appendix slides](#appendix-a-our-starter-ssp)
@@ -365,6 +402,26 @@ Create the basic SSP
 ### Select controls
 
 ![select](./support/generated/rmf3_select.svg)
+
+---
+
+<!--
+_footer: "![width:60px](https://upload.wikimedia.org/wikipedia/commons/e/ee/NIST_logo.svg) How do I OSCAL? - 4th Annual OSCAL Conference Workshop"
+_class: workshop whitebg
+-->
+
+### Select controls (continued)
+
+Our ISSO selected a singular control, [AC-6(1)](https://csrc.nist.gov/projects/cprt/catalog#/cprt/framework/version/SP_800_53_5_1_0/home?element=AC-6):
+
+"Employ the principle of least privilege, allowing only authorized accesses for users (or processes acting on behalf of users) that are necessary to accomplish assigned organizational tasks."
+
+<!--
+* Why select control AC-6(1)?
+    * Measurable not only quantitatively, but qualitatively
+    * Concrete, but broad enough to discuss across system elements in components
+    * Relevant dimensions to administrative, technical, and physical controls relatable to technical or administrative staff, inside and outside IT roles
+-->
 
 ---
 
