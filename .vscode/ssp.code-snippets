@@ -1,0 +1,158 @@
+{
+	// Credit to Matthew Ruge for the idea
+	// via https://gist.github.com/mruge-shr/e90c1e9e83db52038b8f520925a5ab32
+	"New SSP": {
+		"scope": "xml",
+		"prefix": "_ssp",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+			"<system-security-plan",
+			"\tuuid=\"${UUID}\"",
+			"\txmlns=\"http://csrc.nist.gov/ns/oscal/1.0\">",
+			"\t<metadata>",
+			"\t\t<title>$1 SSP</title>",
+			"\t\t<last-modified>$CURRENT_YEAR-$CURRENT_MONTH-${CURRENT_DATE}T$CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND.000-04:00</last-modified>",
+			"\t\t<version>${CURRENT_YEAR}${CURRENT_MONTH}${CURRENT_DATE}</version>",
+			"\t\t<oscal-version>1.0.4</oscal-version>",
+			"\t</metadata>",
+			"\t<import-profile href=\"$2\"/>",
+			"\t<system-characteristics>",
+			"\t\t<system-id identifier-type=\"http://ietf.org/rfc/rfc4122\">${UUID}</system-id>",
+			"\t\t<system-name>$1</system-name>",
+			"\t\t<description>",
+			"\t\t\t<p>$6</p>",
+			"\t\t</description>",
+			"\t\t<security-sensitivity-level>$5</security-sensitivity-level>",
+			"\t\t<system-information>",
+			"\t\t\t<!-- To fill in, use _information-type -->",
+			"\t\t</system-information>",
+			"\t\t<security-impact-level>",
+            "\t\t\t<security-objective-confidentiality>$3</security-objective-confidentiality>",
+            "\t\t\t<security-objective-integrity>$4</security-objective-integrity>",
+            "\t\t\t<security-objective-availability>$5</security-objective-availability>",
+			"\t\t</security-impact-level>",
+			"\t\t<status state=\"$7\"/>",
+			"\t\t<authorization-boundary>",
+			"\t\t\t<p>$9</p>",
+			"\t\t</authorization-boundary>",
+			"\t</system-characteristics>",
+			"\t<system-implementation>$0</system-implementation>",
+			"\t<control-implementation></control-implementation>",
+			"</system-security-plan>"
+		],
+		"description": "generate an SSP",
+	},
+	"SSP Role": {
+		"scope": "xml",
+		"prefix": "_ssp_role",
+		"body": [
+			"<role id=\"$1\">",
+			"\t<title>$2</title>",
+			"</role>"
+		]
+	},
+	"SSP Party": {
+		"scope": "xml",
+		"prefix": "_ssp_party",
+		"body": [
+			"<party uuid=\"${UUID}\" type=\"${1|person,organization|}\">",
+			"\t<name>$2</name>",
+			"\t<member-of-organization>$3</member-of-organization>",
+			"</party>"
+		]
+	},
+	"SSP Responsible Party": {
+		"scope": "xml",
+		"prefix": "_ssp_responsible_party",
+		"body": [
+			"<responsible-party role-id=\"$1\">",
+			"\t<party-uuid>$2</party-uuid>",
+			"</responsible-party>"
+		]
+	},
+	"SSP Information Type": {
+		"scope": "xml",
+		"prefix": "_ssp_information_type",
+		"body": [
+            "<information-type>",
+            "\t<title>$1</title>",
+            "\t<description>",
+            "\t\t<p>$2</p>",
+            "\t</description>",
+            "\t<categorization system=\"https://doi.org/10.6028/NIST.SP.800-60v2r1\">",
+            "\t\t<information-type-id>$3</information-type-id>",
+            "\t</categorization>",
+            "\t<confidentiality-impact>",
+            "\t\t<base>fips-199-$4</base>",
+            "\t</confidentiality-impact>",
+            "\t<integrity-impact>",
+            "\t\t<base>fips-199-$5</base>",
+            "\t</integrity-impact>",
+            "\t<availability-impact>",
+            "\t\t<base>fips-199-$6</base>",
+            "\t</availability-impact>",
+            "</information-type>"
+		]
+	},
+	"SSP User": {
+		"scope": "xml",
+		"prefix": "_ssp_user",
+		"body": [
+			"<user uuid=\"${UUID}\">",
+            "\t<title>$1</title>",
+            "\t<description>",
+            "\t\t<p>$2</p>",
+            "\t</description>",
+            "\t<authorized-privilege>",
+            "\t\t<title>$1 Privilege</title>",
+            "\t\t<function-performed>$3</function-performed>",
+            "\t</authorized-privilege>",
+        	"</user>"
+		]
+	},
+	"SSP Component": {
+		"scope": "xml",
+		"prefix": "_ssp_component",
+		"body": [
+			"<component uuid=\"${UUID}\" type=\"${1:this-system}\">",
+            "\t<title>$2</title>",
+            "\t<description>",
+			"\t\t<p>$3</p>",
+            "\t</description>",
+            "\t<status state=\"$4\"/>",
+            "\t<protocol name=\"$5\">",
+			"\t\t<port-range start=\"$6\" end=\"$6\" transport=\"$7\"/>",
+            "\t</protocol>",
+        	"</component>",
+		]
+	},
+	"Inventory Item": {
+		"scope": "xml",
+		"prefix": "_ssp_inventory_item",
+		"body": [
+			"<inventory-item uuid=\"${UUID}\">",
+            "\t<description>",
+            "\t<p>$1</p>",
+            "\t</description>",
+            "\t<prop name=\"asset-id\" value=\"did:acs:${UUID}\"/>",
+            "\t<prop name=\"ipv4-address\" value=\"${2:127.0.0.1}\"/>",
+            "\t<prop name=\"asset-type\" value=\"os\"/>",
+            "\t<prop name=\"vendor-name\" value=\"$3\"/>",
+        	"</inventory-item>",
+		]
+	},
+	"Implemented Requirement": {
+		"scope": "xml",
+		"prefix": "_ssp_implemented_requirement",
+		"body": [
+			"<implemented-requirement uuid=\"${UUID}\" control-id=\"$1\">",
+            "\t<by-component component-uuid=\"$2\" uuid=\"${UUID}\">",
+			"\t\t<description>",
+			"\t\t\t<p>$3</p>",
+			"\t\t</description>",
+			"\t<implementation-status state=\"${4:planned}\"/>",
+            "\t</by-component>",
+			"</implemented-requirement>",
+		]
+	}
+}

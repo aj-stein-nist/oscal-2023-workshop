@@ -1,0 +1,7 @@
+{
+    "UUID": {
+        "scope": "xml,json,yaml",
+        "prefix": "_uuid",
+        "body": [ "${UUID}" ],
+    }
+}

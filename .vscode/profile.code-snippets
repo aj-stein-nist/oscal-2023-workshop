@@ -1,0 +1,22 @@
+{
+    // Credit to Matthew Ruge for the idea
+	// via https://gist.github.com/mruge-shr/e90c1e9e83db52038b8f520925a5ab32
+    "New Profile": {
+        "scope": "json",
+        "prefix": "_profile",
+        "body": [
+            "{",
+            "\t\"profile\": {",
+            "\t\t\"uuid\": \"${UUID}\",",
+            "\t\t\"metadata\": {",
+            "\t\t\t\"title\": \"$1\",",
+            "\t\t\t\"last-modified\": \"$CURRENT_YEAR-$CURRENT_MONTH-${CURRENT_DATE}T$CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND.000-05:00\",",
+            "\t\t\t\"version\": \"${CURRENT_YEAR}${CURRENT_MONTH}${CURRENT_DATE}\",",
+            "\t\t\t\"oscal-version\": \"1.0.4\"",
+            "\t\t}",
+            "\t}",
+            "\t\"imports\": [$0]",
+            "}"
+        ]
+    }
+}

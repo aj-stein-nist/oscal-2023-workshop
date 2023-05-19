@@ -1,0 +1,21 @@
+{
+    "New AP": {
+		"scope": "xml",
+		"prefix": "_ap",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+			"<assessment-plan",
+			"\tuuid=\"${UUID}\"",
+			"\txmlns=\"http://csrc.nist.gov/ns/oscal/1.0\">",
+			"\t<metadata>",
+			"\t\t<title>$1 Assessment Plan</title>",
+			"\t\t<last-modified>$CURRENT_YEAR-$CURRENT_MONTH-${CURRENT_DATE}T$CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND.000-04:00</last-modified>",
+			"\t\t<version>${CURRENT_YEAR}${CURRENT_MONTH}${CURRENT_DATE}</version>",
+			"\t\t<oscal-version>1.0.4</oscal-version>",
+			"\t</metadata>",
+            "\t<import-ssp href=\"$2\"/>",
+			"</assessment>"
+		],
+		"description": "generate an SSP",
+	},
+}
