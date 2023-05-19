@@ -6,6 +6,13 @@
             "<prop name=\"$1\" value=\"$2\" ${3:uuid=\"${UUID}\"} ${4:class=\"$5\"}/>"
         ],
     },
+    "Link": {
+        "scope": "xml",
+        "prefix": "_link",
+        "body": [
+            "<link href=\"$1\" ${2:rel=\"$3\"} ${4:rel=\"${5|application/json,application/yaml,application/oscal+xml,application/oscal+json,application/oscal+yaml|}\"}/>"
+        ]
+    },
     "Description": {
         "scope": "xml",
         "prefix": "_description",

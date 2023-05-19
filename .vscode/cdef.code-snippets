@@ -8,14 +8,39 @@
 			"\tuuid=\"${UUID}\"",
 			"\txmlns=\"http://csrc.nist.gov/ns/oscal/1.0\">",
 			"\t${1:_metadata}",
-            "\t<import-ssp href=\"$2\"/>",
-            "\t<system-id identifier-type=\"http://ietf.org/rfc/rfc4122\">$3</system-id>",
-            "\t<!-- Observations and Risks -->",
-            "\t$4",
-            "\t${5:_poam_item}",
+            "\t${2:<import-component-definition href=\"$3\"/>}",
 			"\t$0",
 			"</component-definition>"
 		],
-		"description": "generate a POAM",
+		"description": "generate a component definition",
 	},
+    "CDEF Component": {
+        "scope": "xml",
+        "prefix": "_cdef_component",
+        "body": [
+			"<component uuid=\"${UUID}\" type=\"${1|system,interconnection,software,hardware,service,policy,physical,process-procedure,plan,guidance,standard,validation,network|}\">",
+            "\t<title>$2</title>",
+            "\t<description>",
+			"\t\t<p>$3</p>",
+            "\t</description>",
+            "\t${4:<purpose>$5</purpose>}",
+            "\t<protocol name=\"$5\">",
+			"\t\t<port-range start=\"$6\" end=\"$6\" transport=\"${7|TCP,UDP|}\"/>",
+            "\t</protocol>",
+            "\t$8",
+        	"</component>",
+        ]
+    },
+    "CDEF Capability": {
+        "scope": "xml",
+        "prefix": "_cdef_capability",
+        "body": [
+			"<capability uuid=\"${UUID}\" name=\"$1\">",
+            "\t<description>",
+			"\t\t<p>$2</p>",
+            "\t</description>",
+            "\t$3",
+        	"</capability>",
+        ]
+    }
 }
