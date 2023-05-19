@@ -11,37 +11,55 @@
    
    */
 
-section.workshop { font-size: 200% }
-section.shrink   { font-size: 160% }
-section.whitebg  { background-color: white }
+section.workshop {
+    font-size: 200%
+}
+
+section.shrink {
+    font-size: 160%
+}
+
+section.whitebg {
+    background-color: white
+}
 
 section.workshop img {
     background-color: transparent;
 }
 
-section.invert  {
+section.invert {
     background-color: #0c192f;
     color: white;
 }
 
-section.radialbg { background-image:  radial-gradient(circle, #0c192f, #0c192f 35%, black) }
+section.radialbg {
+    background-image: radial-gradient(circle, #0c192f, #0c192f 35%, black)
+}
 
-section.headed { display: block; flex-flow: inherit;
-    padding: 0em }
-    
-section.headed > *:first-child {
+section.headed {
+    display: block;
+    flex-flow: inherit;
+    padding: 0em
+}
+
+section.headed>*:first-child {
     padding: 3vh 9vw;
     background-color: #0c192f;
     color: white;
 }
 
-section.headed.invert > *:first-child {
+section.headed.invert>*:first-child {
     background-color: white;
     color: #0c192f;
 }
 
 section.headed p,
 section.headed pre,
-section.headed > ul,
-section.headed > ol { padding: 3vh 9vw } 
+section.headed>ul,
+section.headed>ol {
+    padding: 3vh 9vw
+}
 
+footer img {
+    margin-right: 0.3em
+}

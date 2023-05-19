@@ -203,7 +203,7 @@ How do those roles collaborate with OSCAL? (*a* way they interact, this is not p
 
 ## Let's try OSCAL
 
-*A potential* OSCAL workflow framed within a *SDLC process*: 
+*A potential* OSCAL workflow framed within an *SDLC process*: 
 
 1. **Prepare** the project and its system
 1. **Categorize** the system's data
