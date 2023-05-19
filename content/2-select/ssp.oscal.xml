@@ -3,7 +3,7 @@
     uuid="cff8385f-108e-40a5-8f7a-82f3dc0eaba8"
     xmlns="http://csrc.nist.gov/ns/oscal/1.0">
     <metadata>
-        <title>IFA GoodReads SSP</title>
+        <title>IFA GoodRead SSP</title>
         <last-modified>2023-05-16T13:57:28.355446-04:00</last-modified>
         <version>1.0</version>
         <oscal-version>1.0.4</oscal-version>
@@ -50,7 +50,7 @@
     <import-profile href="./profile.oscal.json"/>
     <system-characteristics>
         <system-id identifier-type="http://ietf.org/rfc/rfc4122">8101e04d-8305-4e73-bb95-6b59f645b143</system-id>
-        <system-name>IFA GoodReads</system-name>
+        <system-name>IFA GoodRead</system-name>
         <description>
             <p>This system acts as a link shortener for IFA employees</p>
         </description>
@@ -92,6 +92,36 @@
             </description>
         </authorization-boundary>
     </system-characteristics>
-    <system-implementation></system-implementation>
-    <control-implementation></control-implementation>
+    <system-implementation>
+        <user uuid="fb36760a-143d-490b-8fc4-6a8c172fba86">
+            <title>General Public</title>
+            <description>
+                <p>The general public is free to click on shortlinks</p>
+            </description>
+            <authorized-privilege>
+                <title>General Public Privilege</title>
+                <function-performed>shortlink-view</function-performed>
+            </authorized-privilege>
+        </user>
+        <component uuid="551b9706-d6a4-4d25-8207-f2ccec548b89" type="this-system">
+            <title>IFA GoodRead system</title>
+            <description>
+                <p>The IFA GoodRead link shortener system</p>
+            </description>
+            <status state="under-development"/>
+        </component>
+    </system-implementation>
+    <control-implementation>
+        <description>
+            <p>This is the control implementation for the application and infrastructure that compose to the IFA GoodRead Project's system.</p>
+        </description>
+        <implemented-requirement uuid="d5f9b263-965d-440b-99e7-77f5df670a11" control-id="ac-6.1">
+            <by-component component-uuid="551b9706-d6a4-4d25-8207-f2ccec548b89" uuid="a4c2d318-26a9-49df-9818-ee0acaf066f2">
+                <description>
+                    <p>This control is a work in progress.</p>
+                </description>
+                <implementation-status state="planned"/>
+            </by-component>
+        </implemented-requirement>
+    </control-implementation>
 </system-security-plan>
