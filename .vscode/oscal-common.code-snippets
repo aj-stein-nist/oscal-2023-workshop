@@ -1,0 +1,21 @@
+{
+    "Prop": {
+        "scope": "xml",
+        "prefix": "_prop",
+        "body": [
+            "<prop name=\"$1\" value=\"$2\" ${3:uuid=\"${UUID}\"} ${4:class=\"$5\"}/>"
+        ],
+    },
+	"AP/AR Activity": {
+		"scope": "xml",
+		"prefix": ["_ap_activity", "_ar_activity"],
+		"body": [
+			"<activity uuid=\"${UUID}\">",
+			"\t<title>$1</title>",
+			"\t<description>",
+			"\t\t<p>$2</p>",
+			"\t</description>",
+			"</activity>"
+		]
+	}
+}
