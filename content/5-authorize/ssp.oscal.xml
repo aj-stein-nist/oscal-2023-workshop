@@ -86,7 +86,7 @@
             <security-objective-integrity>medium</security-objective-integrity>
             <security-objective-availability>low</security-objective-availability>
         </security-impact-level>
-        <status state="operational"></status>
+        <status state="operational"/>
         <authorization-boundary>
             <description>
                 <p>This components deployed on AwesomeCloud</p>
