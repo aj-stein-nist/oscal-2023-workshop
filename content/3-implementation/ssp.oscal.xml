@@ -136,11 +136,14 @@
             </authorized-privilege>
         </user>
         <component uuid="551b9706-d6a4-4d25-8207-f2ccec548b89" type="this-system">
-            <title>IFA GoodRead system</title>
+            <title>IFA GoodRead System</title>
             <description>
                 <p>IFA develops, operates, and maintains the GoodRead link shortener system to </p>
             </description>
             <status state="under-development"/>
+            <protocol name="http">
+                <port-range start="8000" end="443" transport="TCP"/>
+            </protocol>
             <protocol name="https">
                 <port-range start="443" end="443" transport="TCP"/>
             </protocol>
@@ -150,33 +153,47 @@
         </component>
         <inventory-item uuid="4392599a-9117-416a-87d1-24c7d1b2dd0b">
             <description>
-                <p>This inventory item is an instance of the AwesomeCloud Awesome Compute Service. It is a Linux server.</p>
+                <p>This is the custom GoodRead application within the system.</p>
             </description>
             <prop class="web-application" name="software-name" value="IFA GoodRead"/>
             <prop class="web-application" name="software-version" value="1.0.0"/>
-            <prop class="webserver-framework" name="vendor-name" value="Important Federal Agency"/>
-            <prop class="webserver-framework" name="asset-id" value="IFAGOV-SYSTEM1234-GOODREAD"/>
+            <prop class="webserver-application" name="vendor-name" value="Important Federal Agency"/>
+            <prop class="webserver-application" name="asset-id" value="IFAGOV-SYSTEM1234-GOODREAD"/>
+            <implemented-component component-uuid="551b9706-d6a4-4d25-8207-f2ccec548b89"/>
+        </inventory-item>
+        <inventory-item uuid="d911b560-f564-4715-8d2a-76f86127ac73">
+            <description>
+                <p>This is the web framework </p>
+            </description>
             <prop class="webserver-framework" name="asset-type" value="software"/>
             <prop class="webserver-framework" name="software-name" value="Django Framework"/>
             <prop class="webserver-framework" name="software-version" value="4.2.1"/>
             <prop class="webserver-framework" name="vendor-name" value="Django Project"/>
-            <prop class="webserver-framework" name="asset-id" value="cpe:2.3:a:djangoproject:django:4:*:*:*:*:*:*:*"/>
             <prop class="webserver-framework" name="asset-type" value="software"/>
+            <implemented-component component-uuid="551b9706-d6a4-4d25-8207-f2ccec548b89"/>
+        </inventory-item>
+        <inventory-item uuid="3e3a8d9a-e3d6-4c7d-b59b-a8d6514fa4a2">
+            <description>
+                <p>This is the database for the custom GoodRead application within the system.</p>
+            </description>
             <prop class="database" name="software-name" value="PostgreSQL"/>
             <prop class="database" name="software-version" value="15.3"/>
             <prop class="database" name="vendor-name" value="PostgreSQL Global Development Group"/>
-            <prop class="database" name="asset-id" value="cpe:2.3:a:postgresql:postgresql:15:*:*:*:*:*:*:*"/>
             <prop class="database" name="asset-type" value="database"/>
-            <prop class="database" name="function" value="Persistent storage for web application links and supporting information"/>
-            <prop class="language-runtime" name="vendor-name" value="Python Software Foundation"/>
-            <prop class="language-runtime" name="software-name" value="Python"/>
-            <prop class="language-runtime" name="software-version" value="3.11.3"/>
-            <prop class="language-runtime" name="asset-id" value="cpe:2.3:a:python:python:3:*:*:*:*:*:*:*"/>
-            <prop class="language-runtime" name="asset-type" value="software"/>
-            <prop class="operating-system" name="vendor-name" value="Red Hat"/>
+            <implemented-component component-uuid="551b9706-d6a4-4d25-8207-f2ccec548b89"/>
+        </inventory-item>
+        <inventory-item uuid="0fb95c4c-ebfd-492e-8145-363eb7947dbe">
+            <description>
+                <p>This is the operating system for the web server that runs the custom GoodRead application within the system.</p>
+            </description>
             <prop class="operating-system" name="name" value="Red Hat Enterprise Linux 9"/>
-            <prop class="operating-system" name="asset-id" value="cpe:2.3:o:redhat:enterprise_linux:9.0:*:*:*:*:*:*:*"/>
             <prop class="operating-system" name="asset-type" value="operating-system"/>
+            <implemented-component component-uuid="551b9706-d6a4-4d25-8207-f2ccec548b89"/>
+        </inventory-item>
+        <inventory-item uuid="cd39f700-23ab-4574-a17e-c9c8f073cbec">
+            <description>
+                <p>This inventory item is an instance from the AwesomeCloud Awesome Compute Service (ACS) Service. It is a Linux server.</p>
+            </description>
             <prop class="linux-server" name="vendor-name" value="AwesomeCloud Inc."/>
             <prop class="linux-server" name="asset-id" value="instance-abcd1234"/>
             <prop class="linux-server" name="ipv4-address" value="172.1.2.3"/>
@@ -184,6 +201,12 @@
             <prop class="linux-server" name="uri" value="instance-abcd1234.acs.awesome.cloud"/>
             <prop class="linux-server" name="asset-type" value="server"/>
             <prop class="linux-server" name="function" value="Server for web application"/>
+            <implemented-component component-uuid="551b9706-d6a4-4d25-8207-f2ccec548b89"/>
+        </inventory-item>
+        <inventory-item uuid="d9550535-40b9-4d8b-861c-07aa8786bf43">
+            <description>
+                <p>This inventory item is an instance from the AwesomeCloud Awesome Load Balancer (ALB) Service. It is a Linux server.</p>
+            </description>
             <prop class="network-load-balancer" name="asset-type" value="appliance"/>
             <prop class="network-load-balancer" name="vendor-name" value="AwesomeCloud Inc."/>
             <prop class="linux-server" name="asset-id" value="instance-defg7890"/>

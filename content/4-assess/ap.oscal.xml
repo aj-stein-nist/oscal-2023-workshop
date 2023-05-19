@@ -7,8 +7,20 @@
         <last-modified>2023-05-18T13:57:28.355446-04:00</last-modified>
         <version>1.0</version>
         <oscal-version>1.0.4</oscal-version>
+        <party uuid="e7730080-71ce-4b20-bec4-84f33136fd58" type="person">
+            <name>Amy Assessor</name>
+            <member-of-organization>3a675986-b4ff-4030-b178-e953c2e55d64</member-of-organization>
+        </party>
+        <party uuid="3a675986-b4ff-4030-b178-e953c2e55d64" type="organization">
+            <name>Important Federal Agency</name>
+            <short-name>IFA</short-name>
+            <link href="https://www.ifa.gov" rel="website"/>
+        </party>
+        <responsible-party role-id="assessor">
+            <party-uuid>e7730080-71ce-4b20-bec4-84f33136fd58</party-uuid>
+        </responsible-party>
     </metadata>
-    <import-ssp href="./ssp.oscal.xml"/>
+    <import-ssp href="../3-implementation/ssp.oscal.xml"/>
     <local-definitions>
         <activity uuid="0d243b23-a889-478f-9716-6d4870e56209">
             <title>Examine IFA GoodRead Application and Infrastructure and Cloud Account Configurations</title>

@@ -4,7 +4,7 @@
     xmlns="http://csrc.nist.gov/ns/oscal/1.0">
     <metadata>
         <title></title>
-        <last-modified>2023-05-19T09:53:00-04:00</last-modified>
+        <last-modified>2023-05-19T10:53:24-04:00</last-modified>
         <version>1.0</version>
         <oscal-version>1.0.4</oscal-version>
     </metadata>
@@ -45,6 +45,22 @@
                     <p>IFA GoodRead Product Team has configured the application account and credentials sent via encrypted email to assessor.</p>
                 </remarks>
             </step>
+            <step uuid="64ca1ef6-3ad4-4747-97c6-40890222463f">
+                <title>Confirm Load Balancer Blocks Access to Admin Panel from Internet</title>
+                <description><p>Placeholder.</p></description>
+            </step>
+            <step uuid="715f0592-166f-44f6-bb66-d99623e035dc">
+                <title>Confirm GoodRead's PAO Role Cannot Manage Users</title>
+                <description>
+                    <p>The assessor will confirm that user's logged into the GoodRead Application with the PAO staff role cannot add, modify, or disable users from the system.</p>
+                </description>
+            </step>
+            <step uuid="4641957b-a0fa-4c61-af1a-d3e9101efe40">
+                <title>Confirm Django Admin Panel Not Available</title>
+                <description>
+                    <p>The assessor will confirm with web-based interface and API methods users with the PAO Staff role cannot access the Django admin panel functions and interactively change application's database records.</p>
+                </description>
+            </step>
             <related-controls>
                 <control-selection>
                     <include-control control-id="ac-6.1"/>
@@ -61,10 +77,98 @@
             <p>This will be the first result once the assessor has completed their final analysis in the assessment.</p>
         </description>
         <start>2023-05-19T10:49:20-04:00</start>
+        <local-definitions>
+            <assessment-task uuid="061b6942-f0d4-439c-9d74-92e779992845" type="action">
+                <title>Placeholder</title>
+                <description>
+                    <p>Placeholder</p>
+                </description>
+                <associated-activity activity-uuid="52277182-1ba3-4cb6-8d96-b1b97aaf9d6b">
+                    <subject type="inventory-item">
+                        <include-subject subject-uuid="d9550535-40b9-4d8b-861c-07aa8786bf43" type="inventory-item"/>
+                    </subject>
+                </associated-activity>
+                <associated-activity activity-uuid="52277182-1ba3-4cb6-8d96-b1b97aaf9d6b">
+                    <subject type="inventory-item">
+                        <include-subject subject-uuid="4392599a-9117-416a-87d1-24c7d1b2dd0b" type="inventory-item"/>
+                    </subject>
+                </associated-activity>
+                <associated-activity activity-uuid="52277182-1ba3-4cb6-8d96-b1b97aaf9d6b">
+                    <subject type="inventory-item">
+                        <include-subject subject-uuid="d911b560-f564-4715-8d2a-76f86127ac73" type="inventory-item"/>
+                    </subject>
+                </associated-activity>
+            </assessment-task>
+        </local-definitions>
         <reviewed-controls>
             <control-selection>
                 <include-control control-id="ac-6.1"/>
             </control-selection>
         </reviewed-controls>
+        <observation uuid="43bb3ecb-f0d2-484a-a24b-6388b111559f">
+            <title>AwesomeCloud IAM Roles Examination</title>
+            <description>
+                <p>Examine AwesomeCloud IAM Roles for least privilege design and implementation.</p>
+            </description>
+            <method>EXAMINE</method>
+            <type>control-objective</type>
+            <subject subject-uuid="551b9706-d6a4-4d25-8207-f2ccec548b89" type="component"/>
+            <collected>2023-05-19T11:05:48-04:00</collected>
+            <remarks>
+                <p>The assessor reviewed the AwesomeCloud IAM role for the GoodRead developer. They confirmed users with the developer role are unable to modify any Awesome Load Balancer instance configurations.</p>
+            </remarks>
+        </observation>
+        <observation uuid="0c4de4fc-9bde-46af-b6fe-3b5e78194dcf">
+            <title>Django Framework Examination</title>
+            <description>
+                <p>Examine Django Framework for least privilege design and implementation.</p>
+            </description>
+            <method>EXAMINE</method>
+            <type>control-objective</type>
+            <subject subject-uuid="551b9706-d6a4-4d25-8207-f2ccec548b89" type="component"/>
+            <collected>2023-05-19T12:14:16-04:00</collected>
+            <remarks>
+                <p>The assessor attempted to access the admin panel while logged into the GoodRead application as a PAO staff user. They were able to see the admin panel and directly edit database records for the application using the Django Framework's admin panel.</p>
+            </remarks>
+        </observation>
+        <observation uuid="deeb782b-1a22-4b2d-8ef1-f37fe11caabe">
+            <title>Examine GoodRead Application User Roles</title>
+            <description>
+                <p>Examine the custom application roles for GoodRead users for least privilege design and implementation.</p>
+            </description>
+            <method>EXAMINE</method>
+            <type>control-objective</type>
+            <subject subject-uuid="551b9706-d6a4-4d25-8207-f2ccec548b89" type="component"/>
+            <collected>2023-05-19T12:15:54-04:00</collected>
+            <remarks>
+                <p>The assessor attempted to create, modify, or disable another PAO staff user while logged into the GoodRead application as a PAO staff user by attempting API calls their current session cookie. They were unable to create, modify, or disable any other users and were logged out of the application.</p>
+            </remarks>
+        </observation>
+        <risk uuid="8b8bae66-b28c-4fa5-9a20-b79e7322fc00">
+            <title>PAO Staff Have Over-Privileged Access to GoodRead System</title>
+            <description>
+                <p>A user with the privileges of a PAO staff user can exceed the intended privileges for their related business function and directly edit the database for the GoodRead application.</p>
+            </description>
+            <statement>
+                <p>An account without proper least privilege design and implementation can be used to significantly damage links created by the tool for use by public citizens, potentially causing a national outage. If an outage were to occur, IFA and Government policy will require the CIO of the agency to notify the Department of Homeland Security and the public.</p>
+                <p>Such an event will cause significant financial and reputational risk to IFA's Administrator, executive staff, and the agency overall.</p>
+            </statement>
+            <status>investigating</status>
+        </risk>
+        <finding uuid="74155124-9b75-4bbd-b78f-ba3d8c2532b5">
+            <title>Django Framework Admin Panel Not Disabled</title>
+            <description>
+                <p>The assessor was able to access and modify database records as a user with the low privilege PAO Staff role, not the role of a developer. Additionally, the SSP documents that this functionality with the admin panel, implying the default <code>is_staff</code> role and attribute is disabled, which is contrary to the assessor's observation.</p>
+            </description>
+            <target type="objective-id" target-id="ac-6.1_obj">
+                <description>
+                    <p>This is a finding.</p>
+                </description>
+                <status state="not-satisfied"></status>
+            </target>
+            <implementation-statement-uuid>d5f9b263-965d-440b-99e7-77f5df670a11</implementation-statement-uuid>
+            <related-observation observation-uuid="0c4de4fc-9bde-46af-b6fe-3b5e78194dcf"/>
+            <associated-risk risk-uuid="8b8bae66-b28c-4fa5-9a20-b79e7322fc00" />
+        </finding>
     </result>
 </assessment-results>
