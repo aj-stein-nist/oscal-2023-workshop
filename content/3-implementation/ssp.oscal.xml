@@ -84,7 +84,7 @@
             <security-objective-integrity>medium</security-objective-integrity>
             <security-objective-availability>low</security-objective-availability>
         </security-impact-level>
-        <status state="under-development"></status>
+        <status state="under-development"/>
         <authorization-boundary>
             <description>
                 <p>This components deployed on AwesomeCloud</p>
