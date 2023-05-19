@@ -46,7 +46,6 @@
             <party-uuid>4ba3f2b7-e894-48d7-b940-91c68661df55</party-uuid>
         </responsible-party>
     </metadata>
-    <!-- To fill in: -->
     <import-profile href="../select/profile.oscal.json"/>
     <system-characteristics>
         <system-id identifier-type="http://ietf.org/rfc/rfc4122">8101e04d-8305-4e73-bb95-6b59f645b143</system-id>
@@ -142,7 +141,7 @@
             </description>
             <status state="under-development"/>
             <protocol name="http">
-                <port-range start="8000" end="443" transport="TCP"/>
+                <port-range start="8000" end="8000" transport="TCP"/>
             </protocol>
             <protocol name="https">
                 <port-range start="443" end="443" transport="TCP"/>
@@ -163,7 +162,7 @@
         </inventory-item>
         <inventory-item uuid="d911b560-f564-4715-8d2a-76f86127ac73">
             <description>
-                <p>This is the web framework </p>
+                <p>This is the web application framework upon which the developer writes the custom GoodRead application for the user interface and API of this system.</p>
             </description>
             <prop class="webserver-framework" name="asset-type" value="software"/>
             <prop class="webserver-framework" name="software-name" value="Django Framework"/>
@@ -197,10 +196,10 @@
             <prop class="linux-server" name="vendor-name" value="AwesomeCloud Inc."/>
             <prop class="linux-server" name="asset-id" value="instance-abcd1234"/>
             <prop class="linux-server" name="ipv4-address" value="172.1.2.3"/>
+            <prop class="linux-server" name="ipv4-address" value="1.1.2.3"/>
             <prop class="linux-server" name="vendor-name" value="AwesomeCloud Inc."/>
             <prop class="linux-server" name="uri" value="instance-abcd1234.acs.awesome.cloud"/>
             <prop class="linux-server" name="asset-type" value="server"/>
-            <prop class="linux-server" name="function" value="Server for web application"/>
             <implemented-component component-uuid="551b9706-d6a4-4d25-8207-f2ccec548b89"/>
         </inventory-item>
         <inventory-item uuid="d9550535-40b9-4d8b-861c-07aa8786bf43">
@@ -210,8 +209,8 @@
             <prop class="network-load-balancer" name="asset-type" value="appliance"/>
             <prop class="network-load-balancer" name="vendor-name" value="AwesomeCloud Inc."/>
             <prop class="linux-server" name="asset-id" value="instance-defg7890"/>
-            <prop class="network-load-balancer" name="uri" value="instance-defg7890.alb.awesome.cloud"/>
-            <prop class="network-load-balancer" name="function" value="Reverse proxy for performance and network security"/>
+            <prop class="network-load-balancer" name="uri" value="https://instance-defg7890.alb.awesome.cloud"/>
+            <prop class="network-load-balancer" name="uri" value="https://from.ifa.gov"/>
         </inventory-item>
     </system-implementation>
     <control-implementation>
