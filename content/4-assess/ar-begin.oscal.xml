@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assessment-results 
+    uuid="4918e6c8-bc41-43ef-b038-f343f0a8d5e2"
+    xmlns="http://csrc.nist.gov/ns/oscal/1.0">
+    <metadata>
+        <title></title>
+        <last-modified>2023-05-19T09:53:00-04:00</last-modified>
+        <version>1.0</version>
+        <oscal-version>1.0.4</oscal-version>
+    </metadata>
+    <import-ap href="./ap.oscal.xml"/>
+    <local-definitions>
+        <activity uuid="52277182-1ba3-4cb6-8d96-b1b97aaf9d6b">
+            <title>Examine System Elements for Least Privilege Design and Implementation</title>
+            <description>
+                <p>The activity and it steps will be performed by the assessor and facilitated by the IFA GoodRead Owner, ISSO, and Product Team with necessary information and access about least privilege design and implementation of the system's elements: the application, web framework, server, and cloud account infrastructure.</p>
+            </description>
+            <step uuid="733e3cbf-e398-46b6-9c02-a2cb534c341e">
+                <title>Obtain Network Access via VPN to IFA GoodRead Environment</title>
+                <description>
+                    <p>The assessor will obtain network access with appropriately configured VPN account to see staff interface to the application, which is only accessible via VPN.</p>
+                </description>
+                <remarks>
+                    <p>This step is complete.</p>
+                    <p>IFA GoodRead Product Team coordinated with ISSO and IFA Office of Information Technology for assessor's account and VPN client to have access to application.</p>
+                </remarks>
+            </step>
+            <step uuid="4ce7e0b4-d69e-4b80-a700-8600b4d4d933">
+                <title>Obtain Credentials and Access to AwesomeCloud Account for IFA GoodRead System</title>
+                <description>
+
+                </description>
+                <remarks>
+                    <p>This step is complete.</p>
+                    <p>IFA GoodRead Product Team coordinated with ISSO and IFA Office of Information Technology for assessor's single sign-on credentials to have access to a read-only assessor role to the AwesomeCloud account for the IFA GoodRead system.</p>
+                </remarks>
+            </step>
+            <step uuid="3d0297de-e47b-4360-b9c3-cf5c425f86cd">
+                <title>Obtain Applcation Access Provided by Product Team</title>
+                <description>
+                    <p>The assessor will obtain non-privileged account credentials to test the IFA GoodRead application as a staff user to create shortlinks.</p>
+                </description>
+                <remarks>
+                    <p>This step is complete.</p>
+                    <p>IFA GoodRead Product Team has configured the application account and credentials sent via encrypted email to assessor.</p>
+                </remarks>
+            </step>
+            <related-controls>
+                <control-selection>
+                    <include-control control-id="ac-6.1"/>
+                </control-selection>
+            </related-controls>
+            <responsible-role role-id="assessor">
+                <party-uuid>e7730080-71ce-4b20-bec4-84f33136fd58</party-uuid>
+            </responsible-role>
+        </activity>
+    </local-definitions>
+    <result uuid="e621a431-8eba-4ac7-90cd-ef96e5d90884">
+        <title>IFA GoodRead Pre-Authorization Assessment Result 1</title>
+        <description>
+            <p>This will be the first result once the assessor has completed their final analysis in the assessment.</p>
+        </description>
+        <start>2023-05-19T10:49:20-04:00</start>
+        <reviewed-controls>
+            <control-selection>
+                <include-control control-id="ac-6.1"/>
+            </control-selection>
+        </reviewed-controls>
+    </result>
+</assessment-results>
