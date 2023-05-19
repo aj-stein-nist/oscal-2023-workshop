@@ -1,0 +1,68 @@
+{
+    "New AR": {
+		"scope": "xml",
+		"prefix": "_ar",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+			"<assessment-results",
+			"\tuuid=\"${UUID}\"",
+			"\txmlns=\"http://csrc.nist.gov/ns/oscal/1.0\">",
+			"\t${1:_metadata}",
+            "\t<import-ap href=\"$2\"/>",
+			"\t$0",
+			"</assessment-results>"
+		],
+		"description": "generate an SSP",
+	},
+    "AR Result": {
+        "scope": "xml",
+        "prefix": "_ar_result",
+        "body": [
+            "<result uuid=\"${UUID}\">",
+            "\t<title>$1</title>",
+            "\t<description>",
+            "\t\t<p>$2</p>",
+            "\t</description>",
+            "\t<start>${3:_timestamp}</start>",
+            "\t<reviewed-controls>",
+            "\t\t${4:_control_selection}",
+            "\t</reviewed-controls>",
+            "\t$5",
+            "</result>"
+        ]
+    },
+    "AR Observation": {
+        "scope": "xml",
+        "prefix": "_ar_observation",
+        "body": [
+            "<observation uuid=\"${UUID}\">",
+            "\t<title>$1</title>",
+            "\t<description>",
+            "\t\t<p>$2</p>",
+            "\t</description>",
+            "\t<method>${3|EXAMINE,INTERVIEW,TEST,UNKNOWN|}</method>",
+            "</observation>",
+        ]
+    },
+    "AR Finding": {
+        "scope": "xml",
+        "prefix": "_ar_finding",
+        "body": [
+            "<finding uuid=\"${UUID}\">",
+            "\t<title>$1</title>",
+            "\t<description>",
+            "\t\t<p>$2</p>",
+            "\t</description>",
+            "\t<target type=\"${3:objective}-id\" target-id=\"4\">",
+            "\t\t<description>",
+            "\t\t\t<p>$5</p>",
+            "\t\t</description>",
+            "\t\t<status state=\"${6:not-}satisfied\"/>",
+            "\t</target>",
+            "\t${7:<implementation-statement-uuid>$8</implementation-statement-uuid>}",
+            "\t${9:<related-observation observation-uuid=\"$10\"/>}",
+            "\t${11:<associated-risk risk-uuid=\"$12\"/>}",
+            "</finding>",
+        ]
+    }
+}

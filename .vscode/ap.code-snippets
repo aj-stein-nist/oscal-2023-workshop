@@ -7,22 +7,16 @@
 			"<assessment-plan",
 			"\tuuid=\"${UUID}\"",
 			"\txmlns=\"http://csrc.nist.gov/ns/oscal/1.0\">",
-			"\t<metadata>",
-			"\t\t<title>$1 Assessment Plan</title>",
-			"\t\t<last-modified>$CURRENT_YEAR-$CURRENT_MONTH-${CURRENT_DATE}T$CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND.000-04:00</last-modified>",
-			"\t\t<version>${CURRENT_YEAR}${CURRENT_MONTH}${CURRENT_DATE}</version>",
-			"\t\t<oscal-version>1.0.4</oscal-version>",
-			"\t\t$2",
-			"\t</metadata>",
-            "\t<import-ssp href=\"$3\"/>",
+			"\t${1:_metadata}",
+            "\t<import-ssp href=\"$2\"/>",
 			"\t<local-definitions>",
-			"\t\t$4",
+			"\t\t${3:_ap_activity}",
 			"\t</local-definitions>",
 			"\t<reviewed-controls>",
-			"\t\t",
+			"\t\t${4:_control_selection}",
 			"\t</reviewed-controls>",
 			"\t$0",
-			"</assessment>"
+			"</assessment-plan>"
 		],
 		"description": "generate an SSP",
 	},
@@ -46,16 +40,16 @@
 			"\t<title>$2</title>",
 			"\t${3:<responsible-role role-id=\"$4\"/>}",
 			"\t${5:<remarks>$6</remarks>}",
-			"\t$0",
+			"\t$7",
 			"</task>"
 		]
 	},
 	"AP Task Associated Activity": {
 		"scope": "xml",
-		"prefix": "_ap_task_activity",
+		"prefix": "_ap_associated_activity",
 		"body": [
 			"<associated-activity activity-uuid=\"$1\">",
-			"\t<subject type=\"${2:component\">",
+			"\t<subject type=\"${2:component}\">",
 			"\t\t${3:<include-all/>}",
 			"\t</subject>",
 			"</associated-activity>"

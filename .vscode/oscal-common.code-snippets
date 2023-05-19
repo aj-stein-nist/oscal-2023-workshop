@@ -6,6 +6,56 @@
             "<prop name=\"$1\" value=\"$2\" ${3:uuid=\"${UUID}\"} ${4:class=\"$5\"}/>"
         ],
     },
+    "Description": {
+        "scope": "xml",
+        "prefix": "_description",
+        "body": [
+            "<description>",
+            "\t</p>$1</p>",
+            "</description>"
+        ]
+    },
+    "Metadata": {
+        "scope": "xml",
+        "prefix": "_metadata",
+        "body": [
+            "<metadata>",
+			"\t<title>$1</title>",
+			"\t<last-modified>$CURRENT_YEAR-$CURRENT_MONTH-${CURRENT_DATE}T$CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND.000-04:00</last-modified>",
+			"\t<version>${CURRENT_YEAR}${CURRENT_MONTH}${CURRENT_DATE}</version>",
+			"\t<oscal-version>1.0.4</oscal-version>",
+			"\t$2",
+			"</metadata>",
+        ]
+    },
+	"Role": {
+		"scope": "xml",
+		"prefix": "_role",
+		"body": [
+			"<role id=\"$1\">",
+			"\t<title>$2</title>",
+			"</role>"
+		]
+	},
+	"Party": {
+		"scope": "xml",
+		"prefix": "_party",
+		"body": [
+			"<party uuid=\"${UUID}\" type=\"${1|person,organization|}\">",
+			"\t<name>$2</name>",
+			"\t${3:<member-of-organization>$4</member-of-organization>}",
+			"</party>"
+		]
+	},
+	"Responsible Party": {
+		"scope": "xml",
+		"prefix": "_responsible_party",
+		"body": [
+			"<responsible-party role-id=\"$1\">",
+			"\t<party-uuid>$2</party-uuid>",
+			"</responsible-party>"
+		]
+	},
 	"AP/AR Activity": {
 		"scope": "xml",
 		"prefix": ["_ap_activity", "_ar_activity"],
@@ -15,7 +65,31 @@
 			"\t<description>",
 			"\t\t<p>$2</p>",
 			"\t</description>",
+            "\t$3",
 			"</activity>"
 		]
-	}
+	},
+    "AP/AR Activity Step": {
+        "scope": "xml",
+		"prefix": ["_ap_activity_step", "_ar_activity_step"],
+        "body": [
+            "<step uuid=\"${UUID}\">",
+            "\t<title>$1</title>",
+			"\t<description>",
+			"\t\t<p>$2</p>",
+			"\t</description>",
+            "\t${3:<remarks>$4</remarks>}",
+            "</step>",
+        ]
+    },
+    "AP/AR Control Selection": {
+        "scope": "xml",
+        "prefix": "_control_selection",
+        "body": [
+            "<control-selection>",
+            "\t${1:<include-control control-id=\"$2\"/>}",
+            "\t${3:<include-all/>}",
+            "</control-selection>"
+        ]
+    },
 }

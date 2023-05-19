@@ -22,5 +22,7 @@
     ],
     "[xml]": {
         "editor.tabSize": 4
-    }
+    },
+    "editor.tabCompletion": "on",
+    "editor.snippetSuggestions": "inline"
 }
