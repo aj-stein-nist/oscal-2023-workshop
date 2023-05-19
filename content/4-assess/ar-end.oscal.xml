@@ -45,22 +45,6 @@
                     <p>IFA GoodRead Product Team has configured the application account and credentials sent via encrypted email to assessor.</p>
                 </remarks>
             </step>
-            <step uuid="64ca1ef6-3ad4-4747-97c6-40890222463f">
-                <title>Confirm Load Balancer Blocks Access to Admin Panel from Internet</title>
-                <description><p>Placeholder.</p></description>
-            </step>
-            <step uuid="715f0592-166f-44f6-bb66-d99623e035dc">
-                <title>Confirm GoodRead's PAO Role Cannot Manage Users</title>
-                <description>
-                    <p>The assessor will confirm that user's logged into the GoodRead Application with the PAO staff role cannot add, modify, or disable users from the system.</p>
-                </description>
-            </step>
-            <step uuid="4641957b-a0fa-4c61-af1a-d3e9101efe40">
-                <title>Confirm Django Admin Panel Not Available</title>
-                <description>
-                    <p>The assessor will confirm with web-based interface and API methods users with the PAO Staff role cannot access the Django admin panel functions and interactively change application's database records.</p>
-                </description>
-            </step>
             <related-controls>
                 <control-selection>
                     <include-control control-id="ac-6.1"/>
