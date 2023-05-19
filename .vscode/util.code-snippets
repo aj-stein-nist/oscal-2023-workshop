@@ -1,14 +1,28 @@
 {
     "UUID": {
-        "scope": "xml,json,yaml",
         "prefix": "_uuid",
         "body": [ "${UUID}" ],
+        "description": "Generate a UUID",
     },
     "TIMESTAMP_RFC3339": {
-        "scope": "xml,json,yaml",
         "prefix": "_timestamp",
         "body": [
             "${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}T${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND}${CURRENT_TIMEZONE_OFFSET}"
         ],
+        "description": "Insert the current timestamp"
+    },
+    "DATE_RFC3339": {
+        "prefix": "_date",
+        "body": [
+            "${1:${CURRENT_YEAR}}-${2:${CURRENT_MONTH}}-${3:${CURRENT_DATE}}T00:00:00${CURRENT_TIMEZONE_OFFSET}"
+        ],
+        "description": "Insert a specific date, defaulting to the current day"
+    },
+    "DATETIME_RFC3339": {
+        "prefix": "_datetime",
+        "body": [
+            "${1:${CURRENT_YEAR}}-${2:${CURRENT_MONTH}}-${3:${CURRENT_DATE}}T${4:${CURRENT_HOUR}}:${5:${CURRENT_MINUTE}}:${6:${CURRENT_SECOND}}${CURRENT_TIMEZONE_OFFSET}"
+        ],
+        "description": "Insert a specific datetime, defaulting to now"
     }
 }

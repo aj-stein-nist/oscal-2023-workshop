@@ -1,0 +1,36 @@
+{
+    "New POAM": {
+		"scope": "xml",
+		"prefix": "_poam",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+			"<plan-of-action-and-milestones",
+			"\tuuid=\"${UUID}\"",
+			"\txmlns=\"http://csrc.nist.gov/ns/oscal/1.0\">",
+			"\t${1:_metadata}",
+            "\t<import-ssp href=\"$2\"/>",
+            "\t<system-id identifier-type=\"http://ietf.org/rfc/rfc4122\">$3</system-id>",
+            "\t<!-- Observations and Risks -->",
+            "\t$4",
+            "\t${5:_poam_item}",
+			"\t$0",
+			"</plan-of-action-and-milestones>"
+		],
+		"description": "generate a POAM",
+	},
+    "New POAM Item": {
+		"scope": "xml",
+		"prefix": "_poam_item",
+        "body": [
+            "<poam-item uuid=\"${UUID}\">",
+            "\t<title>$1</title>",
+            "\t<description>",
+            "\t\t<p>$2</p>",
+            "\t</description>",
+            "\t${3:<related-observation observation-uuid=\"$4\"/>}",
+            "\t${5:<associated-risk risk-uuid=\"$6\"/>}",
+			"\t${7:<remarks>$8</remarks>}",
+            "</poam-item>"
+        ]
+    }
+}

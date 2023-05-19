@@ -12,7 +12,7 @@
 			"\t$0",
 			"</assessment-results>"
 		],
-		"description": "generate an SSP",
+		"description": "generate an AR",
 	},
     "AR Result": {
         "scope": "xml",
@@ -31,19 +31,6 @@
             "</result>"
         ]
     },
-    "AR Observation": {
-        "scope": "xml",
-        "prefix": "_ar_observation",
-        "body": [
-            "<observation uuid=\"${UUID}\">",
-            "\t<title>$1</title>",
-            "\t<description>",
-            "\t\t<p>$2</p>",
-            "\t</description>",
-            "\t<method>${3|EXAMINE,INTERVIEW,TEST,UNKNOWN|}</method>",
-            "</observation>",
-        ]
-    },
     "AR Finding": {
         "scope": "xml",
         "prefix": "_ar_finding",
@@ -53,11 +40,11 @@
             "\t<description>",
             "\t\t<p>$2</p>",
             "\t</description>",
-            "\t<target type=\"${3:objective}-id\" target-id=\"4\">",
+            "\t<target type=\"${3|objective-id,statement-id|}\" target-id=\"4\">",
             "\t\t<description>",
             "\t\t\t<p>$5</p>",
             "\t\t</description>",
-            "\t\t<status state=\"${6:not-}satisfied\"/>",
+            "\t\t<status state=\"${6|not-satisfied,satisfied|}\"/>",
             "\t</target>",
             "\t${7:<implementation-statement-uuid>$8</implementation-statement-uuid>}",
             "\t${9:<related-observation observation-uuid=\"$10\"/>}",

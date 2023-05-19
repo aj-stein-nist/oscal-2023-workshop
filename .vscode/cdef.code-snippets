@@ -1,0 +1,21 @@
+{
+    "New CDEF": {
+		"scope": "xml",
+		"prefix": "_cdef",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+			"<component-definition",
+			"\tuuid=\"${UUID}\"",
+			"\txmlns=\"http://csrc.nist.gov/ns/oscal/1.0\">",
+			"\t${1:_metadata}",
+            "\t<import-ssp href=\"$2\"/>",
+            "\t<system-id identifier-type=\"http://ietf.org/rfc/rfc4122\">$3</system-id>",
+            "\t<!-- Observations and Risks -->",
+            "\t$4",
+            "\t${5:_poam_item}",
+			"\t$0",
+			"</component-definition>"
+		],
+		"description": "generate a POAM",
+	},
+}

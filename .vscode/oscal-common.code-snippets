@@ -92,4 +92,37 @@
             "</control-selection>"
         ]
     },
+    "AR/POAM Observation": {
+        "scope": "xml",
+        "prefix": ["_ar_observation", "_poam_observation"],
+        "body": [
+            "<observation uuid=\"${UUID}\">",
+            "\t<title>$1</title>",
+            "\t<description>",
+            "\t\t<p>$2</p>",
+            "\t</description>",
+            "\t<method>${3|EXAMINE,INTERVIEW,TEST,UNKNOWN|}</method>",
+            "\t<type>${4|control-objective,ssp-statement-issue,mitigation,finding,historic|}</type>",
+            "\t${5:<subject subject-uuid=\"$6\" type=\"${7|component,inventory-item,location,party, user,resource|}\"/>}",
+            "\t<collected>${8:_datetime}</collected>",
+            "\t${9:<remarks>$10</remarks>}",
+            "</observation>",
+        ]
+    },
+    "AR/POAM Risk": {
+        "scope": "xml",
+        "prefix": ["_ar_risk", "_poam_risk"],
+        "body": [
+            "<risk uuid=\"${UUID}\">",
+            "\t<title>$1</title>",
+            "\t<description>",
+            "\t\t<p>$2</p>",
+            "\t</description>",
+            "\t<statement>",
+            "\t\t$3",
+            "\t</statement>",
+            "\t<status state=\"${4|open,investigating,remediating,deviation-requested,deviation-approved,closed|}\"/>",
+            "</risk>",
+        ]
+    },
 }
