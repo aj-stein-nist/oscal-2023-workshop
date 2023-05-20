@@ -28,8 +28,8 @@ RUN mkdir -p "${CALABASH_HOME}"
 RUN unzip -d "${CALABASH_HOME}" "xmlcalabash-${calabashversion}.zip"
 RUN f=`ls -d "${CALABASH_HOME}"/*| xargs` && mv "${CALABASH_HOME}"/*/* "${CALABASH_HOME}" && rmdir "${f}"
 
-ARG oscalcliversion=0.3.1
-RUN wget https://github.com/usnistgov/oscal-cli/releases/download/v${oscalcliversion}/cli-core-${oscalcliversion}-oscal-cli.zip
+ARG oscalcliversion=0.3.3
+RUN wget https://repo1.maven.org/maven2/gov/nist/secauto/oscal/tools/oscal-cli/cli-core/${oscalcliversion}/cli-core-${oscalcliversion}-oscal-cli.zip
 RUN mkdir -p /opt/oscal-cli
 RUN unzip -d /opt/oscal-cli cli-core-${oscalcliversion}-oscal-cli.zip
 RUN chmod +x /opt/oscal-cli/bin/oscal-cli
