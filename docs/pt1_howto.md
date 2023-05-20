@@ -1187,11 +1187,11 @@ Then we define the scope of controls, subjects, and tasks of the assessment.
 ### Appendix D.iv: Our assessment plan (conclusion)
 
 In this demonstration we have:
-- Created an AP linked with assessor information and linked it back to a system described in a SSP.
+- Created an AP, added assessor information, and linked to the system SSP.
 - Staged information about activities and their steps in the `<local-definitions`>.
 - Scoped the assessment's controls, system, and activity scope involved in the `<reviewed-controls>`, `<assessment-subject>`, and `<task>` respectively.
 
-✅ We have now documented our assessment in the AP and it is considered *valid*.
+✅ We have now documented our assessment plans and the AP is *valid*.
 
 [⏪ Back to the presentation](#our-assessment-plan)
 
@@ -1230,24 +1230,212 @@ Set up the initial assessment results (AR) with metadata and assessment plan (AP
 
 ---
 
-## Appendix E.ii: Our assessment results
+## Appendix E.ii: Our assessment results (continued)
 
-Copy over the activity steps in the local definition of the AP and add remark notes about status.
+Copy the activity steps `<local-definitions>` from the AP with current status.
 
-
+```xml
+...
+<local-definitions>
+    <activity uuid="52277182-1ba3-4cb6-8d96-b1b97aaf9d6b">
+        ...
+        <step uuid="733e3cbf-e398-46b6-9c02-a2cb534c341e">
+            <title>Step 1</title>
+            <description><p>...</p></description>
+            <!-- Added to relevant steps like below -->
+            <remarks>
+                <p>GoodRead Team set up account for assessor</p>
+            </remarks>
+        </step>
+        ...
+    </activity>
+</local-definitions>
+...
+```
 
 ---
 
-### Appendix E.?: Our assessment results (conclusion)
+## Appendix E.iii: Our assessment results (continued)
+
+Copy the activity steps `<local-definitions>` from the AP with current status.
+
+```xml
+...
+<local-definitions>
+    <activity uuid="52277182-1ba3-4cb6-8d96-b1b97aaf9d6b">
+        ...
+        <step uuid="733e3cbf-e398-46b6-9c02-a2cb534c341e">
+            <title>Step 1</title>
+            <description><p>...</p></description>
+            <!-- Addition below -->
+            <remarks>
+                <p>GoodRead Team set up account for assessor</p>
+            </remarks>
+            <!-- Addition above -->
+        </step>
+        ...
+    </activity>
+</local-definitions>
+...
+```
+
+---
+
+## Appendix E.iv: Our assessment results (continued)
+
+We add the placeholder result with a start time to indicate the assessment started because the assessor received credentials from the product team.
+
+```xml
+...
+<result uuid="e621a431-8eba-4ac7-90cd-ef96e5d90884">
+    <title>IFA GoodRead Pre-Authorization Assessment Result 1</title>
+    <description>
+        <p>This will be the first result once the assessor has completed their final analysis in the assessment.</p>
+    </description>
+    <start>2023-05-19T10:49:20-04:00</start>
+    <reviewed-controls>
+        <control-selection>
+            <include-control control-id="ac-6.1"/>
+        </control-selection>
+    </reviewed-controls>
+</result>
+...
+```
+
+---
+
+## Appendix E.v: Our assessment results (continued)
+
+We now create a result with all the task and its activities completed.
+
+```xml
+...
+<result uuid="fc2a3fda-bb39-4d83-9d39-f2d0e6f0af64">
+    <title>IFA GoodRead Pre-Authorization Assessment Result 1</title>
+    <description>
+        <p>This will be the first result once the assessor has completed their final analysis in the assessment.</p>
+    </description>
+    <start>2023-05-19T10:49:20-04:00</start>
+    <end> 2023-05-19T14:35:20-04:00</end>
+...
+```
+
+---
+
+## Appendix E.vi: Our assessment results (continued)
+
+We now embed the local-definitions in the result with associated activities and elements of the system.
+
+```xml
+...
+<local-definitions>
+    <assessment-task uuid="061b6942-f0d4-439c-9d74-92e779992845" type="action">
+        <title>...</title>
+        <description><p>...</p></description>
+        <associated-activity activity-uuid="52277182-1ba3-4cb6-8d96-b1b97aaf9d6b">
+            <subject type="inventory-item">
+                <include-subject subject-uuid="d9550535-40b9-4d8b-861c-07aa8786bf43" type="inventory-item"/>
+            </subject>
+        </associated-activity>
+        ...
+    </assessment-task>
+</local-definitions>
+...
+```
+
+---
+
+## Appendix E.vii: Our assessment results (continued)
+
+Then we need to indicate the scope of controls for this result (the same as the AP in this case).
+
+```xml
+...
+<reviewed-controls>
+    <control-selection>
+        <include-control control-id="ac-6.1"/>
+    </control-selection>
+</reviewed-controls>
+...
+```
+
+---
+
+## Appendix E.viii: Our assessment results (continued)
+
+After the control scope, we need to add observations of everything seen during the assessment, whether or not it is a finding with a risk. That's later.
+
+```xml
+...
+<observation uuid="0c4de4fc-9bde-46af-b6fe-3b5e78194dcf">
+    <title>Django Framework Examination</title>
+    <description>
+        <p>...</p>
+    </description>
+    <method>EXAMINE</method>
+    <type>control-objective</type>
+    <subject subject-uuid="551b9706-d6a4-4d25-8207-f2ccec548b89" type="component"/>
+    <collected>2023-05-19T12:14:16-04:00</collected>
+    <remarks>
+        <p>...</p>
+    </remarks>
+</observation>
+...
+```
+
+---
+
+## Appendix E.ix: Our assessment results (continued)
+
+We complete the result by linking the unsatisfactory observation to a finding and risk.
+
+```xml
+...
+    <risk uuid="8b8bae66-b28c-4fa5-9a20-b79e7322fc00">
+        <title>PAO Staff Have Over-Privileged Access to GoodRead System</title>
+        <description><p>...</p></description>
+        <statement><p>...</p></statement>
+        <status>investigating</status>
+    </risk>
+    <finding uuid="74155124-9b75-4bbd-b78f-ba3d8c2532b5">
+        <title>Django Framework Admin Panel Not Disabled</title>
+        <description><p>...</p></description>
+        <target type="objective-id" target-id="ac-6.1_obj">
+            <description><p>This is a finding.</p></description>
+            <status state="not-satisfied"></status>
+        </target>
+        <implementation-statement-uuid>d5f9b263-965d-440b-99e7-77f5df670a11</implementation-statement-uuid>
+        <related-observation observation-uuid="0c4de4fc-9bde-46af-b6fe-3b5e78194dcf"/>
+        <associated-risk risk-uuid="8b8bae66-b28c-4fa5-9a20-b79e7322fc00" />
+    </finding>
+</result>
+...
+```
+
+---
+
+### Appendix E.x: Our assessment results (conclusion)
 
 In this demonstration we have:
-- TODO
+- Create a staging assessment results (AR) document instance with:
+    - Copies of the local definition activity and steps
+    - A placeholder result to identify when task activities start
+- Create a finalized AR with:
+    - Updated result with a proper description, start time, and end time
+    - Observations from the assessment, both satisfactory and unsatisfactory
+    - Findings and risks for the unsatisfactory observations
 
 [⏪ Back to the presentation](#our-assessment-results)
 
 ---
 
-## Appendix F: Our plan of action and milestones
+## Appendix F.i: Our plan of action and milestones
+
+TODO
+
+---
+
+## Appendix F.ii: Our plan of action and milestones (continued)
 
 TODO
 

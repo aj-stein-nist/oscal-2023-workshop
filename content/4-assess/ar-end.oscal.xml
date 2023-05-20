@@ -89,17 +89,18 @@
             </responsible-role>
         </activity>
     </local-definitions>
-    <result uuid="e621a431-8eba-4ac7-90cd-ef96e5d90884">
+    <result uuid="fc2a3fda-bb39-4d83-9d39-f2d0e6f0af64">
         <title>IFA GoodRead Pre-Authorization Assessment Result 1</title>
         <description>
             <p>This will be the first result once the assessor has completed their final analysis in the assessment.</p>
         </description>
         <start>2023-05-19T10:49:20-04:00</start>
+        <end> 2023-05-19T14:35:20-04:00</end>
         <local-definitions>
             <assessment-task uuid="061b6942-f0d4-439c-9d74-92e779992845" type="action">
-                <title>Placeholder</title>
+                <title>Examine System Elements for Least Privilege Design and Implementation</title>
                 <description>
-                    <p>Placeholder</p>
+                    <p>The activity and it steps will be performed by the assessor and facilitated by owner, ISSO, and product team for the IFA GoodRead system with necessary information and access about least privilege design and implementation of the system's elements: the application, web framework, server, and cloud account infrastructure.</p>
                 </description>
                 <associated-activity activity-uuid="52277182-1ba3-4cb6-8d96-b1b97aaf9d6b">
                     <subject type="inventory-item">
