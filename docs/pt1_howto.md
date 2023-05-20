@@ -949,7 +949,7 @@ Our system security plan is missing crucial details about our system, namely:
 
 ---
 
-### Appendix C.i: Our updated system security plan's system users
+### Appendix C.i: Our updated SSP's system users
 
 The first user type of our system is the general public, who are free only to view a shortlink.
 
@@ -971,7 +971,7 @@ The first user type of our system is the general public, who are free only to vi
 
 ---
 
-### Appendix C.ii: Our updated system security plan's system users (continued)
+### Appendix C.ii: Our updated SSP's system users (continued)
 
 ```xml
 ...
@@ -1013,42 +1013,78 @@ The first user type of our system is the general public, who are free only to vi
 
 ---
 
-### Appendix C.iii: Our updated system security plan's system component
+### Appendix C.iii: Our updated SSP's system component
 
 For now, let's define our system as a single component.
 
 ```xml
 ...
 <component uuid="551b9706-d6a4-4d25-8207-f2ccec548b89" type="this-system">
-    <title>IFA GoodReads system</title>
+    <title>IFA GoodRead System</title>
     <description>
-        <p>The IFA GoodReads link shortener system</p>
+        <p>IFA develops, operates, and maintains the GoodRead link shortener system to </p>
     </description>
     <status state="under-development"/>
-    <protocol name="https">
-        <port-range start="443" end="443" transport="TCP"/>
-    </protocol>
-    <protocol name="ssh">
-        <port-range start="22" end="22" transport="TCP" />
-    </protocol>
+    <responsible-role role-id="developer">
+        <party-uuid>67c04291-dbf6-495a-a3ba-0011638acc94</party-uuid>
+    </responsible-role>
+    <responsible-role role-id="system-engineer">
+        <party-uuid>4ba3f2b7-e894-48d7-b940-91c68661df55</party-uuid>
+    </responsible-role>
 </component>
+...
 ```
 
 ---
 
-### Appendix C.iv: Our updated system security plan's system inventory
+### Appendix C.iv: Our updated SSP's system inventory
 
-TODO
+Let's define inventory items that are part of the "this-system" component.
+
+```xml
+...
+<inventory-item uuid="4392599a-9117-416a-87d1-24c7d1b2dd0b">
+    <description>
+        <p>This is the custom GoodRead application within the system.</p>
+    </description>
+    <prop class="webserver-application" name="software-name" value="IFA GoodRead"/>
+    <prop class="webserver-application" name="software-version" value="1.0.0"/>
+    <prop class="webserver-application" name="vendor-name" value="Important Federal Agency"/>
+    <prop class="webserver-application" name="asset-id" value="IFAGOV-SYSTEM1234-GOODREAD"/>
+    <implemented-component component-uuid="551b9706-d6a4-4d25-8207-f2ccec548b89"/>
+</inventory-item>
+...
+```
 
 ---
 
-### Appendix C.v: Our updated system security plan's control implementation
+### Appendix C.v: Our updated SSP's control implementation
 
-TODO
+Now we document the control implementation.
+
+```xml
+...
+<control-implementation>
+    <description>
+        <p>...</p>
+    </description>
+    <implemented-requirement
+        uuid="d5f9b263-965d-440b-99e7-77f5df670a11"
+        control-id="ac-6.1">
+        <by-component
+            component-uuid="551b9706-d6a4-4d25-8207-f2ccec548b89"
+            uuid="a4c2d318-26a9-49df-9818-ee0acaf066f2">
+            <description>
+                <p>...</p>
+            </description>
+    </implemented-requirement>
+</control-implementation>
+...
+```
 
 ---
 
-### Appendix C.?: Our updated system security plan (conclusion)
+### Appendix C.vi: Our updated system security plan (conclusion)
 
 In this demonstration we have:
 - Documented our system using the `<system-implementation>` part of our SSP.
@@ -1060,24 +1096,145 @@ In this demonstration we have:
 
 ---
 
-## Appendix D: Our assessment plan
+## Appendix D.i: Our assessment plan
 
-TODO
+First, we set up the initial AP with the metadata and SSP import.
+
+```xml
+...
+<metadata>
+        <role id="assessor">
+            <title>IFA Security Control Assessor</title>
+        </role>
+        <party uuid="e7730080-71ce-4b20-bec4-84f33136fd58" type="person">
+            <name>Amy Assessor</name>
+            <member-of-organization>3a675986-b4ff-4030-b178-e953c2e55d64</member-of-organization>
+        </party>
+        <party uuid="3a675986-b4ff-4030-b178-e953c2e55d64" type="organization">
+            <name>Important Federal Agency</name>
+            <short-name>IFA</short-name>
+            <link href="https://www.ifa.gov" rel="website"/>
+        </party>
+        <responsible-party role-id="assessor">
+            <party-uuid>e7730080-71ce-4b20-bec4-84f33136fd58</party-uuid>
+        </responsible-party>
+</metadata>
+<import-ssp href="../3-implementation/ssp.oscal.xml"/>
+...
+```
 
 ---
 
-### Appendix D.?: Our assessment plan (conclusion)
+## Appendix D.ii: Our assessment plan (continued)
+
+Next we add the local definition with the assessment activity and steps.
+
+```xml
+...
+<local-definitions>
+    <activity uuid="52277182-1ba3-4cb6-8d96-b1b97aaf9d6b">
+        <title>Activity 1</title>
+        <description><p>...</p></description>
+        <prop name="method" value="EXAMINE"/>
+        <step uuid="733e3cbf-e398-46b6-9c02-a2cb534c341e">
+            <title>Step 1</title>
+            <description><p>...</p></description>
+        </step>
+        <related-controls>
+            <control-selection><include-control control-id="ac-6.1"/></control-selection>
+        </related-controls>
+        <responsible-role role-id="assessor">
+            <party-uuid>e7730080-71ce-4b20-bec4-84f33136fd58</party-uuid>
+        </responsible-role>
+    </activity>
+</local-definitions>
+...
+```
+
+---
+
+## Appendix D.iii: Our assessment plan (continued)
+
+Then we define the scope of controls, subjects, and tasks of the assessment.
+
+```xml
+...
+<reviewed-controls>
+    <control-selection>
+        <include-control control-id="ac-6.1"/>
+    </control-selection>
+    <control-objective-selection>
+        <include-all/>
+    </control-objective-selection>
+</reviewed-controls>
+<assessment-subject type="component">
+    <description><p>...</p></description>
+    <include-all/>
+</assessment-subject>
+<task uuid="b3504d22-0e75-4dd7-9247-618661beba4e" type="action">
+    <title>Task 1</title>
+    <associated-activity activity-uuid="0d243b23-a889-478f-9716-6d4870e56209">
+        <subject type="component">
+            <include-all/>
+        </subject>
+    </associated-activity>
+</task>
+...
+```
+
+---
+
+### Appendix D.iv: Our assessment plan (conclusion)
 
 In this demonstration we have:
-- TODO
+- Created an AP linked with assessor information and linked it back to a system described in a SSP.
+- Staged information about activities and their steps in the `<local-definitions`>.
+- Scoped the assessment's controls, system, and activity scope involved in the `<reviewed-controls>`, `<assessment-subject>`, and `<task>` respectively.
+
+✅ We have now documented our assessment in the AP and it is considered *valid*.
 
 [⏪ Back to the presentation](#our-assessment-plan)
 
 ---
 
-## Appendix E: Our assessment results
+## Appendix E.i: Our assessment results
 
-TODO
+Set up the initial assessment results (AR) with metadata and assessment plan (AP) import.
+
+```xml
+...
+<metadata>
+    <title></title>
+    <last-modified>2023-05-19T09:53:00-04:00</last-modified>
+    <version>0.9</version>
+    <oscal-version>1.0.4</oscal-version>
+    <role id="assessor">
+        <title>IFA Security Control Assessor</title>
+    </role>
+    <party uuid="e7730080-71ce-4b20-bec4-84f33136fd58" type="person">
+        <name>Amy Assessor</name>
+        <member-of-organization>3a675986-b4ff-4030-b178-e953c2e55d64</member-of-organization>
+    </party>
+    <party uuid="3a675986-b4ff-4030-b178-e953c2e55d64" type="organization">
+        <name>Important Federal Agency</name>
+        <short-name>IFA</short-name>
+        <link href="https://www.ifa.gov" rel="website"/>
+    </party>
+    <responsible-party role-id="assessor">
+        <party-uuid>e7730080-71ce-4b20-bec4-84f33136fd58</party-uuid>
+    </responsible-party>
+</metadata>
+<import-ap href="./ap.oscal.xml"/>
+...
+```
+
+---
+
+## Appendix E.ii: Our assessment results
+
+Copy over the activity steps in the local definition of the AP and add remark notes about status.
+
+
 
 ---
 
