@@ -5,20 +5,36 @@
     <metadata>
         <title></title>
         <last-modified>2023-05-19T09:53:00-04:00</last-modified>
-        <version>1.0</version>
+        <version>0.9</version>
         <oscal-version>1.0.4</oscal-version>
+        <role id="assessor">
+            <title>IFA Security Control Assessor</title>
+        </role>
+        <party uuid="e7730080-71ce-4b20-bec4-84f33136fd58" type="person">
+            <name>Amy Assessor</name>
+            <member-of-organization>3a675986-b4ff-4030-b178-e953c2e55d64</member-of-organization>
+        </party>
+        <party uuid="3a675986-b4ff-4030-b178-e953c2e55d64" type="organization">
+            <name>Important Federal Agency</name>
+            <short-name>IFA</short-name>
+            <link href="https://www.ifa.gov" rel="website"/>
+        </party>
+        <responsible-party role-id="assessor">
+            <party-uuid>e7730080-71ce-4b20-bec4-84f33136fd58</party-uuid>
+        </responsible-party>
     </metadata>
     <import-ap href="./ap.oscal.xml"/>
     <local-definitions>
         <activity uuid="52277182-1ba3-4cb6-8d96-b1b97aaf9d6b">
             <title>Examine System Elements for Least Privilege Design and Implementation</title>
             <description>
-                <p>The activity and it steps will be performed by the assessor and facilitated by the IFA GoodRead Owner, ISSO, and Product Team with necessary information and access about least privilege design and implementation of the system's elements: the application, web framework, server, and cloud account infrastructure.</p>
+                <p>The activity and it steps will be performed by the assessor and facilitated by owner, ISSO, and product team for the IFA GoodRead system with necessary information and access about least privilege design and implementation of the system's elements: the application, web framework, server, and cloud account infrastructure.</p>
             </description>
+            <prop name="method" value="EXAMINE"/>
             <step uuid="733e3cbf-e398-46b6-9c02-a2cb534c341e">
                 <title>Obtain Network Access via VPN to IFA GoodRead Environment</title>
                 <description>
-                    <p>The assessor will obtain network access with appropriately configured VPN account to see staff interface to the application, which is only accessible via VPN.</p>
+                    <p>The assessor will obtain network access with appropriately configured VPN account to see admin frontend to the application for PAO staff, which is only accessible via VPN with an appropriately configured role for PAO staff accounts.</p>
                 </description>
                 <remarks>
                     <p>This step is complete.</p>
@@ -28,7 +44,7 @@
             <step uuid="4ce7e0b4-d69e-4b80-a700-8600b4d4d933">
                 <title>Obtain Credentials and Access to AwesomeCloud Account for IFA GoodRead System</title>
                 <description>
-
+                    <p>The assessor will obtain access to the GoodRead Product Team's AwesomeCloud account with their single sign-on credentials to a read-only assessor role.</p>
                 </description>
                 <remarks>
                     <p>This step is complete.</p>
@@ -38,7 +54,7 @@
             <step uuid="3d0297de-e47b-4360-b9c3-cf5c425f86cd">
                 <title>Obtain Applcation Access Provided by Product Team</title>
                 <description>
-                    <p>The assessor will obtain non-privileged account credentials to test the IFA GoodRead application as a staff user to create shortlinks.</p>
+                    <p>The assessor will obtain non-privileged account credentials with the PAO staff role to test this role in the application does not permit excessive administrative operations.</p>
                 </description>
                 <remarks>
                     <p>This step is complete.</p>
@@ -46,8 +62,10 @@
                 </remarks>
             </step>
             <step uuid="64ca1ef6-3ad4-4747-97c6-40890222463f">
-                <title>Confirm Load Balancer Blocks Access to Admin Panel from Internet</title>
-                <description><p>Placeholder.</p></description>
+                <title>Confirm Load Balancer Blocks Access to Admin Frontend from Internet</title>
+                <description>
+                    <p>The assessor will confirm that the load balancer for public access does not allow access to Admin Frontend of the application from the Internet.</p>
+                </description>
             </step>
             <step uuid="715f0592-166f-44f6-bb66-d99623e035dc">
                 <title>Confirm GoodRead's PAO Role Cannot Manage Users</title>
