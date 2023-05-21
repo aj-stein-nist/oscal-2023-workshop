@@ -341,20 +341,20 @@ OSCAL tools, such as the [oscal-cli](https://github.com/usnistgov/oscal-cli), pr
 
 ### Prepare
 
-![prepare](./support/generated/rmf1_prepare.svg)
+![prepare](./support/generated/sdlc1_prepare.svg)
 
 ---
 
 
 ### Categorize
 
-![categorize](./support/generated/rmf2.1_categorize.svg)
+![categorize](./support/generated/sdlc2.1_categorize.svg)
 
 ---
 
 ### Categorize (continued)
 
-![categorize](./support/generated/rmf2.2_categorize.svg)
+![categorize](./support/generated/sdlc2.2_categorize.svg)
 
 ---
 
@@ -404,13 +404,13 @@ Create the basic SSP
 
 ### Categorize (continued)
 
-![categorize](./support/generated/rmf2.3_categorize.svg)
+![categorize](./support/generated/sdlc2.3_categorize.svg)
 
 ---
 
 ### Select controls
 
-![select](./support/generated/rmf3_select.svg)
+![select](./support/generated/sdlc3_select.svg)
 
 ---
 
@@ -476,7 +476,7 @@ Note: Live demo here
 
 ### Implement
 
-![implement](./support/generated/rmf4_implement.svg)
+![implement](./support/generated/sdlc4_implement.svg)
 
 ---
 
@@ -500,7 +500,7 @@ Update the SSP with our systems
 
 ### Assess: Plan
 
-![assess-plan](./support/generated/rmf5.1_assess_plan.svg)
+![assess-plan](./support/generated/sdlc5.1_assess_plan.svg)
 
 ---
 
@@ -531,7 +531,7 @@ Create our basic assessment plan
 
 ### Assess: generate results
 
-![assess-plan](./support/generated/rmf5.2_assess_results.svg)
+![assess-plan](./support/generated/sdlc5.2_assess_results.svg)
 
 ---
 
@@ -581,7 +581,7 @@ Evidence generation for assessment results can be [automated with OSCAL](https:/
 
 ### Assess: Generate Plan of Action and Milestones (POA&M)
 
-![assess-poam](./support/generated/rmf5.3_assess_poam.svg)
+![assess-poam](./support/generated/sdlc5.3_assess_poam.svg)
 
 ---
 
@@ -612,19 +612,19 @@ Create the POA&M
 
 ### Assess: Finishing touches
 
-![assess-end](./support/generated/rmf5.4_assess_end.svg)
+![assess-end](./support/generated/sdlc5.4_assess_end.svg)
 
 ---
 
 ### Authorize
 
-![authorize](./support/generated/rmf6_authorize.svg)
+![authorize](./support/generated/sdlc6_authorize.svg)
 
 ---
 
 ### Continuously monitor
 
-![monitor](./support/generated/rmf7_monitor.svg)
+![monitor](./support/generated/sdlc7_monitor.svg)
 
 ---
 
