@@ -73,7 +73,7 @@ node_modules: package.json package-lock.json
 	npm ci
 
 .PHONY: clean
-clean: clean-support clean-exports ## Remove exported presentations and support
+clean: clean-presentations clean-support ## Remove exported presentations and support
 
 .PHONY: clean-support
 clean-support: ## Remove generated presentation support (SVGs, etc.)
