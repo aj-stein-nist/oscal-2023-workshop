@@ -45,7 +45,7 @@
 		"scope": "xml",
 		"prefix": "_ssp_information_type",
 		"body": [
-            "<information-type>",
+            "<information-type uuid=\"${UUID}\">",
             "\t<title>$1</title>",
             "\t<description>",
             "\t\t<p>$2</p>",
