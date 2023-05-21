@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assessment-plan 
+    uuid="c3ba6ab1-0bd0-4042-b5d1-04ee8f00d8fe"
+    xmlns="http://csrc.nist.gov/ns/oscal/1.0">
+    <metadata>
+        <title>IFA GoodRead Continuous Monitoring Assessment Plan June 2023</title>
+        <last-modified>2023-06-02T08:26:52-04:00</last-modified>
+        <version>202306-001</version>
+        <oscal-version>1.0.4</oscal-version>
+        <role id="assessor">
+            <title>IFA Security Controls Assessor</title>
+        </role>
+        <party uuid="e7730080-71ce-4b20-bec4-84f33136fd58" type="person">
+            <name>Amy Assessor</name>
+            <member-of-organization>3a675986-b4ff-4030-b178-e953c2e55d64</member-of-organization>
+        </party>
+        <party uuid="3a675986-b4ff-4030-b178-e953c2e55d64" type="organization">
+            <name>Important Federal Agency</name>
+            <short-name>IFA</short-name>
+            <link href="https://www.ifa.gov" rel="website"/>
+        </party>
+        <responsible-party role-id="assessor">
+            <party-uuid>e7730080-71ce-4b20-bec4-84f33136fd58</party-uuid>
+        </responsible-party>
+    </metadata>
+    <import-ssp href="../5-authorize/ssp.oscal.xml"/>
+    <local-definitions>
+        <activity uuid="cf5d53fe-6043-4c68-9ed6-6b258909febf">
+            <title>Test System Elements for Least Privilege Design and Implementation</title>
+            <description>
+                <p>The activity and it steps will be performed by the assessor via their security automation platform to test least privilege design and implementation of the system's elements, specifically the cloud account infrastructure, as part of continuous monitoring.</p>
+            </description>
+            <prop name="method" value="TEST"/>
+            <step uuid="57f8cfb8-fc3f-41d3-b938-6ab421c92574">
+                <title>Configure Cross-Account IAM Role Trust for GoodRead and Assessor AwesomeCloud Accounts</title>
+                <description>
+                    <p>The GoodRead system engineer will coordinate with the assessor's engineering support staff to configure an IAM role trust. A service account for automation with its own role with the assessor's AwesomeCloud account can assume the role for read-only assessor operations within the GoodRead Product Team's AwesomeCloud account for continuous monitoring of least privilege.</p>
+                </description>
+            </step>
+            <step uuid="976aadad-b1ce-475b-aa6c-e082537e7902">
+                <title>Automate Cross-Account Login to GoodRead AwesomeCloud Account</title>
+                <description>
+                    <p>The assessor's security automation platform will create a session from their dedicated will obtain access to the GoodRead Product Team's AwesomeCloud account with their single sign-on credentials to a read-only assessor role.</p>
+                </description>
+            </step>
+            <step uuid="18ce4e19-7432-4484-8e75-2dd8f05668cf">
+                <title>Analyze GoodRead Developer and System Engineer Roles for Least Privilege</title>
+                <description>
+                    <p>Once authenticated and authorized with a cross-account session, the security automation pipeline will execute scripts developed and maintained by the assessor's engineering support staff. It will analyze the permitted actions for the developer and system engineer roles in the GoodRead Product Team's AwesomeCloud account to confirm they are designed and implement to facilitate only least privilege operation. Examples are included below.</p>
+                    <ul>
+                        <li>For the GoodRead developer role in their AwesomeCloud account, the developer role may only permit the user with this role to check the IP addresses and status of the Awesome Compute Service server instances. This role will not permit the user to create, change, or delete the instances. Similarly, the developer will permit a user to perform actions to see IP addresses of an Awesome Load Balancer instance, but not add, change, or delete the instances.</li>
+                        <li>For the GoodRead system engineer role in their AwesomeCloud account, the system engineer role may only permit actions where the user can add, change, or delete instances for approved services (i.e. Awesome Compute Service, Awesome Load Balancer, et cetera). The role may not permit actions by the user for any other service.</li>
+                    </ul>
+                </description>
+            </step>
+            <related-controls>
+                <control-selection>
+                    <include-control control-id="ac-6.1"/>
+                </control-selection>
+            </related-controls>
+            <responsible-role role-id="assessor">
+                <party-uuid>e7730080-71ce-4b20-bec4-84f33136fd58</party-uuid>
+            </responsible-role>
+        </activity>
+    </local-definitions>
+    <reviewed-controls>
+        <control-selection>
+            <include-control control-id="ac-6.1"/>
+        </control-selection>
+        <control-objective-selection>
+            <include-all/>
+        </control-objective-selection>
+    </reviewed-controls>
+    <assessment-subject type="component">
+        <description>
+            <p>The cloud infrastructure for this information system is within scope of this assessment.</p>
+        </description>
+        <include-all/>
+    </assessment-subject>
+    <task uuid="31d38c07-4a25-404e-a154-f5d596777545" type="action">
+        <title>Test Least Privilege Design and Implementation</title>
+        <associated-activity activity-uuid="cf5d53fe-6043-4c68-9ed6-6b258909febf">
+            <subject type="component">
+                <include-all/>
+            </subject>
+        </associated-activity>
+        <responsible-role role-id="assessor"/>
+        <remarks>
+            <p>Per IFA's use of NIST SP-800 53A, the assessor, with the support of the owner, information system security officer, and product team for the IFA GoodRead project, will test least privilege design and implementation with the following:</p>
+            <ul>
+                <li>system configuration settings and associated documentation;</li>
+            </ul>
+        </remarks>
+    </task>
+    <back-matter/>
+</assessment-plan>
