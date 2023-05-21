@@ -89,9 +89,19 @@
         <status state="operational"/>
         <authorization-boundary>
             <description>
-                <p>This components deployed on AwesomeCloud</p>
+                <p>This section describes an attached diagram of the authorization boundary for IFA GoodRead Project's information system.</p>
             </description>
         </authorization-boundary>
+        <network-architecture>
+            <description>
+                <p>This section describes an attached diagram of the network architecture for IFA GoodRead Project's information system.</p>
+            </description>        
+        </network-architecture>
+        <data-flow>
+            <description>
+                <p>This section describes an attached diagram of various dataflows for application and related elements of the IFA GoodRead Project's information system.</p>
+            </description>        
+        </data-flow>
     </system-characteristics>
     <system-implementation>
         <user uuid="00d323d3-dc3f-4d93-900f-f13430e094d3">
@@ -142,36 +152,34 @@
                 <p>IFA develops, operates, and maintains the GoodRead link shortener system to </p>
             </description>
             <status state="operational"/>
-            <protocol name="http">
-                <port-range start="8000" end="8000" transport="TCP"/>
-            </protocol>
-            <protocol name="https">
-                <port-range start="443" end="443" transport="TCP"/>
-            </protocol>
-            <protocol name="ssh">
-                <port-range start="22" end="22" transport="TCP" />
-            </protocol>
+            <responsible-role role-id="developer">
+                <party-uuid>67c04291-dbf6-495a-a3ba-0011638acc94</party-uuid>
+            </responsible-role>
+            <responsible-role role-id="system-engineer">
+                <party-uuid>4ba3f2b7-e894-48d7-b940-91c68661df55</party-uuid>
+            </responsible-role>
         </component>
         <inventory-item uuid="4392599a-9117-416a-87d1-24c7d1b2dd0b">
             <description>
                 <p>This is the custom GoodRead application within the system.</p>
             </description>
-            <prop class="web-application" name="software-name" value="IFA GoodRead"/>
-            <prop class="web-application" name="software-version" value="1.0.0"/>
-            <prop class="webserver-application" name="vendor-name" value="Important Federal Agency"/>
-            <prop class="webserver-application" name="asset-id" value="IFAGOV-SYSTEM1234-GOODREAD"/>
-            <implemented-component component-uuid="551b9706-d6a4-4d25-8207-f2ccec548b89"/>
+            <prop class="webserver-application" name="software-name" value="IFA GoodRead"/>
+            <prop class="webserver-application" name="software-version" value="1.0.0"/>
+            <prop class="webserver-application" name="asset-type" value="web-server"/>
+            <implemented-component component-uuid="551b9706-d6a4-4d25-8207-f2ccec548b89">
+                <prop name="asset-id" value="IFAGOV-SYSTEM1234-GOODREAD"/>
+            </implemented-component>
         </inventory-item>
         <inventory-item uuid="d911b560-f564-4715-8d2a-76f86127ac73">
             <description>
                 <p>This is the web application framework upon which the developer writes the custom GoodRead application for the user interface and API of this system.</p>
             </description>
-            <prop class="webserver-framework" name="asset-type" value="software"/>
             <prop class="webserver-framework" name="software-name" value="Django Framework"/>
             <prop class="webserver-framework" name="software-version" value="4.2.1"/>
-            <prop class="webserver-framework" name="vendor-name" value="Django Project"/>
-            <prop class="webserver-framework" name="asset-type" value="software"/>
-            <implemented-component component-uuid="551b9706-d6a4-4d25-8207-f2ccec548b89"/>
+            <prop class="webserver-framework" name="asset-type" value="web-server"/>
+            <implemented-component component-uuid="551b9706-d6a4-4d25-8207-f2ccec548b89">
+                <prop name="asset-id" value="IFAGOV-SYSTEM1234-GOODREAD"/>
+            </implemented-component>
         </inventory-item>
         <inventory-item uuid="3e3a8d9a-e3d6-4c7d-b59b-a8d6514fa4a2">
             <description>
@@ -179,40 +187,44 @@
             </description>
             <prop class="database" name="software-name" value="PostgreSQL"/>
             <prop class="database" name="software-version" value="15.3"/>
-            <prop class="database" name="vendor-name" value="PostgreSQL Global Development Group"/>
             <prop class="database" name="asset-type" value="database"/>
-            <implemented-component component-uuid="551b9706-d6a4-4d25-8207-f2ccec548b89"/>
+            <implemented-component component-uuid="551b9706-d6a4-4d25-8207-f2ccec548b89">
+                <prop name="asset-id" value="IFAGOV-SYSTEM1234-GOODREAD"/>
+            </implemented-component>
         </inventory-item>
         <inventory-item uuid="0fb95c4c-ebfd-492e-8145-363eb7947dbe">
             <description>
                 <p>This is the operating system for the web server that runs the custom GoodRead application within the system.</p>
             </description>
-            <prop class="operating-system" name="name" value="Red Hat Enterprise Linux 9"/>
+            <prop class="operating-system" name="software-name" value="Red Hat Enterprise Linux 9"/>
             <prop class="operating-system" name="asset-type" value="operating-system"/>
-            <implemented-component component-uuid="551b9706-d6a4-4d25-8207-f2ccec548b89"/>
+            <implemented-component component-uuid="551b9706-d6a4-4d25-8207-f2ccec548b89">
+                <prop name="asset-id" value="IFAGOV-SYSTEM1234-GOODREAD"/>
+            </implemented-component>
         </inventory-item>
         <inventory-item uuid="cd39f700-23ab-4574-a17e-c9c8f073cbec">
             <description>
                 <p>This inventory item is an instance from the AwesomeCloud Awesome Compute Service (ACS) Service. It is a Linux server.</p>
             </description>
-            <prop class="linux-server" name="vendor-name" value="AwesomeCloud Inc."/>
             <prop class="linux-server" name="asset-id" value="instance-abcd1234"/>
             <prop class="linux-server" name="ipv4-address" value="172.1.2.3"/>
             <prop class="linux-server" name="ipv4-address" value="1.1.2.3"/>
-            <prop class="linux-server" name="vendor-name" value="AwesomeCloud Inc."/>
             <prop class="linux-server" name="uri" value="instance-abcd1234.acs.awesome.cloud"/>
-            <prop class="linux-server" name="asset-type" value="server"/>
-            <implemented-component component-uuid="551b9706-d6a4-4d25-8207-f2ccec548b89"/>
+            <prop class="linux-server" name="asset-type" value="appliance"/>
+            <implemented-component component-uuid="551b9706-d6a4-4d25-8207-f2ccec548b89">
+                <prop name="asset-id" value="IFAGOV-SYSTEM1234-GOODREAD"/>
+            </implemented-component>
         </inventory-item>
         <inventory-item uuid="d9550535-40b9-4d8b-861c-07aa8786bf43">
             <description>
                 <p>This inventory item is an instance from the AwesomeCloud Awesome Load Balancer (ALB) Service. It is a Linux server.</p>
             </description>
             <prop class="network-load-balancer" name="asset-type" value="appliance"/>
-            <prop class="network-load-balancer" name="vendor-name" value="AwesomeCloud Inc."/>
             <prop class="linux-server" name="asset-id" value="instance-defg7890"/>
             <prop class="network-load-balancer" name="uri" value="https://instance-defg7890.alb.awesome.cloud"/>
-            <prop class="network-load-balancer" name="uri" value="https://from.ifa.gov"/>
+            <implemented-component component-uuid="551b9706-d6a4-4d25-8207-f2ccec548b89">
+                <prop name="asset-id" value="IFAGOV-SYSTEM1234-GOODREAD"/>
+            </implemented-component>
         </inventory-item>
     </system-implementation>
     <control-implementation>
