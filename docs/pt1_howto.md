@@ -1522,7 +1522,7 @@ Finally, we must define the POA&M item derived from the accepted risk until it i
 
 ---
 
-### Appendix F.?: Our plan of action and milestones (conclusion)
+### Appendix F.v: Our POA&M (conclusion)
 
 In this demonstration we have:
 - Created a POA&M with initial metadata and linkage to its SSP
