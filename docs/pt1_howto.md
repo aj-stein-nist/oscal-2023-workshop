@@ -1431,20 +1431,104 @@ In this demonstration we have:
 
 ## Appendix F.i: Our plan of action and milestones
 
-TODO
+First, we must initialize the POA&M with the metadata, SSP of the related system, and the system identifier.
+
+```xml
+...
+<metadata>
+    <title>IFA GoodRead Plan of Action and Milestones</title>
+    <last-modified>2023-05-19T12:57:08-04:00</last-modified>
+    <version>1.0</version>
+    <oscal-version>1.0.4</oscal-version>
+</metadata>
+<import-ssp href="../3-implementation/ssp.oscal.xml"/>
+<system-id identifier-type="http://ietf.org/rfc/rfc4122">8101e04d-8305-4e73-bb95-6b59f645b143</system-id>
+...
+```
 
 ---
 
-## Appendix F.ii: Our plan of action and milestones (continued)
+## Appendix F.ii: Our POA&M (continued)
 
-TODO
+We then copy the relevant observation from the AR. Those reading the POA&M may not have access to the AP and AR for this context.
+
+```xml
+...
+<observation uuid="0c4de4fc-9bde-46af-b6fe-3b5e78194dcf">
+    <title>Django Framework Examination</title>
+    <description><p>...</p></description>
+    <method>EXAMINE</method>
+    <type>control-objective</type>
+    <subject subject-uuid="551b9706-d6a4-4d25-8207-f2ccec548b89" type="component"/>
+    <collected>2023-05-19T12:14:16-04:00</collected>
+    <remarks>
+        <p>...</p>
+    </remarks>
+</observation>
+...
+```
+
+---
+
+## Appendix F.iii: Our POA&M (continued)
+
+We then copy over and enhance the risk previously reported in the AR into the POA&M. We annotate that its determination, mitigations, and timings.
+
+```xml
+...
+<risk uuid="d4b8b48b-9c27-4cf7-afe4-11203bfa0420">
+    <title>...</title>
+    <description><p>...</p></description>
+    <statement><p>...</p></statement>
+    <status>deviation-approved</status>
+    <characterization><origin><actor type="party" actor-uuid="e7730080-71ce-4b20-bec4-84f33136fd58"/></origin></characterization>
+    <mitigating-factor uuid="401c15c9-ad6b-4d4a-a591-7d53a3abb3b6">
+        <description><p>...</p></description>
+    </mitigating-factor>
+    <deadline>2024-01-01T05:00:00-04:00</deadline>
+    <response uuid="d28873f7-0a45-476d-9cd3-1d2ec0b8bca1" lifecycle="planned">
+        <title>...</title>
+        <description><p>...</p></description>
+        <prop name="type" value="accept"/>
+        <task uuid="f8b1d4cb-d1a9-4932-9859-2e93b325f287" type="milestone">
+            <title>...</title>
+            <description><p>...</p></description>
+            <timing><within-date-range start="2023-09-29T09:00:00-04:00" end="2024-01-01T05:00:00-04:00"/></timing>
+        </task>
+    </response>
+    <related-observation observation-uuid="0c4de4fc-9bde-46af-b6fe-3b5e78194dcf"/>
+</risk>
+...
+```
+
+---
+
+## Appendix F.iv: Our POA&M (continued)
+
+Finally, we must define the POA&M item derived from the accepted risk until it is mitigated.
+
+```xml
+...
+<poam-item uuid="e174dfb9-0ae3-4a8f-8e7c-081527b84337">
+    <title>...</title>
+    <description>
+        <p>...</p>
+    </description>
+    <related-observation observation-uuid="0c4de4fc-9bde-46af-b6fe-3b5e78194dcf"/>
+    <associated-risk risk-uuid="401c15c9-ad6b-4d4a-a591-7d53a3abb3b6" />
+</poam-item>
+...
+```
 
 ---
 
 ### Appendix F.?: Our plan of action and milestones (conclusion)
 
 In this demonstration we have:
-- TODO
+- Created a POA&M with initial metadata and linkage to its SSP
+- Copied over the subset of relevant observations related to risks
+- Copied over and enhanced risks with additional details, determination, and timings for risk response
+- Created a POA&M item to track how the observed risk is mitigated and by when
 
 [⏪ Back to the presentation](#our-plan-of-action-and-milestones)
 
