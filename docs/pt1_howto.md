@@ -34,27 +34,11 @@ All persons and organizations mentioned within this presentation are fictional a
 
 ## Introduction
 
-- [What is OSCAL?](#what-is-oscal)
 - [Who is the target audience of this talk?](#target-audience)
 - [What are the key assumptions made for this talk?](#assumptions)
 - [Who are we?](#who-are-we)
 - [Environment setup](#environment-setup)
-
----
-
-## What is OSCAL?
-
-"OSCAL is a set of formats expressed in XML, JSON, and YAML. These formats provide machine-readable representations of control catalogs, control baselines, system security plans, and assessment plans and results."
-
----
-
-## What is OSCAL? (continued)
-
-- OSCAL has three layers with seven **models** that define:
-    - information structure supporting a specific operational purpose
-    - relationships between data internal to a model and externally to other models
-- OSCAL data that conforms to one of the models is a **document instance**
-- Software checks that data conforms to the model with a **schema**
+- [What is OSCAL?](#what-is-oscal)
 
 ---
 
@@ -121,30 +105,33 @@ The goal of this presentation is to demonstrate *a* workflow showcasing how OSCA
 
 <!-- TODO include some icons here -->
 
-* Developer - Developing the application
-* System Engineer - Deploying and maintaining the application in the system
+* Normally, we are part of the NIST OSCAL Team
+* Today is special, we are the IFA GoodRead Product Team
+    * Developer - Developing the application
+    * System Engineer - Deploying and maintaining the application in the system
 
 ---
 
 ## The opening act (why are we here?)
 
-Our fictional organization, IFA, wants the GoodRead product team to use OSCAL on this new project and report back on how it improves the project lifecycle.
+IFA has tasked us to design, implement, and documenting this new system for this project, following the IFA software development lifecycle (SDLC).
 
 ![IFA's GitHub page](./support/screenshot_ifa_github.png)
 
-We have been tasked with designing and documenting this new system.
+IFA's Office of the CISO wants us to use OSCAL and report back on how it impacts the IFA SDLC.
 
 ---
 
 ### The project
 
-- Important Federal Agency needs a link shortener (let's call it **IFA GoodRead**)
+- IFA needs to track policy publication
+- A link shortener will help (let's call it **IFA GoodRead**)
 - How will it work?
     - Staff log into GoodRead admin portal
     - Take a URL like `https://www.ifa.gov/2023/04/19/request-for-comment-on-new-guidance-for-2023-fiscal-year`
     - Generate a short link like `https://from.ifa.gov/2023rfc`
     - Share short link with public
-    - Track audience metric from short link usage
+    - Track audience metrics from short link usage
 
 ---
 
@@ -163,12 +150,12 @@ We have been tasked with designing and documenting this new system.
 
 * How did they do it before?
     - Staff created Microsoft Word and PDF documents
-    - Colleagues reviewed individually, made comments, emailed draft feedback
+    - Colleagues reviewed and emailed draft feedback separately
     - Frequent meetings occurred to clear up ambiguities in documents
 * Why didn't they like it before?
     - Data was unstructured and hard to manage
-    - Quality checking across multiple related documents was labor intensive
-    - Quick spot check of system development or operation difficult
+    - Quality checking across multiple documents was tedious
+    - Quick status checks on development or operations were difficult
 
 ---
 
@@ -183,11 +170,11 @@ IFA staff were not so happy.
 
 * How will the IFA GoodRead Team do it now?
     - They built a GRC program with a centralized service
-    - Staff use web application or APIs
-    - Little reliance on Microsoft Word or PDF documents
+    - Staff use near real-time web application or APIs
+    - Decrease reliance on static Microsoft Word or PDF documents
 * What does the IFA CISO office expect to happen now?
-    - GRC service has structured data for efficient analysis
-    - Most quality checking is done by GRC
+    - GRC has structured data for efficient analysis
+    - Most of the tedious quality checking is done by GRC
     - GRC indicates status or progress on the system lifecyle
 
 ---
@@ -200,7 +187,7 @@ IFA staff are a little happier now.
 
 ## How could we leverage OSCAL as developers?
 
-Although *each organization will use OSCAL differently*, it provides some key benefits:
+Although *each organization will use OSCAL differently*, it generally provides some key benefits we will demonstrate today:
 
 - Developers can document systems with code, with all the benefits of modularization.
 - GRC tools and services can exchange data with standard data models.
@@ -220,7 +207,7 @@ How do those roles collaborate with OSCAL? (*a* way they interact, this is not p
 
 ## Let's try OSCAL
 
-*A potential* OSCAL workflow framed within an *SDLC process*: 
+*A potential* OSCAL workflow framed within IFA's SDLC process: 
 
 1. **Prepare** the project and its system
 1. **Categorize** the system's data
@@ -257,7 +244,7 @@ How do those roles collaborate with OSCAL? (*a* way they interact, this is not p
 5. **Assess** system's security
     * Retrieve OSCAL AP
     * Perform assessment activities in OSCAL AP
-    * Create OSCAL AR documenting assessment activities, supporting evidence, and results
+    * Create OSCAL AR documenting assessment activities  and results
     * Upload OSCAL AR to GRC
     * Create OSCAL POA&M and upload to GRC
 6. **Authorize** the system for operation
@@ -280,6 +267,36 @@ How do those roles collaborate with OSCAL? (*a* way they interact, this is not p
 _footer: "![width:60px](https://upload.wikimedia.org/wikipedia/commons/e/ee/NIST_logo.svg) How do I OSCAL? - 4th Annual OSCAL Conference Workshop"
 _class: workshop whitebg
 -->
+
+## What is OSCAL?
+
+"OSCAL is a set of formats expressed in XML, JSON, and YAML. These formats provide machine-readable representations of control catalogs, control baselines, system security plans, and assessment plans and results."
+
+---
+
+<!--
+_footer: "![width:60px](https://upload.wikimedia.org/wikipedia/commons/e/ee/NIST_logo.svg) How do I OSCAL? - 4th Annual OSCAL Conference Workshop"
+_class: workshop whitebg
+-->
+
+## What is OSCAL? (continued)
+
+- OSCAL has three layers with seven **models** that define:
+    - information structure supporting a specific operational purpose
+    - relationships between data internal to a model and externally to other models
+- OSCAL data that conforms to one of the models is a **document instance**
+- Software checks that data conforms to the model with a **schema**
+
+---
+
+<!--
+_footer: "![width:60px](https://upload.wikimedia.org/wikipedia/commons/e/ee/NIST_logo.svg) How do I OSCAL? - 4th Annual OSCAL Conference Workshop"
+_class: workshop whitebg
+
+NOTE: So it's important we understand the models define how you structure your actual data, in the document instance. The IFA GoodRead system will have an OSCAL SSP (the document instance) that conforms to the OSCAL SSP Model. We use the schema to validate the document instance and check how it conforms to the SSP model.
+
+-->
+
 
 ### OSCAL basics
 
