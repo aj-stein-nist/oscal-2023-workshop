@@ -664,7 +664,7 @@ Note: Live demo here
 Create the CDEF, update the SSP to use the CDEF
 -->
 
-[🔗 appendix slides](#appendix-g-breaking-our-ssp-into-component-definitions)
+[🔗 appendix slides](#appendix-i-breaking-our-ssp-into-component-definitions)
 
 ---
 
@@ -1203,11 +1203,6 @@ Set up the initial assessment results (AR) with metadata and assessment plan (AP
 
 ```xml
 ...
-<metadata>
-    <title></title>
-    <last-modified>2023-05-19T09:53:00-04:00</last-modified>
-    <version>0.9</version>
-    <oscal-version>1.0.4</oscal-version>
     <role id="assessor">
         <title>IFA Security Control Assessor</title>
     </role>
@@ -1230,32 +1225,7 @@ Set up the initial assessment results (AR) with metadata and assessment plan (AP
 
 ---
 
-## Appendix E.ii: Our assessment results (continued)
-
-Copy the activity steps `<local-definitions>` from the AP with current status.
-
-```xml
-...
-<local-definitions>
-    <activity uuid="52277182-1ba3-4cb6-8d96-b1b97aaf9d6b">
-        ...
-        <step uuid="733e3cbf-e398-46b6-9c02-a2cb534c341e">
-            <title>Step 1</title>
-            <description><p>...</p></description>
-            <!-- Added to relevant steps like below -->
-            <remarks>
-                <p>GoodRead Team set up account for assessor</p>
-            </remarks>
-        </step>
-        ...
-    </activity>
-</local-definitions>
-...
-```
-
----
-
-## Appendix E.iii: Our assessment results (continued)
+### Appendix E.ii: Our assessment results (continued)
 
 Copy the activity steps `<local-definitions>` from the AP with current status.
 
@@ -1281,7 +1251,7 @@ Copy the activity steps `<local-definitions>` from the AP with current status.
 
 ---
 
-## Appendix E.iv: Our assessment results (continued)
+### Appendix E.iii: Our assessment results (continued)
 
 We add the placeholder result with a start time to indicate the assessment started because the assessor received credentials from the product team.
 
@@ -1304,7 +1274,7 @@ We add the placeholder result with a start time to indicate the assessment start
 
 ---
 
-## Appendix E.v: Our assessment results (continued)
+### Appendix E.iv: Our assessment results (continued)
 
 We now create a result with all the task and its activities completed.
 
@@ -1322,7 +1292,7 @@ We now create a result with all the task and its activities completed.
 
 ---
 
-## Appendix E.vi: Our assessment results (continued)
+### Appendix E.v: Our assessment results (continued)
 
 We now embed the local-definitions in the result with associated activities and elements of the system.
 
@@ -1345,7 +1315,7 @@ We now embed the local-definitions in the result with associated activities and 
 
 ---
 
-## Appendix E.vii: Our assessment results (continued)
+### Appendix E.vi: Our assessment results (continued)
 
 Then we need to indicate the scope of controls for this result (the same as the AP in this case).
 
@@ -1361,7 +1331,7 @@ Then we need to indicate the scope of controls for this result (the same as the 
 
 ---
 
-## Appendix E.viii: Our assessment results (continued)
+### Appendix E.vii: Our assessment results (continued)
 
 After the control scope, we need to add observations of everything seen during the assessment, whether or not it is a finding with a risk. That's later.
 
@@ -1385,7 +1355,7 @@ After the control scope, we need to add observations of everything seen during t
 
 ---
 
-## Appendix E.ix: Our assessment results (continued)
+### Appendix E.viii: Our assessment results (continued)
 
 We complete the result by linking the unsatisfactory observation to a finding and risk.
 
@@ -1414,7 +1384,7 @@ We complete the result by linking the unsatisfactory observation to a finding an
 
 ---
 
-### Appendix E.x: Our assessment results (conclusion)
+### Appendix E.ix: Our assessment results (conclusion)
 
 In this demonstration we have:
 - Create a staging assessment results (AR) document instance with:
@@ -1448,7 +1418,7 @@ First, we must initialize the POA&M with the metadata, SSP of the related system
 
 ---
 
-## Appendix F.ii: Our POA&M (continued)
+### Appendix F.ii: Our POA&M (continued)
 
 We then copy the relevant observation from the AR. Those reading the POA&M may not have access to the AP and AR for this context.
 
@@ -1470,7 +1440,7 @@ We then copy the relevant observation from the AR. Those reading the POA&M may n
 
 ---
 
-## Appendix F.iii: Our POA&M (continued)
+### Appendix F.iii: Our POA&M (continued)
 
 We then copy over and enhance the risk previously reported in the AR into the POA&M. We annotate that its determination, mitigations, and timings.
 
@@ -1503,7 +1473,7 @@ We then copy over and enhance the risk previously reported in the AR into the PO
 
 ---
 
-## Appendix F.iv: Our POA&M (continued)
+### Appendix F.iv: Our POA&M (continued)
 
 Finally, we must define the POA&M item derived from the accepted risk until it is mitigated.
 
@@ -1534,13 +1504,25 @@ In this demonstration we have:
 
 ---
 
-## Appendix G: Breaking our SSP into component definitions
+## Appendix G: Updating the SSP after authorization
 
 TODO
 
 ---
 
-### Appendix G.?: Breaking our SSP into component definitions (conclusion)
+## Appendix H.?: Continuous monitoring
+
+TODO
+
+---
+
+## Appendix I.?: Breaking our SSP into component definitions
+
+TODO
+
+---
+
+### Appendix I.?: Breaking our SSP into component definitions (conclusion)
 
 In this demonstration we have:
 - TODO
