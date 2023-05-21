@@ -1724,15 +1724,55 @@ In this demonstration we have:
 
 ---
 
-## Appendix I.?: Breaking our SSP into component definitions
+## Appendix I: Breaking our SSP into component definitions
 
-TODO
+We applied our SDLC in a faster, more efficient way. How do we share our work with colleagues using the same technology?
+
+We can refactor the SSP in two phases.
+
+1. Break out the component of the SSP into multiple components
+1. Extract them, make them shareable with component definitions, and point to them in the SSP
 
 ---
 
-### Appendix I.?: Breaking our SSP into component definitions (conclusion)
+### Appendix I.i: Breaking our SSP into component definitions (continued)
+
+In phase one, we take the one "this system" component in the system implementation of the SSP and break it into several reusable technologies for others in our organization.
+
+1. AwesomeCloud Awesome Compute Service
+1. AwesomeCloud Awesome Load Balancer
+1. RedHat Enterprise Linux
+
+---
+
+### Appendix I.ii: Breaking our SSP into component definitions (continued)
+
+We then adjust the implemented-component's UUID to properly reference the more granular components.
+
+We enhance the responsible role relationships to better indicate our organization work with third-party staff to take components and adapt them to our needs.
+
+---
+
+### Appendix I.iii: Breaking our SSP into component definitions (continued)
+
+In phase two, we take the shareable implementation requirements and add them into the components within a component definition as abstract, shareable control implementations we can share across multiple systems.
+
+---
+
+### Appendix I.iii: Breaking our SSP into component definitions (continued)
+
+To complete phase two, we instantiate the components in the component definition by reusing the existing, concrete SSP components.
+
+We link back to the components in the component definition from which we derived them.
+
+---
+
+### Appendix I.iv Breaking our SSP into component definitions (continued)
 
 In this demonstration we have:
-- TODO
+- Refactored one component into multiple components in the same SSP
+- Refactored multiple SSP components into sharable components in a component definition file.
 
-[⏪ Back to the presentation](#breaking-our-ssp-into-component-definitions)
+✅ We now have modular component definition and SSP document instances and they are *valid*.
+
+[⏪ Back to the presentation](#what-have-we-learned)
