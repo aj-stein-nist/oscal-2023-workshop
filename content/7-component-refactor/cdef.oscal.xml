@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component-definition
+    uuid="49c14042-7132-48a8-85bc-653382cafaf7"
+    xmlns="http://csrc.nist.gov/ns/oscal/1.0">
+    <metadata>
+        <title>IFA's Component Definitions</title>
+        <last-modified>2023-05-21T11:53:27-04:00</last-modified>
+        <version>0.1</version>
+        <oscal-version>1.0.4</oscal-version>
+        <role id="system-engineer">
+            <title>IFA GoodRead System Engineer</title>
+        </role>
+        <role id="customer-support-engineer">
+            <title>Awesome Cloud Customer Support Engineer</title>
+        </role>
+        <role id="linux-support-engineer">
+            <title>RedHat Enterprise Linux Customer Support Engineer</title>
+        </role>
+        <party uuid="3a675986-b4ff-4030-b178-e953c2e55d64" type="organization">
+            <name>Important Federal Agency</name>
+            <short-name>IFA</short-name>
+            <link href="https://www.ifa.gov" rel="website"/>
+        </party>
+        <party uuid="62b64e9b-2b7d-41d2-bffe-fc558410774a" type="organization">
+            <name>AwesomeCloud Public Sector Engineering Support - United States</name>
+            <short-name>AC-PSES-US</short-name>
+            <link href="https://awesomecloud.systems/public-sector/" rel="website"/>
+        </party>
+        <party uuid="fc63163f-aaf9-495a-8849-10023df63edf" type="organization">
+            <name>RedHat Public Sector Solutions</name>
+            <short-name>RedHat</short-name>
+            <link href="https://www.redhat.com/en/solutions/public-sector"/>
+        </party>
+        <responsible-party role-id="system-engineer">
+            <party-uuid>3a675986-b4ff-4030-b178-e953c2e55d64</party-uuid>
+        </responsible-party>
+        <responsible-party role-id="customer-support-engineer">
+            <party-uuid>62b64e9b-2b7d-41d2-bffe-fc558410774a</party-uuid>
+        </responsible-party>
+        <responsible-party role-id="linux-support-engineer">
+            <party-uuid>fc63163f-aaf9-495a-8849-10023df63edf</party-uuid>
+        </responsible-party>
+    </metadata>
+    <component uuid="e032d54a-19a0-4045-b32f-190ae205f462" type="service">
+        <title>AwesomeCloud Awesome Compute Service</title>
+        <description>
+            <p>This is the AwesomeCloud service (and accompanying API) that the GoodRead Product
+                Team uses to provision virtualized servers for the information system.</p>
+        </description>
+        <responsible-role role-id="system-engineer">
+            <party-uuid>4ba3f2b7-e894-48d7-b940-91c68661df55</party-uuid>
+        </responsible-role>
+        <responsible-role role-id="customer-support-engineer">
+            <party-uuid>62b64e9b-2b7d-41d2-bffe-fc558410774a</party-uuid>
+        </responsible-role>
+        <control-implementation uuid="f8964a1e-de2c-4450-9b5e-8fa70f7d0376" source="../2-select/output_resolved_catalog.oscal.json">
+            <description>
+                <p>These are control implementations for Awesome Compute Service for requirements of
+                    controls in the NIST SP 800-53 control catalog.</p>
+            </description>
+            <implemented-requirement uuid="bc0d7155-8490-4164-b1b3-d1d92170d926" control-id="ac-6.1">
+                <description>
+                    <p>For cloud account and API access to reconfigure the Linux server and its load balancer, administrative access is only allowed for the system engineer via a special AwesomeCloud IAM role. The authentication and authorization for this role is controlled by an integration with the organization's single sign-on solution. This solution will only be accessible and correctly execute for them when they are on the VPN with their account with traffic forwarded to the appropriate network zone in the IFA GoodRead account in AwesomeCloud. It will not work the developer or any staff users of the application.</p>
+                </description>
+            </implemented-requirement>
+        </control-implementation>
+    </component>
+    <component uuid="33720748-dc5b-49df-972d-564b023d5ffe" type="service">
+        <title>AwesomeCloud Awesome Load Balancer Service</title>
+        <description>
+            <p>This is the AwesomeCloud service (and accompanying API) that the GoodRead Product
+                Team uses to serve as a reverse proxy to allow only authorized HTTP communication
+                from the public via the Internet and implictly disallow any unauthorized HTTP
+                communication as well as other protocols.</p>
+        </description>
+        <responsible-role role-id="system-engineer">
+            <party-uuid>4ba3f2b7-e894-48d7-b940-91c68661df55</party-uuid>
+        </responsible-role>
+        <responsible-role role-id="customer-support-engineer">
+            <party-uuid>62b64e9b-2b7d-41d2-bffe-fc558410774a</party-uuid>
+        </responsible-role>
+        <control-implementation uuid="a2c04042-a33d-46fe-88d8-b7bf16e93acf"
+            source="../2-select/output_resolved_catalog.oscal.json">
+            <description>
+                <p>This is the AwesomeCloud service (and accompanying API) that the GoodRead Product
+                    Team uses to serve as a reverse proxy to allow only authorized HTTP
+                    communication from the public via the Internet and implictly disallow any
+                    unauthorized HTTP communication as well as other protocols.</p>
+            </description>
+            <implemented-requirement uuid="ce4c8ddb-368a-4bdf-8669-86dc9fd99d73" control-id="ac-6.1">
+                <description>
+                    <p>For cloud account and API access to reconfigure the Linux server and its load balancer, administrative access is only allowed for the system engineer via a special AwesomeCloud IAM role. The authentication and authorization for this role is controlled by an integration with the organization's single sign-on solution. This solution will only be accessible and correctly execute for them when they are on the VPN with their account with traffic forwarded to the appropriate network zone in the IFA GoodRead account in AwesomeCloud. It will not work the developer or any staff users of the application.</p>
+                </description>
+            </implemented-requirement>
+        </control-implementation>
+    </component>
+    <component uuid="9213d667-81a9-4048-be7e-3c5cb04f7012" type="software">
+        <title>RedHat Enterprise Linux (RHEL)</title>
+        <description>
+            <p>This is the operating system for the server upon which the GoodRead Product Team deploys their web application.</p>
+        </description>
+        <responsible-role role-id="system-engineer">
+            <party-uuid>4ba3f2b7-e894-48d7-b940-91c68661df55</party-uuid>
+        </responsible-role>
+        <control-implementation uuid="f35e62de-e6d0-4342-89bc-8ee56d04c94d"
+            source="../2-select/output_resolved_catalog.oscal.json">
+            <description>
+                <p>This is the AwesomeCloud service (and accompanying API) that the GoodRead Product
+                    Team uses to serve as a reverse proxy to allow only authorized HTTP
+                    communication from the public via the Internet and implictly disallow any
+                    unauthorized HTTP communication as well as other protocols.</p>
+            </description>
+            <implemented-requirement uuid="3aa9198a-abba-442c-8dc0-f344c4b86af4" control-id="ac-6.1">
+                <description>
+                    <p>For the RedHat Linux servers upon which the IFA applications are deployed only the system engineer has a non-privileged user to log in remotely via the SSH protocol to perform ad-hoc inspection, monthly log review as required by policy and procedure, and emergency debugging of the system. Privileged system administration operations may only be performed with the <code>sudo</code> subsystem which requires a password, two-factor authentication, and has enhanced logging of all commands executed. The system engineer must log in remotely and then use <code>sudo</code> to elevate privileges. Remote access with the privileged account is prohibited by configuration and attempts are logged.</p>
+                </description>
+            </implemented-requirement>
+        </control-implementation>
+    </component>
+</component-definition>

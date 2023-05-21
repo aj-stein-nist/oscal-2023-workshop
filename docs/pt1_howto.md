@@ -106,7 +106,7 @@ The goal of this presentation is to demonstrate *a* workflow showcasing how OSCA
 <!-- TODO include some icons here -->
 
 * Normally, we are part of the NIST OSCAL Team
-* Today is special, we are the IFA GoodRead Product Team
+* Today is special, we are the fictional IFA GoodRead Product Team
     * Developer - Developing the application
     * System Engineer - Deploying and maintaining the application in the system
 
@@ -127,11 +127,9 @@ IFA's Office of the CISO wants us to use OSCAL and report back on how it impacts
 - IFA needs to track policy publication
 - A link shortener will help (let's call it **IFA GoodRead**)
 - How will it work?
-    - Staff log into GoodRead admin portal
-    - Take a URL like `https://www.ifa.gov/2023/04/19/request-for-comment-on-new-guidance-for-2023-fiscal-year`
-    - Generate a short link like `https://from.ifa.gov/2023rfc`
-    - Share short link with public
-    - Track audience metrics from short link usage
+    - Staff log into GoodRead admin portal and insert a URL like  `https://www.ifa.gov/2023/04/19/request-for-comment-on-new-guidance-for-2023-fiscal-year`
+    - The system will generate shortlink like `https://from.ifa.gov/2023rfc`
+    - Staff can now **share the shortlink with the public** and get **metrics on the shortlink's usage**
 
 ---
 
@@ -192,16 +190,6 @@ Although *each organization will use OSCAL differently*, it generally provides s
 - Developers can document systems with code, with all the benefits of modularization.
 - GRC tools and services can exchange data with standard data models.
 - Vendors can provide security information about their products in components.
-
-<!--
-TODO: Create the following slides:
-How do those roles collaborate with OSCAL? (*a* way they interact, this is not prescriptive)
-    1. Developers write SSP store in VCS (GitHub)
-    1. VCS copy of SSP uploaded to GRC tool
-    1. ISSM reviews in GRC tool
-    1. During assessment, assessors send AP to AO/ISSM/developer
-    1. Devs submit evidence to assessors in AR against AP in GRC tool
--->
 
 ---
 
@@ -270,7 +258,7 @@ _class: workshop whitebg
 
 ## What is OSCAL?
 
-"OSCAL is a set of formats expressed in XML, JSON, and YAML. These formats provide machine-readable representations of control catalogs, control baselines, system security plans, and assessment plans and results."
+"OSCAL is a set of formats expressed in XML, JSON, and YAML. These formats provide machine-readable representations of **control catalogs**, **control baselines**, **system security plans**, and **assessment plans and results**."
 
 ---
 
@@ -281,7 +269,7 @@ _class: workshop whitebg
 
 ## What is OSCAL? (continued)
 
-- OSCAL has three layers with seven **models** that define:
+- OSCAL has three **layers** with seven **models** that define:
     - information structure supporting a specific operational purpose
     - relationships between data internal to a model and externally to other models
 - OSCAL data that conforms to one of the models is a **document instance**
