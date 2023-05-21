@@ -3,7 +3,7 @@
     uuid="ed38ade8-9b1d-4c03-a296-c842baf09add"
     xmlns="http://csrc.nist.gov/ns/oscal/1.0">
     <metadata>
-        <title></title>
+        <title>GoodRead Pre-Authorization Assessment Report</title>
         <last-modified>2023-05-19T10:53:24-04:00</last-modified>
         <version>1.0</version>
         <oscal-version>1.0.4</oscal-version>

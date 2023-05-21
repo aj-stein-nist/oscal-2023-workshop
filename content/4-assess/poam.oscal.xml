@@ -4,8 +4,8 @@
     xmlns="http://csrc.nist.gov/ns/oscal/1.0">
     <metadata>
         <title>IFA GoodRead Plan of Action and Milestones</title>
-        <last-modified>2023-05-19T12:57:08.000-04:00</last-modified>
-        <version>20230519</version>
+        <last-modified>2023-05-19T12:57:08-04:00</last-modified>
+        <version>1.0</version>
         <oscal-version>1.0.4</oscal-version>
     </metadata>
     <import-ssp href="../3-implementation/ssp.oscal.xml"/>
@@ -23,7 +23,7 @@
             <p>The assessor attempted to access the admin panel while logged into the GoodRead application as a PAO staff user. They were able to see the admin panel and directly edit database records for the application using the Django Framework's admin panel.</p>
         </remarks>
     </observation>
-    <risk uuid="8b8bae66-b28c-4fa5-9a20-b79e7322fc00">
+    <risk uuid="d4b8b48b-9c27-4cf7-afe4-11203bfa0420">
         <title>IFA-GOODREAD-RISK-1: PAO Staff Have Over-Privileged Access to GoodRead System</title>
         <description>
             <p>A user with the privileges of a PAO staff user can exceed the intended privileges for their related business function and directly edit the database for the GoodRead application.</p>
