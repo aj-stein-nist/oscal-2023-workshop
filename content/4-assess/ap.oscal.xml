@@ -98,7 +98,7 @@
                 <include-all/>
             </subject>
         </associated-activity>
-        <responsible-role role-id="ifa-assessor"/>
+        <responsible-role role-id="assessor"/>
         <remarks>
             <p>Per IFA's use of NIST SP-800 53A, the assessor, with the support of the owner, information system security officer, and product team for the IFA GoodRead project, will examine least privilege design and implementation with the following:</p>
             <ul>
