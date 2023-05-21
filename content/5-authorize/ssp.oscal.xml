@@ -57,7 +57,7 @@
         <date-authorized>2023-05-19</date-authorized>
         <security-sensitivity-level>moderate</security-sensitivity-level>
         <system-information>
-            <information-type>
+            <information-type uuid="bccfbb65-a7f3-41ac-989f-01d96eddfdc7">
                 <title>User-provided Links</title>
                 <description>
                     <p>This system maintains a set of user-provided links and their associated
@@ -209,7 +209,7 @@
             <prop class="linux-server" name="asset-id" value="instance-abcd1234"/>
             <prop class="linux-server" name="ipv4-address" value="172.1.2.3"/>
             <prop class="linux-server" name="ipv4-address" value="1.1.2.3"/>
-            <prop class="linux-server" name="uri" value="instance-abcd1234.acs.awesome.cloud"/>
+            <prop class="linux-server" name="uri" value="instance-abcd1234.acs.awesomecloud.systems"/>
             <prop class="linux-server" name="asset-type" value="appliance"/>
             <implemented-component component-uuid="551b9706-d6a4-4d25-8207-f2ccec548b89">
                 <prop name="asset-id" value="IFAGOV-SYSTEM1234-GOODREAD"/>
@@ -221,7 +221,7 @@
             </description>
             <prop class="network-load-balancer" name="asset-type" value="appliance"/>
             <prop class="linux-server" name="asset-id" value="instance-defg7890"/>
-            <prop class="network-load-balancer" name="uri" value="https://instance-defg7890.alb.awesome.cloud"/>
+            <prop class="network-load-balancer" name="uri" value="https://instance-defg7890.alb.awesomecloud.systems"/>
             <implemented-component component-uuid="551b9706-d6a4-4d25-8207-f2ccec548b89">
                 <prop name="asset-id" value="IFAGOV-SYSTEM1234-GOODREAD"/>
             </implemented-component>
