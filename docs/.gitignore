@@ -1,4 +1,4 @@
 node_modules/
 support/generated/
-pt*.html
-pt*.pdf
+*.html
+*.pdf

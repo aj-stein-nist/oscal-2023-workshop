@@ -37,10 +37,10 @@ support: $(MERMAID_SVG_FILES) ## Generate presentation support
 .PHONY: presentations
 presentations: presentations-html presentations-pdf ## Export all presentations to HTML and PDF
 
-MARP_FILES:=$(wildcard pt*.md)
+MARP_FILES:=$(wildcard presentation_*.md)
 MARP_FLAGS:=--allow-local-files --theme-set $(SUPPORT_DIR)/csd-workshop2023.css
 
-EXPORTED_FILES:=$(patsubst pt%.md,pt%.html,$(MARP_FILES))
+EXPORTED_FILES:=$(patsubst presentation_%.md,presentation_%.html,$(MARP_FILES))
 
 # Export the given markdown presentation to html
 %.html: %.md node_modules support
@@ -50,7 +50,7 @@ EXPORTED_FILES:=$(patsubst pt%.md,pt%.html,$(MARP_FILES))
 presentations-html: $(EXPORTED_FILES) ## Export all presentations to HTML
 	@echo Generated presentation HTML...
 
-EXPORTED_FILES_PDF:=$(patsubst pt%.md,pt%.pdf,$(MARP_FILES))
+EXPORTED_FILES_PDF:=$(patsubst presentation_%.md,presentation_%.pdf,$(MARP_FILES))
 
 # Export the given markdown presentation to pdf
 %.pdf: %.md node_modules support
@@ -81,4 +81,4 @@ clean-support: ## Remove generated presentation support (SVGs, etc.)
 
 .PHONY: clean-presentations
 clean-presentations: ## Remove exported presentations (HTML and PDFs)
-	rm -f pt*.html pt*.pdf
+	rm -f presentation_*.html presentation_*.pdf
