@@ -1412,7 +1412,7 @@ In this demonstration we have:
 
 ---
 
-## Appendix F.i: Our plan of action and milestones
+## Appendix F: Our plan of action and milestones
 
 First, we must initialize the POA&M with the metadata, SSP of the related system, and the system identifier.
 
@@ -1431,7 +1431,7 @@ First, we must initialize the POA&M with the metadata, SSP of the related system
 
 ---
 
-### Appendix F.ii: Our POA&M (continued)
+### Appendix F.i: Our POA&M (continued)
 
 We then copy the relevant observation from the AR. Those reading the POA&M may not have access to the AP and AR for this context.
 
@@ -1453,7 +1453,7 @@ We then copy the relevant observation from the AR. Those reading the POA&M may n
 
 ---
 
-### Appendix F.iii: Our POA&M (continued)
+### Appendix F.ii: Our POA&M (continued)
 
 We then copy over and enhance the risk previously reported in the AR into the POA&M. We annotate that its determination, mitigations, and timings.
 
@@ -1486,7 +1486,7 @@ We then copy over and enhance the risk previously reported in the AR into the PO
 
 ---
 
-### Appendix F.iv: Our POA&M (continued)
+### Appendix F.iii: Our POA&M (continued)
 
 Finally, we must define the POA&M item derived from the accepted risk until it is mitigated.
 
@@ -1505,7 +1505,7 @@ Finally, we must define the POA&M item derived from the accepted risk until it i
 
 ---
 
-### Appendix F.v: Our POA&M (conclusion)
+### Appendix F.iv: Our POA&M (conclusion)
 
 In this demonstration we have:
 - Created a POA&M with initial metadata and linkage to its SSP
@@ -1606,9 +1606,121 @@ In this demonstration we have:
 
 ---
 
-## Appendix H.?: Continuously monitoring the system
+## Appendix H: Continuously monitoring the system
 
-TODO
+Now that we have an authorized system, we need to manage continuous monitoring (ConMon) with a workflow.
+
+* Review and update POA&M items (if after the first iteration)
+* Define the ConMon plan in an OSCAL AP
+* Begin the ConMon process and add updates to an OSCAL AR
+* When complete, finalize the OSCAL AR with open findings
+* Create or update the OSCAL POA&M with findings and risks
+* Rinse and repeat for the next ConMon iteration
+
+---
+
+### Appendix H.i: Continuously monitoring the system (continued)
+
+First we will do familiar steps to create an OSCAL AP. We set up the ConMon AP with the metadata and the SSP for the authorized system.
+
+```xml
+...
+<metadata>
+    ...
+    <role id="assessor"><title>IFA Security Controls Assessor</title></role>
+    <party uuid="e7730080-71ce-4b20-bec4-84f33136fd58" type="person">
+        <name>Amy Assessor</name>
+        <member-of-organization>3a675986-b4ff-4030-b178-e953c2e55d64</member-of-organization>
+    </party>
+    <party uuid="3a675986-b4ff-4030-b178-e953c2e55d64" type="organization">
+        <name>Important Federal Agency</name>
+        <short-name>IFA</short-name>
+        <link href="https://www.ifa.gov" rel="website"/>
+    </party>
+    <responsible-party role-id="assessor">
+        <party-uuid>e7730080-71ce-4b20-bec4-84f33136fd58</party-uuid>
+    </responsible-party>
+</metadata>
+<import-ssp href="../5-authorize/ssp.oscal.xml"/>
+...
+```
+
+---
+
+### Appendix H.ii: Continuously monitoring the system (continued)
+
+In ConMon, we will testing the same control but with a slightly different activity and steps in the local definitions and scoping info.
+
+```xml
+...
+<local-definitions>
+    <activity uuid="cf5d53fe-6043-4c68-9ed6-6b258909febf">
+        <title>Test System Elements for Least Privilege Design and Implementation</title>
+        <description><p>...</p></description>
+        <prop name="method" value="TEST"/>
+        <step uuid="57f8cfb8-fc3f-41d3-b938-6ab421c92574">
+            <title>Configure Cross-Account IAM Role Trust for GoodRead and Assessor AwesomeCloud Accounts</title>
+            <description><p>...</p></description>
+        </step>
+        <step uuid="976aadad-b1ce-475b-aa6c-e082537e7902">
+            <title>Automate Cross-Account Login to GoodRead AwesomeCloud Account</title>
+            <description><p>...</p></description>
+        </step>
+        <step uuid="18ce4e19-7432-4484-8e75-2dd8f05668cf">
+            <title>Analyze GoodRead Developer and System Engineer Roles for Least Privilege</title>
+            <description><p>...</p></description>
+        </step>
+        <related-controls>
+            <control-selection>
+                <include-control control-id="ac-6.1"/>
+            </control-selection>
+        </related-controls>
+        <responsible-role role-id="assessor">
+            <party-uuid>e7730080-71ce-4b20-bec4-84f33136fd58</party-uuid>
+        </responsible-role>
+    </activity>
+</local-definitions>
+...
+```
+
+---
+
+### Appendix H.iii: Continuously monitoring the system (continued)
+
+After this, we need to complete the ConMon AP with the necessary control scope, tasks, and assessment subject just like with an assessment.
+
+([Click here](#appendix-diii-our-assessment-plan-continued) to review this demo, it is extremely similar.)
+
+---
+
+### Appendix H.iv: Continuously monitoring the system (continued)
+
+We now need to create an AR for this POA&M cycle iteration.
+
+* [We create the with initial metadata AP import](#appendix-ei-our-assessment-results)
+* [We copy over the locally-defined AP data as needed](#appendix-eii-our-assessment-results-continued)
+* [Add the placeholder result with assessment start time](#appendix-eiii-our-assessment-results-continued)
+* [Add the placeholder result with assessment start time](#appendix-eiv-our-assessment-results-continued)
+* Finalize the AR with completed result with all objectives, findings, and risks like before in [1](#appendix-ev-our-assessment-results-continued), [2](#appendix-evi-our-assessment-results-continued), [3](#appendix-evii-our-assessment-results-continued), [4](#appendix-eviii-our-assessment-results-continued), and [5](#appendix-eix-our-assessment-results-conclusion)
+---
+
+### Appendix H.v: Continuously monitoring the system (continued)
+
+In ConMon, we still use the POA&M to communicate findings, their risks, and how to manage them. We create a new POA&M instance or (more realistically) update the pre-existing one with new findings.
+
+We follow the same steps we follow with making a POA&M instance for assessment, following [1](#appendix-f-our-plan-of-action-and-milestones), [2](#appendix-fi-our-poam-continued), [3](#appendix-fii-our-poam-continued), [4](#appendix-fiii-our-poam-continued), and [5](#appendix-fiv-our-poam-conclusion).
+
+---
+
+### Appendix H.vi: Continuously monitoring the system (continued)
+
+In this demonstration we have:
+- Examined the similarities of assessment to continuous monitoring
+- Designed a plan for automated ConMon testing using the familiar AP to AR to POA&M workflow
+
+✅ We now have an example of a continuous monitoring cycle and the AP, AR, and POA&M documents created are *valid*.
+
+[⏪ Back to the presentation](#breaking-our-ssp-into-component-definitions)
 
 ---
 
