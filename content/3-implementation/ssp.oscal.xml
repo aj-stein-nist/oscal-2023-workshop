@@ -233,16 +233,16 @@
             <value>individuals and roles with authorized access to security functions and security-relevant information are defined and not available to all users of the system;</value>
         </set-parameter>
         <set-parameter param-id="ac-06.01_odp.02">
-            <value>security funcons (deployed in hardware) for authorized access are defined;</value>
+            <value>security functions (deployed in hardware) for authorized access are defined;</value>
         </set-parameter>
         <set-parameter param-id="ac-06.01_odp.03">
-            <value>security funcons (deployed in soware) for authorized access are defined;</value>
+            <value>security functions (deployed in soware) for authorized access are defined;</value>
         </set-parameter>
         <set-parameter param-id="ac-06.01_odp.04">
-            <value>security funcons (deployed in firmware) for authorized access are defined;</value>
+            <value>security functions (deployed in firmware) for authorized access are defined;</value>
         </set-parameter>
         <set-parameter param-id="ac-06.01_odp.05">
-            <value>security-relevant informaon for authorized access is defined;</value>
+            <value>security-relevant information for authorized access is defined;</value>
         </set-parameter>
         <implemented-requirement uuid="d5f9b263-965d-440b-99e7-77f5df670a11" control-id="ac-6.1">
             <by-component component-uuid="551b9706-d6a4-4d25-8207-f2ccec548b89" uuid="a4c2d318-26a9-49df-9818-ee0acaf066f2">
