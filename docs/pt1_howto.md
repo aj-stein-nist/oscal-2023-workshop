@@ -686,7 +686,9 @@ Create the CDEF, update the SSP to use the CDEF
 - [D](#appendix-d-our-assessment-plan): Our assessment plan
 - [E](#appendix-e-our-assessment-results): Our assessment results
 - [F](#appendix-f-our-plan-of-action-and-milestones): Our plan of action and milestones
-- [G](#appendix-g-breaking-our-ssp-into-component-definitions): Breaking our system security plan into component definitions
+- [G](#appendix-g-updating-the-ssp-after-authorization): Updating the SSP after authorization
+- [H](#appendix-h-continuously-monitoring-the-system): Continuously monitoring the system
+- [I](#appendix-i-breaking-our-ssp-into-component-definitions): Breaking our system security plan into component definitions
 
 ---
 
@@ -1392,8 +1394,10 @@ In this demonstration we have:
     - A placeholder result to identify when task activities start
 - Create a finalized AR with:
     - Updated result with a proper description, start time, and end time
-    - Observations from the assessment, both satisfactory and unsatisfactory
+    - Observations from the assessment
     - Findings and risks for the unsatisfactory observations
+
+✅ We have now documented our assessment and the AR is *valid*.
 
 [⏪ Back to the presentation](#our-assessment-results)
 
@@ -1500,17 +1504,100 @@ In this demonstration we have:
 - Copied over and enhanced risks with additional details, determination, and timings for risk response
 - Created a POA&M item to track how the observed risk is mitigated and by when
 
+✅ We have our POA&Ms and the document instance is *valid*.
+
 [⏪ Back to the presentation](#our-plan-of-action-and-milestones)
 
 ---
 
 ## Appendix G: Updating the SSP after authorization
 
-TODO
+We now have implemented and assessed the system. Congrats! We need to update the SSP to indicate it is authorized.
 
 ---
 
-## Appendix H.?: Continuous monitoring
+### Appendix G.i: Updating the SSP after authorization (continued)
+
+We add the authorization date in the system characteristics.
+
+```xml
+...
+<system-characteristics>
+    <system-id identifier-type="http://ietf.org/rfc/rfc4122">8101e04d-8305-4e73-bb95-6b59f645b143</system-id>
+    <system-name>IFA GoodRead</system-name>
+    <description>
+        <p>This system acts as a link shortener for IFA employees</p>
+    </description>
+    <!-- Addition below -->
+    <date-authorized>2023-05-19</date-authorized>
+    <!-- Addition above -->
+    <security-sensitivity-level>moderate</security-sensitivity-level>
+...
+```
+
+---
+
+### Appendix G.ii: Updating the SSP after authorization (continued)
+
+Second, we update the system status to operational.
+
+```xml
+<system-characteristics>
+    <system-id identifier-type="http://ietf.org/rfc/rfc4122">8101e04d-8305-4e73-bb95-6b59f645b143</system-id>
+    <system-name>IFA GoodRead</system-name>
+    <description><p>This system acts as a link shortener for IFA employees</p></description>
+    <date-authorized>2023-05-19</date-authorized>
+    ...
+    <security-impact-level>
+    ...
+    </security-impact-level>
+    <!-- Addition below -->
+    <status state="operational"/>
+    <!-- Addition above -->
+    <authorization-boundary>
+...
+```
+
+---
+
+### Appendix G.iii: Updating the SSP after authorization (continued)
+
+Finally, we update system components' status to operational. (For now, we only have one.)
+
+```xml
+...
+<system-implementation>
+    ...
+    <component uuid="551b9706-d6a4-4d25-8207-f2ccec548b89" type="this-system">
+        <title>IFA GoodRead System</title>
+        <description>
+            <p>IFA develops, operates, and maintains the GoodRead link shortener system to </p>
+        </description>
+        <!-- Addition below -->
+        <status state="operational"/>
+        <!-- Addition above -->
+        <responsible-role role-id="developer">
+            <party-uuid>67c04291-dbf6-495a-a3ba-0011638acc94</party-uuid>
+        </responsible-role>
+...
+```
+
+---
+
+### Appendix G.iv: Updating the SSP after authorization (continued)
+
+In this demonstration we have:
+- Updated the SSP with the authorization date
+- Updated system status to an operational state
+- Updated system's component status to an operational state
+
+✅ We have the SSP for authorized system and it is *valid*.
+
+[⏪ Back to the presentation](#our-plan-of-action-and-milestones)
+
+---
+
+## Appendix H.?: Continuously monitoring the system
 
 TODO
 
