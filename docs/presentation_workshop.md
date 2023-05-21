@@ -109,6 +109,10 @@ The goal of this presentation is to demonstrate *a* workflow showcasing how OSCA
 * Today is special, we are the fictional IFA GoodRead Product Team
     * Developer - Developing the application
     * System Engineer - Deploying and maintaining the application in the system
+* There are other actors in this organization important to this presentation:
+    * System Owner
+    * ISSO
+    * Assessor
 
 ---
 
