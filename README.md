@@ -7,5 +7,5 @@ Presentation materials are located in [`docs/`](./docs).
 To follow along, clone the repository here:
 
 ```
-git clone --recurse-submodules https://github.com/aj-stein-nist/oscal-2023-workshop.git
+git clone https://github.com/aj-stein-nist/oscal-2023-workshop.git
 ```
