@@ -1,6 +1,6 @@
 ---
 marp: true
-title: "Part 1: How do I OSCAL?"
+title: "How do I OSCAL?"
 author: A.J. Stein, Nikita Wootten
 theme: csd-workshop2023
 class: invert workshop
