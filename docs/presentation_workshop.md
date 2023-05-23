@@ -539,7 +539,7 @@ Create our basic assessment plan
 
 ---
 
-### Assess: generate results
+### Assess: Generate Results
 
 ![assess-plan](./support/generated/sdlc5.2_assess_results.svg)
 
@@ -595,10 +595,11 @@ Evidence generation for assessment results can be [automated with OSCAL](https:/
 
 ---
 
-<!--
-_footer: "![width:60px](https://upload.wikimedia.org/wikipedia/commons/e/ee/NIST_logo.svg) How do I OSCAL? - 4th Annual OSCAL Conference Workshop"
-_class: workshop whitebg
--->
+### Assess: Finalize POA&M Findings and Action Plan
+
+![assess-end](./support/generated/sdlc5.4_assess_end.svg)
+
+---
 
 #### 🧩 The OSCAL plan of actions & milestones (POA&M) model
 
@@ -617,12 +618,6 @@ Create the POA&M
 -->
 
 [🔗 appendix slides](#appendix-f-our-plan-of-action-and-milestones)
-
----
-
-### Assess: Finishing touches
-
-![assess-end](./support/generated/sdlc5.4_assess_end.svg)
 
 ---
 
