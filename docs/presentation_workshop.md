@@ -303,6 +303,14 @@ _footer: "![width:60px](https://upload.wikimedia.org/wikipedia/commons/e/ee/NIST
 _class: workshop whitebg
 -->
 
+#### 🌊 Traceability and information flow
+
+The models build on one-another iteratively
+
+![OSCAL flow](./support/OSCAL_information_flow.png)
+
+---
+
 #### How do we edit OSCAL content?
 
 ![bg right 100%](./support/screenshot_model_reference.png)
@@ -632,13 +640,6 @@ Create the POA&M
 _footer: "![width:60px](https://upload.wikimedia.org/wikipedia/commons/e/ee/NIST_logo.svg) How do I OSCAL? - 4th Annual OSCAL Conference Workshop"
 _class: workshop whitebg
 -->
-
-#### 🌊 The flow of information
-The models build on one-another iteratively
-
-![OSCAL flow](./support/OSCAL_information_flow.png)
-
----
 
 ### Making OSCAL documents reusable
 
