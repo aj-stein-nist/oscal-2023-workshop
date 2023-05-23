@@ -110,15 +110,15 @@ The goal of this presentation is to demonstrate *a* workflow showcasing how OSCA
     * Developer - Developing the application
     * System Engineer - Deploying and maintaining the application in the system
 * There are other actors in this organization important to this presentation:
-    * System Owner
-    * ISSO
+    * Owner
+    * Information System Security Officer (ISSO)
     * Assessor
 
 ---
 
 ## The opening act (why are we here?)
 
-IFA has tasked us to design, implement, and documenting this new system for this project, following the IFA software development lifecycle (SDLC).
+IFA has tasked us with designing, implementing, and documenting this new system for this project, following our software development lifecycle (SDLC).
 
 ![IFA's GitHub page](./support/screenshot_ifa_github.png)
 
@@ -139,9 +139,9 @@ IFA's Office of the CISO wants us to use OSCAL and report back on how it impacts
 
 ## The valley of despair
 
-- IFA has lots of mandatory policies and recommended processes
-- Projects must start, change, or stop through the IFA SDLC
-- Not just developers and engineers create and manage a system:
+* IFA has lots of mandatory policies and recommended processes
+* Projects must start, change, or stop through the IFA SDLC
+* Not just developers and engineers create and manage a system:
     - Technical and non-technical staff must frequently collaborate
     - They write about what they have and do in the project
     - They have to keep documentation current in long SDLC phases
@@ -174,10 +174,10 @@ IFA staff were not so happy.
     - They built a GRC program with a centralized service
     - Staff use near real-time web application or APIs
     - Decrease reliance on static Microsoft Word or PDF documents
-* What does the IFA CISO office expect to happen now?
+* What does the IFA CISO office expect to happen now with OSCAL?
     - GRC has structured data for efficient analysis
     - Most of the tedious quality checking is done by GRC
-    - GRC indicates status or progress on the system lifecyle
+    - GRC indicates status or progress on the system lifecycle
 
 ---
 
@@ -194,6 +194,8 @@ Although *each organization will use OSCAL differently*, it generally provides s
 - Developers can document systems with code, with all the benefits of modularization.
 - GRC tools and services can exchange data with standard data models.
 - Vendors can provide security information about their products in components.
+
+<!-- NOTE: Let's take a step back now. If you are in the audience, we explained this scenario before so you can start to understand the different kinds of people involved and the tools they need. If you are making OSCAL-based GRC tools and security tools that exchange data between them, we need to understand the different use cases in that context and how we (the NIST Team and you in the audience) support those use cases. -->
 
 ---
 
@@ -214,45 +216,45 @@ Although *each organization will use OSCAL differently*, it generally provides s
 ## Let's try OSCAL (continued)
 
 1. **Prepare** the project and its system
-    * Bootstrap OSCAL files with preparatory info
+    - Bootstrap OSCAL files with preparatory info
 2. **Categorize** the system's data
-    * Add system information types in OSCAL SSP
-    * Add system categorization in OSCAL SSP
+    - Add system information types in OSCAL SSP
+    - Add system categorization in OSCAL SSP
 
 ---
 
 ## Let's try OSCAL (continued)
 
 3. **Select** controls for the system
-    * Retrieve import profile for OSCAL SSP to identify selected controls
-    * Generate resolved OSCAL catalog from OSCAL profile
+    - Retrieve import profile for OSCAL SSP to identify selected controls
+    - Generate resolved OSCAL catalog from OSCAL profile
 4. **Implement** the system and its security
-    * Add "this system" component in OSCAL SSP
-    * Add control implementation in OSCAL
+    - Add "this system" component in OSCAL SSP
+    - Add control implementation in OSCAL
 ---
 
 ## Let's try OSCAL (continued)
 
 5. **Assess** system's security
-    * Retrieve OSCAL AP
-    * Perform assessment activities in OSCAL AP
-    * Create OSCAL AR documenting assessment activities  and results
-    * Upload OSCAL AR to GRC
-    * Create OSCAL POA&M and upload to GRC
+    - Retrieve OSCAL AP
+    - Perform assessment activities in OSCAL AP
+    - Create OSCAL AR documenting assessment activities  and results
+    - Upload OSCAL AR to GRC
+    - Create OSCAL POA&M and upload to GRC
 6. **Authorize** the system for operation
-    * Retrieve updated OSCAL SSP with authorization data
-    * Deploy system
+    - Retrieve updated OSCAL SSP with authorization data
+    - Deploy system
 
 ---
 
 ## Let's try OSCAL (continued)
 
 7. **Monitor** the system
-    * Review OSCAL POA&M and check if findings obsolete
-    * Retrieve OSCAL AP for continuous monitoring steps
-    * Perform continuous monitoring activities
-    * Create OSCAL AR documenting activities, supporting evidence, and results
-    * Create and update OSCAL POA&M if needed
+    - Review OSCAL POA&M and check if findings obsolete
+    - Retrieve OSCAL AP for continuous monitoring steps
+    - Perform continuous monitoring activities
+    - Create OSCAL AR documenting activities, supporting evidence, and results
+    - Create and update OSCAL POA&M if needed
 ---
 
 <!--
