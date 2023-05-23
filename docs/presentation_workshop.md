@@ -488,7 +488,7 @@ Note: Live demo here
 
 ---
 
-#### IFA GoodReads: Defining the system
+#### IFA GoodRead: Defining the system
 
 ![bg right 65%](./support/generated/system.svg)
 
@@ -714,7 +714,7 @@ Let's start with a skeleton of an SSP and fill in some metadata:
   uuid="cff8385f-108e-40a5-8f7a-82f3dc0eaba8"
   xmlns="http://csrc.nist.gov/ns/oscal/1.0">
   <metadata>
-    <title>IFA GoodReads SSP</title>
+    <title>IFA GoodRead SSP</title>
     <last-modified>2023-05-16T13:57:28.355446-04:00</last-modified>
     <version>1.0</version>
     <oscal-version>1.0.4</oscal-version>
@@ -779,7 +779,7 @@ We use `<role>` and `<party>` in `<metadata>` to document the kinds of work in a
     <system-id identifier-type="http://ietf.org/rfc/rfc4122">
         8101e04d-8305-4e73-bb95-6b59f645b143
     </system-id>
-    <system-name>IFA GoodReads</system-name>
+    <system-name>IFA GoodRead</system-name>
     <description>
         <p>This system acts as a link shortener for IFA employees</p>
     </description>
@@ -860,7 +860,7 @@ Profiles import and tailor controls from one or more catalogs.
     "profile": {
         "uuid": "ada8fb2f-ba03-46b6-a695-35763beed453",
         "metadata": {
-            "title": "IFA GoodReads Profile",
+            "title": "IFA GoodRead Profile",
             "last-modified": "2023-05-17T13:57:28.355446-04:00",
             "version": "1.0",
             "oscal-version": "1.0.4"
@@ -903,7 +903,7 @@ Which produces:
     "catalog" : {
         "uuid" : "30013927-fb24-4e03-bc15-8d9df5e17a25",
         "metadata" : {
-            "title" : "IFA GoodReads Profile"
+            "title" : "IFA GoodRead Profile"
             // ...
         },
         "controls": [ {
