@@ -88,6 +88,7 @@ In order to follow along you need:
     - ⚠️ Windows users will require the [WSL backend](https://learn.microsoft.com/en-us/windows/wsl/install)
 1. [Visual Studio Code](https://code.visualstudio.com/#alt-downloads)
 1. [Docker Desktop](https://www.docker.com/products/docker-desktop/) if on macOS or Windows, [Docker Engine](https://docs.docker.com/engine/) if on Linux
+1. Use this QR code or visit [github.com/aj-stein/oscal-2023-workshop](https://github.com/aj-stein/oscal-2023-workshop) to read instructions.
 
 📝 You do not have to follow along to learn from this presentation.
 
@@ -586,6 +587,8 @@ We agree! In a separate presentation we have explored this idea with a small Git
 ![bg right](./support/qrcode_case-study.png)
 
 Evidence generation for assessment results can be [automated with OSCAL](https://github.com/usnistgov/blossom-case-study).
+
+[github.com/usnistgov/blossom-case-study](https://github.com/usnistgov/blossom-case-study)
 
 ---
 
