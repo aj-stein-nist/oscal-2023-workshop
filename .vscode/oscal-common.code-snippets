@@ -27,64 +27,86 @@
         "prefix": "_metadata",
         "body": [
             "<metadata>",
-			"\t<title>$1</title>",
-			"\t<last-modified>$CURRENT_YEAR-$CURRENT_MONTH-${CURRENT_DATE}T$CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND.000-04:00</last-modified>",
-			"\t<version>${CURRENT_YEAR}${CURRENT_MONTH}${CURRENT_DATE}</version>",
-			"\t<oscal-version>1.0.4</oscal-version>",
-			"\t$2",
-			"</metadata>",
+            "\t<title>$1</title>",
+            "\t<last-modified>$CURRENT_YEAR-$CURRENT_MONTH-${CURRENT_DATE}T$CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND.000-04:00</last-modified>",
+            "\t<version>${CURRENT_YEAR}${CURRENT_MONTH}${CURRENT_DATE}</version>",
+            "\t<oscal-version>1.0.4</oscal-version>",
+            "\t$2",
+            "</metadata>",
         ]
     },
-	"Role": {
-		"scope": "xml",
-		"prefix": "_role",
-		"body": [
-			"<role id=\"$1\">",
-			"\t<title>$2</title>",
-			"</role>"
-		]
-	},
-	"Party": {
-		"scope": "xml",
-		"prefix": "_party",
-		"body": [
-			"<party uuid=\"${UUID}\" type=\"${1|person,organization|}\">",
-			"\t<name>$2</name>",
-			"\t${3:<member-of-organization>$4</member-of-organization>}",
-			"</party>"
-		]
-	},
-	"Responsible Party": {
-		"scope": "xml",
-		"prefix": "_responsible_party",
-		"body": [
-			"<responsible-party role-id=\"$1\">",
-			"\t<party-uuid>$2</party-uuid>",
-			"</responsible-party>"
-		]
-	},
-	"AP/AR Activity": {
-		"scope": "xml",
-		"prefix": ["_ap_activity", "_ar_activity"],
-		"body": [
-			"<activity uuid=\"${UUID}\">",
-			"\t<title>$1</title>",
-			"\t<description>",
-			"\t\t<p>$2</p>",
-			"\t</description>",
+    "Role": {
+        "scope": "xml",
+        "prefix": "_role",
+        "body": [
+            "<role id=\"$1\">",
+            "\t<title>$2</title>",
+            "</role>"
+        ]
+    },
+    "Party": {
+        "scope": "xml",
+        "prefix": "_party",
+        "body": [
+            "<party uuid=\"${UUID}\" type=\"${1|person,organization|}\">",
+            "\t<name>$2</name>",
+            "\t${3:<member-of-organization>$4</member-of-organization>}",
+            "</party>"
+        ]
+    },
+    "Responsible Party": {
+        "scope": "xml",
+        "prefix": "_responsible_party",
+        "body": [
+            "<responsible-party role-id=\"$1\">",
+            "\t<party-uuid>$2</party-uuid>",
+            "</responsible-party>"
+        ]
+    },
+    "Party Role Responsible Party": {
+        "scope": "xml",
+        "prefix": "_party_role_responsible_party",
+        "body": [
+            "<role id=\"$1\">",
+            "\t<title>$2</title>",
+            "</role>",
+            "<party uuid=\"${3:${UUID}}\" type=\"${4|person,organization|}\">",
+            "\t<name>$5</name>",
+            "\t${6:<member-of-organization>$7</member-of-organization>}",
+            "</party>",
+            "<responsible-party role-id=\"$1\">",
+            "\t<party-uuid>$3</party-uuid>",
+            "</responsible-party>"
+        ]
+    },
+    "AP/AR Activity": {
+        "scope": "xml",
+        "prefix": [
+            "_ap_activity",
+            "_ar_activity"
+        ],
+        "body": [
+            "<activity uuid=\"${UUID}\">",
+            "\t<title>$1</title>",
+            "\t<description>",
+            "\t\t<p>$2</p>",
+            "\t</description>",
             "\t$3",
-			"</activity>"
-		]
-	},
+            "</activity>"
+        ]
+    },
     "AP/AR Activity Step": {
         "scope": "xml",
-		"prefix": ["_ap_activity_step", "_ar_activity_step"],
+        "prefix": [
+            "_ap_activity_step",
+            "_ar_activity_step"
+        ],
         "body": [
             "<step uuid=\"${UUID}\">",
             "\t<title>$1</title>",
-			"\t<description>",
-			"\t\t<p>$2</p>",
-			"\t</description>",
+            "\t<description>",
+            "\t\t<p>$2</p>",
+            "\t</description>",
             "\t${3:<remarks>$4</remarks>}",
             "</step>",
         ]
@@ -101,7 +123,10 @@
     },
     "AR/POAM Observation": {
         "scope": "xml",
-        "prefix": ["_ar_observation", "_poam_observation"],
+        "prefix": [
+            "_ar_observation",
+            "_poam_observation"
+        ],
         "body": [
             "<observation uuid=\"${UUID}\">",
             "\t<title>$1</title>",
@@ -118,7 +143,10 @@
     },
     "AR/POAM Risk": {
         "scope": "xml",
-        "prefix": ["_ar_risk", "_poam_risk"],
+        "prefix": [
+            "_ar_risk",
+            "_poam_risk"
+        ],
         "body": [
             "<risk uuid=\"${UUID}\">",
             "\t<title>$1</title>",
